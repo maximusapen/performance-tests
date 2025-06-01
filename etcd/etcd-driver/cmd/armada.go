@@ -1,5 +1,5 @@
 /*******************************************************************************
- * IBM Confidential
+ *
  * OCO Source Materials
  * IBM Cloud Kubernetes Service, 5737-D43
  * (C) Copyright IBM Corp. 2017, 2020 All Rights Reserved.
