@@ -1,12 +1,4 @@
 #!/bin/bash -e
-# ******************************************************************************
-# * Licensed Materials - Property of IBM
-# * IBM Cloud Kubernetes Service, 5737-D43
-# * (C) Copyright IBM Corp. 2019, 2021 All Rights Reserved.
-# * US Government Users Restricted Rights - Use, duplication or
-# * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
-# ******************************************************************************
-#
 
 # This script can run in the following scenarios:
 # - In Jenkins jobs where vault role id and secret id credentials are set up by conductors

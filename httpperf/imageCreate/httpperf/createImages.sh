@@ -1,11 +1,5 @@
 #!/bin/bash
-# ******************************************************************************
-# * Licensed Materials - Property of IBM
-# * IBM Cloud Kubernetes Service, 5737-D43
-# * (C) Copyright IBM Corp. 2017, 2022 All Rights Reserved.
-# * US Government Users Restricted Rights - Use, duplication or
-# * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
-# ******************************************************************************
+
 # Generates multiple images (numContainers) all listening on different ports.
 # The images are pushed to the imageNames (imageName0, imageName1 etc), registry and namespace defined below.
 

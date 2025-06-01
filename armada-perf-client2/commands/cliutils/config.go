@@ -1,4 +1,3 @@
-
 package cliutils
 
 import (
@@ -28,7 +27,7 @@ type ArmadaConfig struct {
 	IBMCloud *IBMCloudConfig
 }
 
-// IKSConfig defines metadata for accessing the IBM Cloud Kubernetes Service
+// IKSConfig defines metadata for accessing the 
 type IKSConfig struct {
 	Endpoint string `toml:"endpoint"`
 	Region   string `toml:"region"`

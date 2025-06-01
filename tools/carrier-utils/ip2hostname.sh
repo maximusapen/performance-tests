@@ -1,11 +1,5 @@
 #!/bin/bash
-# ******************************************************************************
-# * Licensed Materials - Property of IBM
-# * IBM Cloud Kubernetes Service, 5737-D43
-# * (C) Copyright IBM Corp. 2018, 2019 All Rights Reserved.
-# * US Government Users Restricted Rights - Use, duplication or
-# * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
-# ******************************************************************************
+
 # Script to convert carrier IP addresses to host names, from ether stdin
 # of a file given as a parameter.
 # It requires access to either calicoctl (so run on the master or workers)

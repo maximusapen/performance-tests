@@ -1,13 +1,3 @@
-# Create the httperf image
-
-# use this file to create te docker image - it assumes you are running it from the directory containing the dockerfile.
-# substitute the appropriate registry for your environment
-
-# To create and push the image to the registry:
-# create tagged image ready to push : docker build -t stg.icr.io/armada_performance_stage1/httpperf .
-# push image to registry : "docker push stg.icr.io/armada_performance_stage1/httpperf"
-# This installs a Debian image with the latest version of Go installed
-# and a workspace (GOPATH) configured at /go.
 
 FROM golang:1.19.6
 

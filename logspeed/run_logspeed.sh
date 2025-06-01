@@ -1,11 +1,4 @@
 #!/bin/bash -e
-# ******************************************************************************
-# * Licensed Materials - Property of IBM
-# * IBM Cloud Kubernetes Service, 5737-D43
-# * (C) Copyright IBM Corp. 2021 All Rights Reserved.
-# * US Government Users Restricted Rights - Use, duplication or
-# * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
-# ******************************************************************************
 
 # Install a Daemonset that will generate logs, and time how long it takes to gather the logs.
 # Usage: run_logspeed.sh <num_repeats> <true|false>
