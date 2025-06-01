@@ -1,11 +1,4 @@
 #!/bin/bash
-# ******************************************************************************
-# * Licensed Materials - Property of IBM
-# * IBM Cloud Kubernetes Service, 5737-D43
-# * (C) Copyright IBM Corp. 2020, 2022 All Rights Reserved.
-# * US Government Users Restricted Rights - Use, duplication or
-# * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
-# ******************************************************************************
 
 # Generate httpperf_lb_multiport_service.yaml with 1000 ports starting at 30081
 
