@@ -1,0 +1,92 @@
+---
+# Install jmeter and plugins ready to run AcmeAIr tests
+# see details here https://github.com/blueperf/helper
+
+- name: download jmeter and do the checksum which can be found on download page
+  become: true
+  get_url:
+    url: https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.5.tgz
+    dest: /performance/src
+    checksum: sha512:d5d1ce795e9baf18efd3a13ecda150b4da80c3173a2c7ef0da2a5546ac6862b1edd2a2f4e52d971c7da05d879362c28dca6bf218c5f7570b5cc98f7ba73c92af # pragma: allowlist secret
+    mode: 0777
+
+- name: unarchive jmeter which we just downloaded
+  become: true
+  unarchive:
+    src: /performance/src/apache-jmeter-5.5.tgz
+    dest: /usr/local
+    mode: 0775
+    remote_src: yes
+
+- name: Delete the /usr/local/apache-jmeter directory  
+  become: true
+  command: rm -rf /usr/local/apache-jmeter    
+
+- name: Move the downloaded directory to be unversioned in /usr/local/apache-jmeter 
+  become: true
+  command: mv /usr/local/apache-jmeter-5.5 /usr/local/apache-jmeter
+    
+- name: download json.simple
+  become: true
+  get_url:
+    url: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/json-simple/json-simple-1.1.1.jar
+    dest: /usr/local/apache-jmeter/lib/ext
+    mode: 0775
+
+- name: copy acmeair-jmeter-2.0.0-SNAPSHOT.jar
+  become: true
+  copy:
+    src: /performance/src/blueperf/helper/acmeair-jmeter-2.0.0-SNAPSHOT.jar
+    dest: /usr/local/apache-jmeter/lib/ext/
+    remote_src: yes
+
+- name: Install plugins
+  become: true
+  unarchive:
+    src: https://jmeter-plugins.org/files/packages/jpgc-filterresults-2.2.zip
+    dest: /usr/local/apache-jmeter
+    remote_src: yes
+    mode: 0775
+
+- name: Install plugins
+  become: true
+  unarchive:
+    src: https://jmeter-plugins.org/files/packages/jpgc-synthesis-2.2.zip
+    dest: /usr/local/apache-jmeter
+    remote_src: yes
+    mode: 0775
+
+- name: Install plugins
+  become: true
+  unarchive:
+    src: https://jmeter-plugins.org/files/packages/jpgc-cmd-2.2.zip
+    dest: /usr/local/apache-jmeter
+    remote_src: yes
+    mode: 0775
+
+- name: Change permissions on shell scripts
+  become: true
+  file:
+    path: /usr/local/apache-jmeter/bin/JMeterPluginsCMD.sh
+    mode: 0775
+
+- name: Change permissions on shell scripts
+  become: true
+  file:
+    path: /usr/local/apache-jmeter/bin/FilterResults.sh
+    mode: 0775
+
+- name: Insert log4j property for CVE
+  become: true
+  lineinfile:
+    path: /usr/local/apache-jmeter/bin/system.properties
+    line: log4j2.formatMsgNoLookups=true
+
+- name: Increase jmeter heap size
+  become: true
+  command: sudo sed -i -e 's/-Xms1g -Xmx1g/-Xms4g -Xmx4g/g' /usr/local/apache-jmeter/bin/jmeter    
+
+- name: Remove the jndiLookup.class for log4j CVE
+  become: true
+  shell: zip -q -d /usr/local/apache-jmeter/lib/log4j-core-*.jar org/apache/logging/log4j/core/lookup/JndiLookup.class
+ 

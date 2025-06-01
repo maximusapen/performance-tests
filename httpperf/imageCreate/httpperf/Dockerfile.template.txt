@@ -1,0 +1,24 @@
+# This is a template file used by createImages.sh to create multiple container images - all based on httpperf.
+# That script substitutes _httpPort_ and _httpsPort_ so all containers listen on different ports - so they can co-exist in a pod.
+
+FROM golang:1.19.6
+
+# Install prerequisites
+RUN apt-get update && apt-get install -y \
+    curl
+CMD /bin/bash
+
+# Copy the local package directory to the container's workspace.
+ADD . $GOPATH/src/httpperf
+
+# Build the httpperf command inside the container.
+RUN go install httpperf
+ADD ./server.pem $GOPATH/
+ADD ./server.key $GOPATH/
+
+#Run the httpperf command by default when the container starts.
+ENTRYPOINT ["/go/bin/httpperf", "-httpPort=_httpPort_", "-httpsPort=_httpsPort_"]
+
+# Document that the service listens on the ports
+EXPOSE _httpPort_
+EXPOSE _httpsPort_

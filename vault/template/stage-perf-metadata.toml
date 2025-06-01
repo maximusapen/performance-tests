@@ -1,0 +1,10 @@
+[iks]
+endpoint = "CARRIER_iks_endpoint_CARRIER"
+
+[satlink]
+endpoint = "https://api.link.satellite.test.cloud.ibm.com"
+
+[ibmcloud]
+iam_endpoint = "https://iam.test.cloud.ibm.com"
+username = "KEY_armada_performance_functional_id_KEY"
+account_id = "KEY_armada_performance_account_id_KEY"

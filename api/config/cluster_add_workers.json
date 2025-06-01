@@ -1,0 +1,7 @@
+{
+  "diskEncryption": %DISKENCRYPTION%,
+  "machineType": "%MACHINETYPE%",
+  "privateVlan": "%PRIVATEVLAN%",
+  "publicVlan": "%PUBLICVLAN%",
+  "workerNum": "%WORKERNUM%"
+}

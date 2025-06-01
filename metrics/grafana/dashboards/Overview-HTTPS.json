@@ -1,0 +1,1582 @@
+{
+    "annotations": {
+        "list": []
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "hideControls": false,
+    "id": 13985018,
+    "links": [
+        {
+            "icon": "external link",
+            "tags": [],
+            "type": "link"
+        }
+    ],
+    "refresh": false,
+    "rows": [
+        {
+            "collapse": false,
+            "height": 265,
+            "panels": [
+                {
+                    "aliasColors": {
+                        "HTTPNodePort": "#B7DBAB",
+                        "HTTPSNodePort": "#508642",
+                        "http": "#E0F9D7",
+                        "httpNodePort.threads_100": "#7EB26D",
+                        "httpNodePort.threads_200": "#3F6833",
+                        "https": "#7EB26D",
+                        "httpsNodePort.threads_100": "#7EB26D",
+                        "httpsNodePort.threads_200": "#EAB839",
+                        "httpsNodePort.threads_300": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 10,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "includeVars": true,
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "minSpan": 4,
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "repeat": null,
+                    "scopedVars": {
+                        "TestName": {
+                            "selected": true,
+                            "text": "httpsNodePort",
+                            "value": "httpsNodePort"
+                        }
+                    },
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.nodes5_replicas5.*.throughput.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "$TestName  :  Request/s",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 2,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Throughput (req/sec)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "HTTPNodePort": "#B7DBAB",
+                        "HTTPSNodePort": "#508642",
+                        "http": "#E0F9D7",
+                        "httpNodePort.threads_100": "#7EB26D",
+                        "httpNodePort.threads_200": "#3F6833",
+                        "https": "#7EB26D",
+                        "httpsNodePort.threads_100": "#7EB26D",
+                        "httpsNodePort.threads_200": "#EAB839",
+                        "httpsNodePort.threads_300": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 87,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "includeVars": true,
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "minSpan": 4,
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "scopedVars": {
+                        "TestName": {
+                            "selected": true,
+                            "text": "httpsNodePort",
+                            "value": "httpsNodePort"
+                        }
+                    },
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.*.*.average.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "$TestName  : Average Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 2,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "HTTPNodePort": "#B7DBAB",
+                        "HTTPSNodePort": "#508642",
+                        "http": "#E0F9D7",
+                        "httpNodePort.threads_100": "#7EB26D",
+                        "httpNodePort.threads_200": "#3F6833",
+                        "https": "#7EB26D",
+                        "httpsNodePort.threads_100": "#7EB26D",
+                        "httpsNodePort.threads_200": "#EAB839",
+                        "httpsNodePort.threads_300": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 62,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "includeVars": true,
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "minSpan": 4,
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "repeat": null,
+                    "scopedVars": {
+                        "TestName": {
+                            "selected": true,
+                            "text": "httpsNodePort",
+                            "value": "httpsNodePort"
+                        }
+                    },
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.*.*.percentile95.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.*.*.percentile99.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "$TestName  : 99th Percentile Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 2,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "HTTPIngress": "#EF843C",
+                        "HTTPIngress.cpu": "#EF843C",
+                        "HTTPNodePort": "#9AC48A",
+                        "HTTPNodePort.cpu": "#E0F9D7",
+                        "HTTPSIngress": "#BF1B00",
+                        "HTTPSIngress.cpu": "#E24D42",
+                        "HTTPSLoadBalancer": "#1F78C1",
+                        "HTTPSLoadBalancer.cpu": "#1F78C1",
+                        "HTTPSNodePort": "#508642",
+                        "HTTPSNodePort.cpu": "#7EB26D",
+                        "httpsNodePort.threads_200": "#EAB839",
+                        "httpsNodePort.threads_300": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 55,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "includeVars": true,
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "minSpan": 4,
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "repeat": null,
+                    "scopedVars": {
+                        "TestName": {
+                            "selected": true,
+                            "text": "httpsNodePort",
+                            "value": "httpsNodePort"
+                        }
+                    },
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.nodes5_replicas5.*.errorPercentage.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "$TestName : % Request Error",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 2,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "% Error Responses",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": "TestName",
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 265,
+            "panels": [
+                {
+                    "aliasColors": {
+                        "HTTPNodePort": "#B7DBAB",
+                        "HTTPSNodePort": "#508642",
+                        "http": "#E0F9D7",
+                        "httpNodePort.threads_100": "#7EB26D",
+                        "httpNodePort.threads_200": "#3F6833",
+                        "https": "#7EB26D",
+                        "httpsLoadBalancer.threads_100": "#7EB26D",
+                        "httpsLoadBalancer.threads_200": "#EAB839",
+                        "httpsLoadBalancer.threads_300": "#6ED0E0",
+                        "httpsNodePort.threads_100": "#7EB26D",
+                        "httpsNodePort.threads_200": "#EAB839",
+                        "httpsNodePort.threads_300": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 88,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "includeVars": true,
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "minSpan": 4,
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "repeat": null,
+                    "scopedVars": {
+                        "TestName": {
+                            "selected": true,
+                            "text": "httpsLoadBalancer",
+                            "value": "httpsLoadBalancer"
+                        }
+                    },
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.nodes5_replicas5.*.throughput.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "$TestName  :  Request/s",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 2,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Throughput (req/sec)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "HTTPNodePort": "#B7DBAB",
+                        "HTTPSNodePort": "#508642",
+                        "http": "#E0F9D7",
+                        "httpNodePort.threads_100": "#7EB26D",
+                        "httpNodePort.threads_200": "#3F6833",
+                        "https": "#7EB26D",
+                        "httpsLoadBalancer.threads_100": "#7EB26D",
+                        "httpsLoadBalancer.threads_200": "#EAB839",
+                        "httpsLoadBalancer.threads_300": "#6ED0E0",
+                        "httpsNodePort.threads_100": "#7EB26D",
+                        "httpsNodePort.threads_200": "#EAB839",
+                        "httpsNodePort.threads_300": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 89,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "includeVars": true,
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "minSpan": 4,
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "scopedVars": {
+                        "TestName": {
+                            "selected": true,
+                            "text": "httpsLoadBalancer",
+                            "value": "httpsLoadBalancer"
+                        }
+                    },
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.*.*.average.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "$TestName  : Average Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 2,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "HTTPNodePort": "#B7DBAB",
+                        "HTTPSNodePort": "#508642",
+                        "http": "#E0F9D7",
+                        "httpNodePort.threads_100": "#7EB26D",
+                        "httpNodePort.threads_200": "#3F6833",
+                        "https": "#7EB26D",
+                        "httpsLoadBalancer.threads_100": "#7EB26D",
+                        "httpsLoadBalancer.threads_200": "#EAB839",
+                        "httpsLoadBalancer.threads_300": "#6ED0E0",
+                        "httpsNodePort.threads_100": "#7EB26D",
+                        "httpsNodePort.threads_200": "#EAB839",
+                        "httpsNodePort.threads_300": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 90,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "includeVars": true,
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "minSpan": 4,
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "repeat": null,
+                    "scopedVars": {
+                        "TestName": {
+                            "selected": true,
+                            "text": "httpsLoadBalancer",
+                            "value": "httpsLoadBalancer"
+                        }
+                    },
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.*.*.percentile95.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.*.*.percentile99.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "$TestName  : 99th Percentile Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 2,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "HTTPIngress": "#EF843C",
+                        "HTTPIngress.cpu": "#EF843C",
+                        "HTTPNodePort": "#9AC48A",
+                        "HTTPNodePort.cpu": "#E0F9D7",
+                        "HTTPSIngress": "#BF1B00",
+                        "HTTPSIngress.cpu": "#E24D42",
+                        "HTTPSLoadBalancer": "#1F78C1",
+                        "HTTPSLoadBalancer.cpu": "#1F78C1",
+                        "HTTPSNodePort": "#508642",
+                        "HTTPSNodePort.cpu": "#7EB26D",
+                        "httpsNodePort.threads_200": "#EAB839",
+                        "httpsNodePort.threads_300": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 91,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "includeVars": true,
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "minSpan": 4,
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "repeat": null,
+                    "scopedVars": {
+                        "TestName": {
+                            "selected": true,
+                            "text": "httpsLoadBalancer",
+                            "value": "httpsLoadBalancer"
+                        }
+                    },
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.nodes5_replicas5.*.errorPercentage.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "$TestName : % Request Error",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 2,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "% Error Responses",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": 1549968028955,
+            "repeatRowId": 1,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 265,
+            "panels": [
+                {
+                    "aliasColors": {
+                        "HTTPNodePort": "#B7DBAB",
+                        "HTTPSNodePort": "#508642",
+                        "http": "#E0F9D7",
+                        "httpNodePort.threads_100": "#7EB26D",
+                        "httpNodePort.threads_200": "#3F6833",
+                        "https": "#7EB26D",
+                        "httpsIngress.threads_100": "#7EB26D",
+                        "httpsIngress.threads_200": "#EAB839",
+                        "httpsIngress.threads_300": "#6ED0E0",
+                        "httpsNodePort.threads_100": "#7EB26D",
+                        "httpsNodePort.threads_200": "#EAB839",
+                        "httpsNodePort.threads_300": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 92,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "includeVars": true,
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "minSpan": 4,
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "repeat": null,
+                    "scopedVars": {
+                        "TestName": {
+                            "selected": true,
+                            "text": "httpsIngress",
+                            "value": "httpsIngress"
+                        }
+                    },
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.nodes5_replicas5.*.throughput.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "$TestName  :  Request/s",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 2,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Throughput (req/sec)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "HTTPNodePort": "#B7DBAB",
+                        "HTTPSNodePort": "#508642",
+                        "http": "#E0F9D7",
+                        "httpNodePort.threads_100": "#7EB26D",
+                        "httpNodePort.threads_200": "#3F6833",
+                        "https": "#7EB26D",
+                        "httpsIngress.threads_100": "#7EB26D",
+                        "httpsIngress.threads_200": "#EAB839",
+                        "httpsIngress.threads_300": "#6ED0E0",
+                        "httpsNodePort.threads_100": "#7EB26D",
+                        "httpsNodePort.threads_200": "#EAB839",
+                        "httpsNodePort.threads_300": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 93,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "includeVars": true,
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "minSpan": 4,
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "scopedVars": {
+                        "TestName": {
+                            "selected": true,
+                            "text": "httpsIngress",
+                            "value": "httpsIngress"
+                        }
+                    },
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.*.*.average.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "$TestName  : Average Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 2,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "HTTPNodePort": "#B7DBAB",
+                        "HTTPSNodePort": "#508642",
+                        "http": "#E0F9D7",
+                        "httpNodePort.threads_100": "#7EB26D",
+                        "httpNodePort.threads_200": "#3F6833",
+                        "https": "#7EB26D",
+                        "httpsIngress.threads_100": "#7EB26D",
+                        "httpsIngress.threads_200": "#EAB839",
+                        "httpsIngress.threads_300": "#6ED0E0",
+                        "httpsNodePort.threads_100": "#7EB26D",
+                        "httpsNodePort.threads_200": "#EAB839",
+                        "httpsNodePort.threads_300": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 94,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "includeVars": true,
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "minSpan": 4,
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "repeat": null,
+                    "scopedVars": {
+                        "TestName": {
+                            "selected": true,
+                            "text": "httpsIngress",
+                            "value": "httpsIngress"
+                        }
+                    },
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.*.*.percentile95.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.*.*.percentile99.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "$TestName  : 99th Percentile Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 2,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "HTTPIngress": "#EF843C",
+                        "HTTPIngress.cpu": "#EF843C",
+                        "HTTPNodePort": "#9AC48A",
+                        "HTTPNodePort.cpu": "#E0F9D7",
+                        "HTTPSIngress": "#BF1B00",
+                        "HTTPSIngress.cpu": "#E24D42",
+                        "HTTPSLoadBalancer": "#1F78C1",
+                        "HTTPSLoadBalancer.cpu": "#1F78C1",
+                        "HTTPSNodePort": "#508642",
+                        "HTTPSNodePort.cpu": "#7EB26D",
+                        "httpsIngress.threads_100": "#7EB26D",
+                        "httpsIngress.threads_200": "#EAB839",
+                        "httpsIngress.threads_300": "#6ED0E0",
+                        "httpsNodePort.threads_200": "#EAB839",
+                        "httpsNodePort.threads_300": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 95,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "includeVars": true,
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "minSpan": 4,
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "repeat": null,
+                    "scopedVars": {
+                        "TestName": {
+                            "selected": true,
+                            "text": "httpsIngress",
+                            "value": "httpsIngress"
+                        }
+                    },
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.nodes5_replicas5.*.errorPercentage.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "$TestName : % Request Error",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 2,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "% Error Responses",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": 1549968028955,
+            "repeatRowId": 1,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 60,
+            "panels": [
+                {
+                    "content": "# httpsNodePort : Cruiser CPU/Memory Stats\n(Click top left corner of this box to get stats)",
+                    "id": 84,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-cruiserstats",
+                            "dashboard": "Overview - CruiserStats",
+                            "includeVars": false,
+                            "keepTime": true,
+                            "params": "var-TestName=httpsNodePort.nodes5_replicas5.threads_200",
+                            "title": "Cruiser CPU/Memory Stats",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "mode": "markdown",
+                    "repeat": null,
+                    "span": 12,
+                    "title": "",
+                    "type": "text"
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": -5,
+            "panels": [],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 5,
+            "panels": [
+                {
+                    "content": "# httpsLoadBalancer : Cruiser CPU/Memory Stats\n(Click top left corner of this box to get stats)",
+                    "id": 85,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-cruiserstats",
+                            "dashboard": "Overview - CruiserStats",
+                            "includeVars": false,
+                            "keepTime": true,
+                            "params": "var-TestName=httpsLoadBalancer.nodes5_replicas5.threads_100",
+                            "title": "Cruiser CPU/Memory Stats",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "mode": "markdown",
+                    "span": 12,
+                    "title": "",
+                    "type": "text"
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 22,
+            "panels": [
+                {
+                    "content": "# httpsIngress : Cruiser CPU/Memory Stats\n(Click top left corner of this box to get stats)",
+                    "id": 86,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-cruiserstats",
+                            "dashboard": "Overview - CruiserStats",
+                            "includeVars": false,
+                            "keepTime": true,
+                            "params": "var-TestName=httpsIngress.nodes5_replicas5.threads_100",
+                            "title": "Cruiser CPU/Memory Stats",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "mode": "markdown",
+                    "span": 12,
+                    "title": "",
+                    "type": "text"
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        }
+    ],
+    "schemaVersion": 14,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "tags": [],
+                    "text": "carrier3_stage",
+                    "value": "carrier3_stage"
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "CarrierName",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "carrier1_stage",
+                        "value": "carrier1_stage"
+                    },
+                    {
+                        "selected": false,
+                        "text": "carrier2_stage",
+                        "value": "carrier2_stage"
+                    },
+                    {
+                        "selected": true,
+                        "text": "carrier3_stage",
+                        "value": "carrier3_stage"
+                    },
+                    {
+                        "selected": false,
+                        "text": "carrier4_stage",
+                        "value": "carrier4_stage"
+                    }
+                ],
+                "query": "carrier1_stage, carrier2_stage,carrier3_stage,carrier4_stage",
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "tags": [],
+                    "text": "1_12*",
+                    "value": "1_12*"
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": "Kubernetes Major Version",
+                "multi": false,
+                "name": "KubeVersion",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "*",
+                        "value": "*"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1_10*",
+                        "value": "1_10*"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1_11*",
+                        "value": "1_11*"
+                    },
+                    {
+                        "selected": true,
+                        "text": "1_12*",
+                        "value": "1_12*"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1_13*",
+                        "value": "1_13*"
+                    }
+                ],
+                "query": "*,1_10*,1_11*,1_12*,1_13*",
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "tags": [],
+                    "text": "httpsNodePort + httpsLoadBalancer + httpsIngress",
+                    "value": [
+                        "httpsNodePort",
+                        "httpsLoadBalancer",
+                        "httpsIngress"
+                    ]
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": "",
+                "multi": true,
+                "name": "TestName",
+                "options": [
+                    {
+                        "selected": true,
+                        "text": "httpsNodePort",
+                        "value": "httpsNodePort"
+                    },
+                    {
+                        "selected": true,
+                        "text": "httpsLoadBalancer",
+                        "value": "httpsLoadBalancer"
+                    },
+                    {
+                        "selected": true,
+                        "text": "httpsIngress",
+                        "value": "httpsIngress"
+                    }
+                ],
+                "query": "httpsNodePort, httpsLoadBalancer, httpsIngress",
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "text": "u2c_2x4",
+                    "value": [
+                        "u2c_2x4"
+                    ]
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": "Machine Type",
+                "multi": false,
+                "name": "MachineType",
+                "options": [
+                    {
+                        "selected": true,
+                        "text": "u2c_2x4",
+                        "value": "u2c_2x4"
+                    },
+                    {
+                        "selected": false,
+                        "text": "u3c_2x4",
+                        "value": "u3c_2x4"
+                    },
+                    {
+                        "selected": false,
+                        "text": "dal09",
+                        "value": "dal09"
+                    },
+                    {
+                        "selected": false,
+                        "text": "dg",
+                        "value": "dg"
+                    },
+                    {
+                        "selected": false,
+                        "text": "dm",
+                        "value": "dm"
+                    },
+                    {
+                        "selected": false,
+                        "text": "nr",
+                        "value": "nr"
+                    },
+                    {
+                        "selected": false,
+                        "text": "js",
+                        "value": "js"
+                    },
+                    {
+                        "selected": false,
+                        "text": "rgs",
+                        "value": "rgs"
+                    },
+                    {
+                        "selected": false,
+                        "text": "kt",
+                        "value": "kt"
+                    }
+                ],
+                "query": "u2c_2x4, u3c_2x4, dal09, dg, dm, nr, js, rgs, kt",
+                "type": "custom"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-7d",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "5s",
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ],
+        "time_options": [
+            "5m",
+            "15m",
+            "1h",
+            "6h",
+            "12h",
+            "24h",
+            "2d",
+            "7d",
+            "30d"
+        ]
+    },
+    "timezone": "browser",
+    "title": "Overview - HTTPS",
+    "version": 6
+}

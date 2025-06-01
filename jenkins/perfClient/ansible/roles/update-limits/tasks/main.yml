@@ -1,0 +1,57 @@
+---
+- name: Add or modify pam_limits in /etc/security/limits.conf nofile
+  become: true
+  pam_limits:
+    domain: '*'
+    limit_type: '-'
+    limit_item: nofile
+    value: 524288
+    backup: yes
+
+- name: Add or modify pam_limits in /etc/security/limits.conf memlock
+  become: true
+  pam_limits:
+    domain: '*'
+    limit_type: '-'
+    limit_item: memlock
+    value: -1
+
+- name: Add or modify pam_limits in /etc/security/limits.conf rss
+  become: true
+  pam_limits:
+    domain: '*'
+    limit_type: '-'
+    limit_item: rss
+    value: -1
+
+- name: Add or modify pam_limits in /etc/security/limits.conf core
+  become: true
+  pam_limits:
+    domain: '*'
+    limit_type: '-'
+    limit_item: core
+    value: -1
+
+- name: Add or modify pam_limits in /etc/security/limits.conf stack
+  become: true
+  pam_limits:
+    domain: '*'
+    limit_type: '-'
+    limit_item: stack
+    value: -1
+
+- name: Add or modify pam_limits in /etc/security/limits.conf nproc
+  become: true
+  pam_limits:
+    domain: '*'
+    limit_type: '-'
+    limit_item: nproc
+    value: 2067554
+
+- name: Add or modify pam_limits in /etc/security/limits.conf maxlogins
+  become: true
+  pam_limits:
+    domain: '*'
+    limit_type: '-'
+    limit_item: maxlogins
+    value: 8192

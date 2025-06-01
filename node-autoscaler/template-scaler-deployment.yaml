@@ -1,0 +1,29 @@
+---
+ apiVersion: apps/v1
+ kind: Deployment
+ metadata:
+   name: scaler
+ spec:
+   replicas: %REPLICAS%
+   selector:
+     matchLabels:
+       app: scaler
+   template:
+     metadata:
+       labels:
+         app: scaler
+     spec:
+       containers:
+       - name: nginx
+         image: stg.icr.io/armada_performance/nginx:latest 
+         imagePullPolicy: Always
+         resources:
+           requests:
+             cpu: 1100m
+       nodeSelector:
+         poolLabel: %POOL-LABEL%
+       tolerations:
+       - key: "%POOL-LABEL%"
+         operator: "Equal"
+         value: "true"
+         effect: "NoExecute"

@@ -1,0 +1,6 @@
+---
+- hosts:
+   - "{{ REALENV }}-perf-client"
+  become: yes
+  roles:
+  - install-java

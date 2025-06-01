@@ -1,0 +1,18 @@
+---
+# Delete secrets on the carrier before deploying carrier without os reload
+
+- name: Delete carrier secret for armada
+  shell: kubectl -n armada delete secret registry-default-secret
+  ignore_errors: True
+- name: Delete carrier secret for ibm-system
+  shell: kubectl -n ibm-system delete secret registry-default-secret
+  ignore_errors: True
+- name: Delete carrier secret for kube-system
+  shell: kubectl -n kube-system delete secret registry-default-secret
+  ignore_errors: True
+- name: Delete carrier secret for kubx-masters
+  shell: kubectl -n kubx-masters delete secret registry-default-secret
+  ignore_errors: True
+- name: Delete carrier secret for monitoring
+  shell: kubectl -n monitoring delete secret registry-default-secret
+  ignore_errors: True

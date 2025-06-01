@@ -1,0 +1,11 @@
+apiVersion: v1
+name: iperfclient
+description: A Helm chart for running iperf client in Armada
+version: 1.0.0
+home: https://github.ibm.com/alchemy-containers/armada-performance/tree/master/iperf
+sources:
+  - https://github.ibm.com/alchemy-containers/armada-performance/tree/master/iperf
+maintainers:
+  - name: Dan McGinnes
+    email: mcginnes@uk.ibm.com
+appVersion: 1.0

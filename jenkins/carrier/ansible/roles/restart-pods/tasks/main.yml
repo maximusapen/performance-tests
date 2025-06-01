@@ -1,0 +1,18 @@
+---
+# Delete all pods for the service in the namespace.  
+# Kubenetes should restart all pods after deletion to ensure 
+# carrier is running with latest service.
+- name: Get pods for the micro-service
+  shell: kubectl get pods -n {{ namespace }} | grep {{ podname }} | awk ' {print $1} '
+  register: pods
+- name: pods details
+  debug: var=pods.stdout_lines
+- name: Delete pods
+  shell: kubectl -n {{ namespace }} delete pod {{ item }}
+  with_items: '{{ pods.stdout_lines }}'
+- name: Ensure pod is ready
+  shell: kubectl get pods -n {{ namespace }} | grep {{ podname }}; kubectl get pods -n {{ namespace }} --no-headers | grep {{ podname }} | grep -v Running | grep -v Pending | wc -l | grep ^0$
+  register: ks
+  until: ks.rc == 0
+  retries: "{{ validation_retries | int }}"
+  delay: "{{ validation_delay | int }}"

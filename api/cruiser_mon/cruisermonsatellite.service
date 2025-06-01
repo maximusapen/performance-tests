@@ -1,0 +1,13 @@
+[Unit]
+Description=Cruiser_mon satellite systemd service.
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /performance/armada-perf/api/cruiser_mon/startCruiserMonitoring.sh satellite perf-cm
+Restart=on-failure
+RestartSec=60
+LimitNOFILE=20000
+LimitNPROC=20000
+
+[Install]
+WantedBy=multi-user.target

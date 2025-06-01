@@ -1,0 +1,28 @@
+apiVersion: "etcd.database.coreos.com/v1beta2"
+kind: "EtcdCluster"
+metadata:
+  name: "example"
+spec:
+  size: 3
+  pod:
+    etcdEnv:
+    - name: ETCD_ELECTION_TIMEOUT
+      value: "15000"
+    - name: ETCD_HEARTBEAT_INTERVAL
+      value: "100"
+    - name: ETCD_SNAPSHOT_COUNT
+      value: "10000"
+    - name: ETCD_MAX_SNAPSHOTS
+      value: "5"
+    - name: ETCD_AUTO_COMPACTION_RETENTION
+      value: "1"
+    resources:
+      requests:
+        cpu: 20m
+        memory: 100Mi
+  TLS:
+    static:
+      member:
+        peerSecret: etcd-peer-tls
+        serverSecret: etcd-server-tls
+      operatorSecret: etcd-client-tls

@@ -1,0 +1,8 @@
+apiVersion: v1
+name: httpperf
+description: A Helm chart for Kubernetes
+version: 1.0.0
+home: https://github.ibm.com/alchemy-containers/armada-performance/tree/master/httpperf
+sources:
+  - https://github.ibm.com/alchemy-containers/armada-performance/tree/master/httpperf
+appVersion: 1.1

@@ -1,0 +1,1008 @@
+{
+    "annotations": {
+        "list": []
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "hideControls": false,
+    "id": 13465522,
+    "links": [
+        {
+            "icon": "external link",
+            "tags": [],
+            "type": "link"
+        }
+    ],
+    "refresh": false,
+    "rows": [
+        {
+            "collapse": false,
+            "height": 99,
+            "panels": [
+                {
+                    "content": "In the graph immediately below:\\\nThe first green data point in each set occurs when scale up is requested. The last green data point occurs when the request was satisfied. i.e. at least 10 nodes\\\nSimilarly, the first yellow data point in each set occurs when scale down is requested. The last yellow data point occurs when the request was satisfied.",
+                    "id": 33,
+                    "links": [],
+                    "mode": "markdown",
+                    "span": 12,
+                    "title": "",
+                    "type": "text"
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 276,
+            "panels": [
+                {
+                    "aliasColors": {
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.0_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.100_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.10_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.20_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.30_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.40_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.50_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.60_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.70_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.80_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.90_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.duration.sparse-avg": "#BF1B00",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.0_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.100_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.10_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.20_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.30_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.40_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.50_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.60_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.80_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.90_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.duration.sparse-avg": "#7EB26D",
+                        "pod_scaling_down.251-1": "#C15C17",
+                        "pod_scaling_down.501-1": "#3F6833",
+                        "pod_scaling_down.not_deleted": "#890F02",
+                        "pod_scaling_down.not_deleted.duration": "#D683CE",
+                        "pod_scaling_down.not_deleted.httpperf": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.0_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.100_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.10_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.20_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.30_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.40_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.50_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.60_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.70_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.80_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.90_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.duration": "#B7DBAB",
+                        "pod_scaling_down.not_deleted.pod-scaling": "#890F02",
+                        "pod_scaling_down.not_deleted.pod-scaling.duration": "#EF843C",
+                        "pod_scaling_up.1-251": "#B7DBAB",
+                        "pod_scaling_up.1-501": "#F9934E",
+                        "pod_scaling_up.available_replicas": "#3F6833",
+                        "pod_scaling_up.available_replicas.duration": "#B7DBAB",
+                        "pod_scaling_up.available_replicas.httpperf": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.0_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.100_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.10_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.20_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.30_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.40_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.50_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.60_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.70_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.80_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.90_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.pod-scaling": "#508642",
+                        "pod_scaling_up.available_replicas.pod-scaling.duration": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 32,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 12,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.node_scale_up_numNodes.sparse-avg, 3), 4)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.node_scale_down_numNodes.sparse-avg, 3), 4)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Number of Nodes During Scale Up and Down",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Number of Nodes",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 250,
+            "panels": [
+                {
+                    "aliasColors": {
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.0_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.100_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.10_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.20_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.30_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.40_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.50_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.60_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.70_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.80_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.90_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.duration.sparse-avg": "#BF1B00",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.0_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.100_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.10_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.20_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.30_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.40_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.50_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.60_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.80_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.90_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.duration.sparse-avg": "#7EB26D",
+                        "pod_scaling_down.251-1": "#C15C17",
+                        "pod_scaling_down.501-1": "#3F6833",
+                        "pod_scaling_down.not_deleted": "#890F02",
+                        "pod_scaling_down.not_deleted.duration": "#D683CE",
+                        "pod_scaling_down.not_deleted.httpperf": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.0_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.100_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.10_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.20_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.30_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.40_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.50_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.60_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.70_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.80_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.90_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.duration": "#B7DBAB",
+                        "pod_scaling_down.not_deleted.pod-scaling": "#890F02",
+                        "pod_scaling_down.not_deleted.pod-scaling.duration": "#EF843C",
+                        "pod_scaling_up.1-251": "#B7DBAB",
+                        "pod_scaling_up.1-501": "#F9934E",
+                        "pod_scaling_up.available_replicas": "#3F6833",
+                        "pod_scaling_up.available_replicas.duration": "#B7DBAB",
+                        "pod_scaling_up.available_replicas.httpperf": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.0_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.100_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.10_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.20_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.30_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.40_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.50_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.60_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.70_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.80_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.90_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.pod-scaling": "#508642",
+                        "pod_scaling_up.available_replicas.pod-scaling.duration": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 28,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 6,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.node_scale_up.*.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Time to Scale UP Nodes",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "dtdurations",
+                            "label": "Node Scale Up Time",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.0_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.100_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.10_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.20_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.30_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.40_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.50_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.60_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.70_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.80_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.90_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.duration.sparse-avg": "#BF1B00",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.0_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.100_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.10_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.20_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.30_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.40_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.50_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.60_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.80_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.90_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.duration.sparse-avg": "#7EB26D",
+                        "pod_scaling_down.251-1": "#C15C17",
+                        "pod_scaling_down.501-1": "#3F6833",
+                        "pod_scaling_down.not_deleted": "#890F02",
+                        "pod_scaling_down.not_deleted.duration": "#D683CE",
+                        "pod_scaling_down.not_deleted.httpperf": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.0_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.100_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.10_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.20_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.30_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.40_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.50_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.60_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.70_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.80_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.90_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.duration": "#B7DBAB",
+                        "pod_scaling_down.not_deleted.pod-scaling": "#890F02",
+                        "pod_scaling_down.not_deleted.pod-scaling.duration": "#EF843C",
+                        "pod_scaling_up.1-251": "#B7DBAB",
+                        "pod_scaling_up.1-501": "#F9934E",
+                        "pod_scaling_up.available_replicas": "#3F6833",
+                        "pod_scaling_up.available_replicas.duration": "#B7DBAB",
+                        "pod_scaling_up.available_replicas.httpperf": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.0_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.100_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.10_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.20_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.30_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.40_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.50_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.60_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.70_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.80_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.90_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.pod-scaling": "#508642",
+                        "pod_scaling_up.available_replicas.pod-scaling.duration": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 29,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 6,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.$TestName.node_scale_down.*.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Time to Scale DOWN Nodes (Nodes Deleted)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "dtdurations",
+                            "label": "Node Scale Down Time",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 272,
+            "panels": [
+                {
+                    "aliasColors": {
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.0_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.100_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.10_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.20_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.30_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.40_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.50_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.60_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.70_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.80_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.90_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.duration.sparse-avg": "#BF1B00",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.0_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.100_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.10_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.20_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.30_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.40_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.50_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.60_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.80_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.90_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.duration.sparse-avg": "#7EB26D",
+                        "pod_scaling_down.251-1": "#C15C17",
+                        "pod_scaling_down.501-1": "#3F6833",
+                        "pod_scaling_down.not_deleted": "#890F02",
+                        "pod_scaling_down.not_deleted.duration": "#D683CE",
+                        "pod_scaling_down.not_deleted.httpperf": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.0_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.100_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.10_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.20_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.30_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.40_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.50_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.60_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.70_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.80_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.90_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.duration": "#B7DBAB",
+                        "pod_scaling_down.not_deleted.pod-scaling": "#890F02",
+                        "pod_scaling_down.not_deleted.pod-scaling.duration": "#EF843C",
+                        "pod_scaling_up.1-251": "#B7DBAB",
+                        "pod_scaling_up.1-501": "#F9934E",
+                        "pod_scaling_up.available_replicas": "#3F6833",
+                        "pod_scaling_up.available_replicas.duration": "#B7DBAB",
+                        "pod_scaling_up.available_replicas.httpperf": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.0_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.100_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.10_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.20_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.30_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.40_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.50_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.60_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.70_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.80_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.90_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.pod-scaling": "#508642",
+                        "pod_scaling_up.available_replicas.pod-scaling.duration": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 22,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 6,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.k8s.pod_scaling_up.*.available_replicas.$TestName.duration.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Time for all pods to become ready",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "dtdurations",
+                            "label": "Pod Scale Up Time",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.0_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.100_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.10_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.20_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.30_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.40_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.50_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.60_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.70_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.80_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.90_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.duration.sparse-avg": "#BF1B00",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.0_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.100_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.10_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.20_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.30_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.40_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.50_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.60_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.80_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.90_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.duration.sparse-avg": "#7EB26D",
+                        "pod_scaling_down.251-1": "#C15C17",
+                        "pod_scaling_down.501-1": "#3F6833",
+                        "pod_scaling_down.not_deleted": "#890F02",
+                        "pod_scaling_down.not_deleted.duration": "#D683CE",
+                        "pod_scaling_down.not_deleted.httpperf": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.0_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.100_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.10_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.20_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.30_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.40_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.50_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.60_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.70_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.80_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.90_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.duration": "#B7DBAB",
+                        "pod_scaling_down.not_deleted.pod-scaling": "#890F02",
+                        "pod_scaling_down.not_deleted.pod-scaling.duration": "#EF843C",
+                        "pod_scaling_up.1-251": "#B7DBAB",
+                        "pod_scaling_up.1-501": "#F9934E",
+                        "pod_scaling_up.available_replicas": "#3F6833",
+                        "pod_scaling_up.available_replicas.duration": "#B7DBAB",
+                        "pod_scaling_up.available_replicas.httpperf": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.0_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.100_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.10_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.20_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.30_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.40_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.50_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.60_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.70_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.80_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.90_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.pod-scaling": "#508642",
+                        "pod_scaling_up.available_replicas.pod-scaling.duration": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 26,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 6,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.k8s.pod_scaling_down.*.not_deleted.$TestName.duration.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Time to Delete Pods (Nodes not removed yet)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "dtdurations",
+                            "label": "Node Scale Down Time",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 44,
+            "panels": [
+                {
+                    "content": "# $TestName : Cruiser CPU/Memory Stats\n(Click top left corner of this box to get stats)",
+                    "id": 23,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-cruiserstats",
+                            "dashboard": "Overview - CruiserStats",
+                            "includeVars": true,
+                            "keepTime": true,
+                            "title": "Overview - CruiserStats",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "mode": "markdown",
+                    "span": 12,
+                    "title": "",
+                    "type": "text"
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        }
+    ],
+    "schemaVersion": 14,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "tags": [],
+                    "text": "carrier3_stage",
+                    "value": "carrier3_stage"
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "CarrierName",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "carrier1_stage",
+                        "value": "carrier1_stage"
+                    },
+                    {
+                        "selected": false,
+                        "text": "carrier2_stage",
+                        "value": "carrier2_stage"
+                    },
+                    {
+                        "selected": true,
+                        "text": "carrier3_stage",
+                        "value": "carrier3_stage"
+                    },
+                    {
+                        "selected": false,
+                        "text": "carrier4_stage",
+                        "value": "carrier4_stage"
+                    }
+                ],
+                "query": "carrier1_stage, carrier2_stage,carrier3_stage,carrier4_stage",
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "tags": [],
+                    "text": "1_12*",
+                    "value": "1_12*"
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": "Kubernetes Major Version",
+                "multi": false,
+                "name": "KubeVersion",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "*",
+                        "value": "*"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1_10*",
+                        "value": "1_10*"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1_11*",
+                        "value": "1_11*"
+                    },
+                    {
+                        "selected": true,
+                        "text": "1_12*",
+                        "value": "1_12*"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1_13*",
+                        "value": "1_13*"
+                    }
+                ],
+                "query": "*,1_10*,1_11*,1_12*,1_13*",
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "text": "node-autoscaler",
+                    "value": "node-autoscaler"
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": "",
+                "multi": false,
+                "name": "TestName",
+                "options": [
+                    {
+                        "selected": true,
+                        "text": "node-autoscaler",
+                        "value": "node-autoscaler"
+                    }
+                ],
+                "query": "node-autoscaler",
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "tags": [],
+                    "text": "u2c_2x4",
+                    "value": [
+                        "u2c_2x4"
+                    ]
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": "Machine Type",
+                "multi": false,
+                "name": "MachineType",
+                "options": [
+                    {
+                        "selected": true,
+                        "text": "u2c_2x4",
+                        "value": "u2c_2x4"
+                    },
+                    {
+                        "selected": false,
+                        "text": "u3c_2x4",
+                        "value": "u3c_2x4"
+                    },
+                    {
+                        "selected": false,
+                        "text": "dal09",
+                        "value": "dal09"
+                    },
+                    {
+                        "selected": false,
+                        "text": "dg",
+                        "value": "dg"
+                    },
+                    {
+                        "selected": false,
+                        "text": "dm",
+                        "value": "dm"
+                    },
+                    {
+                        "selected": false,
+                        "text": "nr",
+                        "value": "nr"
+                    },
+                    {
+                        "selected": false,
+                        "text": "js",
+                        "value": "js"
+                    },
+                    {
+                        "selected": false,
+                        "text": "rgs",
+                        "value": "rgs"
+                    },
+                    {
+                        "selected": false,
+                        "text": "kt",
+                        "value": "kt"
+                    }
+                ],
+                "query": "u2c_2x4, u3c_2x4, dal09, dg, dm, nr, js, rgs, kt",
+                "type": "custom"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-7d",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "5s",
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ],
+        "time_options": [
+            "5m",
+            "15m",
+            "1h",
+            "6h",
+            "12h",
+            "24h",
+            "2d",
+            "7d",
+            "30d"
+        ]
+    },
+    "timezone": "browser",
+    "title": "Overview - Node Autoscaler",
+    "version": 57
+}

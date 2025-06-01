@@ -1,0 +1,485 @@
+{
+    "annotations": {
+        "list": []
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "hideControls": false,
+    "id": 9200408,
+    "links": [
+        {
+            "icon": "external link",
+            "tags": [],
+            "type": "link"
+        }
+    ],
+    "refresh": false,
+    "rows": [
+        {
+            "collapse": false,
+            "height": 284,
+            "panels": [
+                {
+                    "aliasColors": {
+                        "waiting_for_master_deployment": "#BA43A9"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 15,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "includeVars": true,
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 2,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 12,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "I",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.waiting_for_master_deployment.duration.max, 3, 7), 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "J",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.requested.duration.max, 3, 7), 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "K",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.provision_pending.duration.max, 3, 7), 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "L",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.provisioning.duration.max, 3, 7), 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "M",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.deploying.duration.max, 3, 7), 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "N",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.deployed.duration.max, 3, 7), 6)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Cluster Creation : Time Spent in Each State (1 Master + 5 Workers)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "dtdurations",
+                            "label": "Cluster Creation Time",
+                            "logBase": 1,
+                            "max": "1200",
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 250,
+            "panels": [
+                {
+                    "aliasColors": {
+                        "waiting_for_master_deployment": "#BA43A9"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 2,
+                    "id": 24,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "includeVars": true,
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 2,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 12,
+                    "stack": true,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "I",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.requested.duration.max, 3, 7), 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "J",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.provision_pending.duration.max, 3, 7), 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "K",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.provisioning.duration.max, 3, 7), 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "L",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.waiting_for_master_deployment.duration.max, 3, 7), 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "M",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.deploying.duration.max, 3, 7), 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "N",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.deployed.duration.max, 3, 7), 6)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Cluster Creation : Cumulative State Durations  (1 Master + 5 Workers)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "dtdurations",
+                            "label": "Cluster Creation Time",
+                            "logBase": 1,
+                            "max": "1800",
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": -157,
+            "panels": [
+                {
+                    "content": "## $TestName : Carrier CPU/Memory Stats\n(Click top left corner of this box to get stats)",
+                    "id": 23,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-carrierstats",
+                            "dashboard": "Overview - CarrierStats",
+                            "includeVars": true,
+                            "keepTime": true,
+                            "title": "Overview - CarrierStats",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "mode": "markdown",
+                    "span": 12,
+                    "title": "",
+                    "type": "text"
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        }
+    ],
+    "schemaVersion": 14,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "carrier4_stage",
+                    "value": "carrier4_stage"
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "CarrierName",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "carrier1_stage",
+                        "value": "carrier1_stage"
+                    },
+                    {
+                        "selected": false,
+                        "text": "carrier2_stage",
+                        "value": "carrier2_stage"
+                    },
+                    {
+                        "selected": false,
+                        "text": "carrier3_stage",
+                        "value": "carrier3_stage"
+                    },
+                    {
+                        "selected": true,
+                        "text": "carrier4_stage",
+                        "value": "carrier4_stage"
+                    }
+                ],
+                "query": "carrier1_stage, carrier2_stage,carrier3_stage,carrier4_stage",
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "text": "1_12*",
+                    "value": "1_12*"
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": "Kubernetes Major Version",
+                "multi": false,
+                "name": "KubeVersion",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "*",
+                        "value": "*"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1_10*",
+                        "value": "1_10*"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1_11*",
+                        "value": "1_11*"
+                    },
+                    {
+                        "selected": true,
+                        "text": "1_12*",
+                        "value": "1_12*"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1_13*",
+                        "value": "1_13*"
+                    }
+                ],
+                "query": "*,1_10*,1_11*,1_12*,1_13*",
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "tags": [],
+                    "text": "CreateCluster",
+                    "value": "CreateCluster"
+                },
+                "hide": 2,
+                "includeAll": false,
+                "label": "TestName",
+                "multi": false,
+                "name": "TestName",
+                "options": [
+                    {
+                        "selected": true,
+                        "text": "CreateCluster",
+                        "value": "CreateCluster"
+                    }
+                ],
+                "query": "CreateCluster",
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "tags": [],
+                    "text": "u2c_2x4",
+                    "value": [
+                        "u2c_2x4"
+                    ]
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": "Machine Type",
+                "multi": false,
+                "name": "MachineType",
+                "options": [
+                    {
+                        "selected": true,
+                        "text": "u2c_2x4",
+                        "value": "u2c_2x4"
+                    },
+                    {
+                        "selected": false,
+                        "text": "u3c_2x4",
+                        "value": "u3c_2x4"
+                    },
+                    {
+                        "selected": false,
+                        "text": "dal09",
+                        "value": "dal09"
+                    },
+                    {
+                        "selected": false,
+                        "text": "dg",
+                        "value": "dg"
+                    },
+                    {
+                        "selected": false,
+                        "text": "dm",
+                        "value": "dm"
+                    },
+                    {
+                        "selected": false,
+                        "text": "nr",
+                        "value": "nr"
+                    },
+                    {
+                        "selected": false,
+                        "text": "js",
+                        "value": "js"
+                    },
+                    {
+                        "selected": false,
+                        "text": "rgs",
+                        "value": "rgs"
+                    },
+                    {
+                        "selected": false,
+                        "text": "kt",
+                        "value": "kt"
+                    }
+                ],
+                "query": "u2c_2x4, u3c_2x4, dal09, dg, dm, nr, js, rgs, kt",
+                "type": "custom"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-7d",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "5s",
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ],
+        "time_options": [
+            "5m",
+            "15m",
+            "1h",
+            "6h",
+            "12h",
+            "24h",
+            "2d",
+            "7d",
+            "30d"
+        ]
+    },
+    "timezone": "browser",
+    "title": "Overview - ClusterCreate",
+    "version": 45
+}

@@ -1,0 +1,5 @@
+{
+  "id": "%ZONEID%",
+  "privateVlan": "%PRIVATEVLAN%",
+  "publicVlan": "%PUBLICVLAN%"
+}

@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-master
+  labels:
+    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+    generator: helm
+    date: {{ now | htmlDate }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jmeter-master
+  template:
+    metadata:
+      labels:
+        app: jmeter-master
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}-master
+        image: "{{ .Values.image.registry }}/{{ .Values.image.name }}-master:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        command: [ "/bin/bash", "-c", "source /jmeter/run_test.sh" ]
+        ports:
+        - containerPort: {{ .Values.jmeter.master.port }}
+        volumeMounts:
+        - name: {{ .Release.Name }}-config
+          mountPath: "/jmeter/test.jmx"
+          subPath: "test.jmx"
+        env:
+        - name: JMETER_ARGS
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Release.Name }}-config
+              key: JMETER_ARGS
+        - name: SLAVE_PODS
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Release.Name }}-config
+              key: SLAVE_PODS
+        - name: JVM_ARGS
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Release.Name }}-config
+              key: JVM_ARGS
+{{ if .Values.restricted }}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 100001
+{{ end }}
+      tolerations:
+      - key: "key"
+        operator: "Equal"
+        value: "master"
+        effect: "NoSchedule"
+      nodeSelector:
+        use: master
+      volumes:
+      - name: {{ .Release.Name }}-config
+        configMap:
+          name: {{ .Release.Name }}-config

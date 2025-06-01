@@ -1,0 +1,51 @@
+[api]
+api_server_scheme = "https"
+api_server_ip = "CARRIER_api_server_ip_CARRIER"
+api_server_port = "443"
+api_version = "v1"
+
+[etcd]
+etcd_endpoints = ""
+
+[location]
+region = "us-south"
+datacenter = "dal09"
+environment = "stage"
+
+[request]
+create_clusters = "cluster_create.json"
+add_workers = "cluster_add_workers.json"
+create_worker_pool = "worker_pool_create.json"
+resize_worker_pool = "worker_pool_resize.json"
+add_worker_pool_zone = "worker_pool_zone_add.json"
+worker_poll_interval = "0s"
+
+[softlayer]
+softlayer_dummy = false
+softlayer_username = "KEY_PROD_GLOBAL_ARMPERF_SOFTLAYER_1186049_USERID_KEY"
+softlayer_api_key = "ENCKEY_PROD_GLOBAL_ARMPERF_SOFTLAYER_1186049_APIKEY_ENCKEY"     # pragma: allowlist secret
+softlayer_private_vlan = "2263901"
+softlayer_public_vlan = "2263903"
+softlayer_churn_private_vlan = "2557145"
+softlayer_churn_public_vlan = "2557151"
+softlayer_billing = "hourly"
+softlayer_isolation = "public"
+softlayer_portable_subnet = true
+softlayer_portable_subnet_size = 16
+softlayer_disk_encryption = true
+
+[bootstrap]
+bootstrap_dummy = false
+
+[deploy]
+deploy_dummy = false
+
+[bluemix]
+bluemix_dummy = false
+iam_url = "https://iam.test.cloud.ibm.com"
+username = "KEY_armada_performance_functional_id_KEY"
+api_key = "ENCKEY_STAGE_GLOBAL_ARMPERF_IBMCLOUD_APIKEY_ENCKEY"      # pragma: allowlist secret
+uaa_token = ""
+iam_token = ""
+refresh_token = ""
+account_id = "KEY_armada_performance_account_id_KEY"

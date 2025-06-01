@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: {{ .Values.parameters.getNamespace }}
+  labels:
+    app: nginx
+    release: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: stg.icr.io/armada_performance/nginx
+        ports:
+        - containerPort: 80
+        imagePullPolicy: IfNotPresent
+{{ if .Values.restricted }}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 100001
+{{ end }}

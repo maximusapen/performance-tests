@@ -1,0 +1,29 @@
+---
+# Install oc for use with OpenShift clusters
+
+- set_fact: oc_version="4.8"
+
+- name: create temporary directory
+  file:
+    path: /tmp/oc-{{ oc_version }}
+    state: directory
+
+- name: Get and extract openshift client tools
+  become: true
+  unarchive:
+    src: https://mirror.openshift.com/pub/openshift-v4/amd64/clients/ocp/stable-{{ oc_version}}/openshift-client-linux.tar.gz
+    dest: /tmp/oc-{{ oc_version }}
+    remote_src: yes
+
+- name: copy oc to /usr/local/bin
+  become: true
+  copy:
+    src: /tmp/oc-{{ oc_version }}/oc
+    remote_src: True
+    dest: /usr/local/bin
+    mode: 0755
+
+- name: Clean artifact path
+  file:
+    state: absent
+    path: "/tmp/oc-{{ oc_version }}"

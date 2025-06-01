@@ -1,0 +1,28 @@
+---
+- hosts: 
+    - localhost
+    - k8s_master-{{ REALENV }}-{{ CARRIER }}
+  tasks:
+  - name: "Check if cluster yml exists"
+    local_action: stat path=../../../../armada-envs/{{ REALENV }}/{{ CARRIER }}.yml
+    run_once: true
+    register: cluster_yml
+  
+  - name: import cluster variables
+    include_vars: "../../../../armada-envs/{{ REALENV }}/{{ CARRIER }}.yml"
+    when: cluster_yml.stat.exists|bool
+
+  - name: "Check if ansible deploy yml exists"
+    local_action: stat path=../../../../ansible-deploy/site-inventories/{{ ENV }}-armada-perf/group_vars/{{ CARRIER }}-master
+    run_once: true
+    register: ansible_deploy_yml
+  
+  - name: import cluster variables from ansible-deploy
+    include_vars: "../../../../ansible-deploy/site-inventories/{{ ENV }}-armada-perf/group_vars/{{ CARRIER }}-master"
+    when: ansible_deploy_yml.stat.exists|bool
+  
+- hosts: 
+    - k8s_master-{{ REALENV }}-{{ CARRIER }}
+  become: yes
+  roles:
+  - mount-nfs-perf

@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: {{ .Release.Name }}-daemonset
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    generator: helm
+    date: {{ now | htmlDate }}
+spec:
+  selector:
+    matchLabels:
+      name: {{ template "fullname" . }}
+  template:
+    metadata:
+      labels:
+        name: {{ template "fullname" . }}
+      name: {{ template "fullname" . }}
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.registry }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env:
+        - name: "METRICS_PREFIX"
+          value: {{ .Values.metricsPrefix }}
+        - name: "METRICS_OS"
+          value: {{ .Values.metricsOS }}
+        - name: "K8S_SERVER_VERSION"
+          value: {{ .Values.k8sVersion }}
+        - name: HOST_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: PERF_SB_VERBOSE
+          valueFrom:
+            configMapKeyRef:
+              name: perf-sysbench-config
+              key: PERF_SB_VERBOSE
+        - name: PERF_SB_METRICS
+          valueFrom:
+            configMapKeyRef:
+              name: perf-sysbench-config
+              key: PERF_SB_METRICS
+        - name: PERF_SB_TESTNAME
+          valueFrom:
+            configMapKeyRef:
+              name: perf-sysbench-config
+              key: PERF_SB_TESTNAME
+        args: ["--verbose=$(PERF_SB_VERBOSE)", "--metrics=$(PERF_SB_METRICS)", "--testname=$(PERF_SB_TESTNAME)"]
+        envFrom:
+        - configMapRef:
+              name: perf-sysbench-machine-config
+{{ if .Values.restricted }}
+        securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 100001
+{{ end }}

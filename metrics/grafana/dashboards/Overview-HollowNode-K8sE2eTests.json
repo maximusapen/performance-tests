@@ -1,0 +1,781 @@
+{
+    "annotations": {
+        "list": []
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "hideControls": false,
+    "id": 11393895,
+    "links": [
+        {
+            "icon": "external link",
+            "tags": [],
+            "type": "link"
+        }
+    ],
+    "refresh": false,
+    "rows": [
+        {
+            "collapse": false,
+            "height": 250,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 23,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.APIResponsiveness.hollow_nodes200.*.pods.Perc90.max, 3), 6, 7, 8)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "200 Hollow Nodes : Kubernetes E2E Tests : POD : API Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 31,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.APIResponsiveness.hollow_nodes200.*.nodes.Perc90.max, 3), 6, 7, 8)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": true,
+                            "refId": "C",
+                            "target": "$MachineType.performance.{carrier4_stage,carrier3_stage}.1_1*.load.APIResponsiveness.nodes5.*.nodes.Perc90.max",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "200 Hollow Nodes : Kubernetes E2E Tests : NODE : API Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 27,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.APIResponsiveness.hollow_nodes200.*.services.Perc90.max, 3), 6, 7, 8)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "200 Hollow Nodes : Kubernetes E2E Tests : SERVICE : API Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 252,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 29,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode($MachineType.performance.$CarrierName.$KubeVersion.load.APIResponsiveness.hollow_nodes200.*.deployments.Perc90.max, 7, 8, 9)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": true,
+                            "refId": "A",
+                            "target": "$MachineType.performance.carrier4_stage.1_1*.load.APIResponsiveness.nodes5.GET.deployments.Perc90.max",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "200 Hollow Nodes : Kubernetes E2E Tests : DEPLOYMENT : API Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 28,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 8,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.APIResponsiveness.hollow_nodes200.*.replicationcontrollers.Perc90.max, 3), 6, 7, 8)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": true,
+                            "refId": "A",
+                            "target": "$MachineType.performance.{carrier3_stage,carrier4_stage}.1_1*.load.APIResponsiveness.nodes5.DELETE.replicationcontrollers.Perc90.max",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "200 Hollow Nodes : Kubernetes E2E Tests : REPLICATION CONTROLLER : API Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 309,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 32,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 12,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.TestPhaseTimer.hollow_nodes200.110-namespace-creation.max, 3), 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.TestPhaseTimer.hollow_nodes200.120-services-creation.max, 3), 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.TestPhaseTimer.hollow_nodes200.200-load-pods-creation.max, 3), 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.TestPhaseTimer.hollow_nodes200.300-scaling-first-time.max, 3), 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "E",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.TestPhaseTimer.hollow_nodes200.400-scaling-second-time.max, 3), 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "F",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.TestPhaseTimer.hollow_nodes200.500-load-pods-deletion.max, 3), 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "G",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.TestPhaseTimer.hollow_nodes200.800-services-deletion.max, 3), 6)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "200 Hollow Nodes : Kubernetes E2E LOAD Test : Phase Metrics",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time (s)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": -332,
+            "panels": [],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 23,
+            "panels": [],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        }
+    ],
+    "schemaVersion": 14,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": "carrier3_stage",
+                    "value": "carrier3_stage"
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "CarrierName",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "carrier1_stage",
+                        "value": "carrier1_stage"
+                    },
+                    {
+                        "selected": false,
+                        "text": "carrier2_stage",
+                        "value": "carrier2_stage"
+                    },
+                    {
+                        "selected": true,
+                        "text": "carrier3_stage",
+                        "value": "carrier3_stage"
+                    },
+                    {
+                        "selected": false,
+                        "text": "carrier4_stage",
+                        "value": "carrier4_stage"
+                    }
+                ],
+                "query": "carrier1_stage, carrier2_stage,carrier3_stage,carrier4_stage",
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "text": "1_10*",
+                    "value": "1_10*"
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": "Kubernetes Major Version",
+                "multi": false,
+                "name": "KubeVersion",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "*",
+                        "value": "*"
+                    },
+                    {
+                        "selected": true,
+                        "text": "1_10*",
+                        "value": "1_10*"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1_11*",
+                        "value": "1_11*"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1_12*",
+                        "value": "1_12*"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1_13*",
+                        "value": "1_13*"
+                    }
+                ],
+                "query": "*,1_10*,1_11*,1_12*,1_13*",
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "tags": [],
+                    "text": "u2c_2x4",
+                    "value": [
+                        "u2c_2x4"
+                    ]
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": "Machine Type",
+                "multi": false,
+                "name": "MachineType",
+                "options": [
+                    {
+                        "selected": true,
+                        "text": "u2c_2x4",
+                        "value": "u2c_2x4"
+                    },
+                    {
+                        "selected": false,
+                        "text": "u3c_2x4",
+                        "value": "u3c_2x4"
+                    },
+                    {
+                        "selected": false,
+                        "text": "dal09",
+                        "value": "dal09"
+                    },
+                    {
+                        "selected": false,
+                        "text": "dg",
+                        "value": "dg"
+                    },
+                    {
+                        "selected": false,
+                        "text": "dm",
+                        "value": "dm"
+                    },
+                    {
+                        "selected": false,
+                        "text": "nr",
+                        "value": "nr"
+                    },
+                    {
+                        "selected": false,
+                        "text": "js",
+                        "value": "js"
+                    },
+                    {
+                        "selected": false,
+                        "text": "rgs",
+                        "value": "rgs"
+                    },
+                    {
+                        "selected": false,
+                        "text": "kt",
+                        "value": "kt"
+                    }
+                ],
+                "query": "u2c_2x4, u3c_2x4, dal09, dg, dm, nr, js, rgs, kt",
+                "type": "custom"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-7d",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "5s",
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ],
+        "time_options": [
+            "5m",
+            "15m",
+            "1h",
+            "6h",
+            "12h",
+            "24h",
+            "2d",
+            "7d",
+            "30d"
+        ]
+    },
+    "timezone": "browser",
+    "title": "Overview - HollowNode - K8s E2e Tests",
+    "version": 4
+}

@@ -1,0 +1,18 @@
+---
+- name: Install jq base version 1.3, no  apt install yet for 1.5
+  become: true
+  apt:
+    name: jq
+    state: latest
+    install_recommends: yes
+
+- name: Download the 1.5 version
+  become: true
+  get_url:
+    url: https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
+    dest: /usr/local/bin/
+    validate_certs: False
+    mode: 0775
+
+- name: Copy to correct folder to replace the 1.3 version
+  shell: mv /usr/local/bin/jq-linux64 '$(which jq)'

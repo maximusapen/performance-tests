@@ -1,0 +1,63 @@
+[api]
+api_server_scheme = "http"
+api_server_ip = "127.0.0.1"
+api_server_port = "6969"
+api_version = "v1"
+
+[etcd]
+etcd_api_version = 2
+etcd_endpoints = "http://127.0.0.1:2379"
+etcd_timeout = "5s"
+etcd_auth = false
+etcd_user = ""
+etcd_password = ""
+etcd_cert = ""
+etcd_fakesl_endpoints = "http://127.0.0.1:2379"
+etcd_retries = 3
+
+[location]
+region = "us-south"
+datacenter = "mex01"
+environment = "dev"
+
+[request]
+create_clusters = "cluster_create.json"
+add_workers = "cluster_add_workers.json"
+worker_poll_interval = "0s"
+
+[softlayer]
+softlayer_dummy = true
+softlayer_username = "dummy_armadaemail@uk.ibm.com"
+softlayer_api_key = "11111a11111111a111aa1111111a11111aa111a1aaaaaaa1a1111111aa1111aa"  # pragma: allowlist secret
+softlayer_private_vlan = "100"
+softlayer_public_vlan = "101"
+softlayer_billing = "hourly"	# 'hourly' or 'monthly'
+softlayer_isolation = "public"	# 'public' or 'private'
+softlayer_portable_subnet = true
+
+[bootstrap]
+bootstrap_dummy = true
+bootstrap_worker_delay = "0s"
+
+[deploy]
+deploy_dummy = true
+deploy_master_delay = "0s"
+
+[bluemix]
+bluemix_dummy = true
+iam_url = "http://127.0.0.1"
+username = ""
+password = ""
+api_key = ""
+uaa_token = "dummy_uaa_token.jwt"
+iam_token = "dummy_iam_token.jwt"
+refresh_token = "dummy_refresh_token.jwt"
+account_id = "a1b2c3d45f9a123bc456dde012345e67"     # pragma: allowlist secret
+org_id = "a1b2cdef-6a7f-1569-9f29-000000000000"
+space_id = "a1b2cdef-6a7f-1569-9f29-000000000000"
+
+[metrics]
+name = "performance_tmp.dailyperf.carrier9_dev.armada_api_dummy"
+scheme = "https"
+host = "metrics.stage1.ng.bluemix.net"
+path = "/v1/metrics"

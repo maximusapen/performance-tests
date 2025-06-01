@@ -1,0 +1,6 @@
+---
+- hosts:
+   - "{{ CARRIER }}"
+  become: yes
+  roles:
+  - cron-nmon

@@ -1,0 +1,4 @@
+{
+  "action": "IsThisNeeded",
+  "count": "%WORKERNUM%"
+}

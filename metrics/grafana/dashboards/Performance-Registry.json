@@ -1,0 +1,1447 @@
+{
+    "annotations": {
+        "list": []
+    },
+    "editMode": false,
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "hideControls": false,
+    "id": 284,
+    "links": [],
+    "refresh": false,
+    "rows": [
+        {
+            "collapse": false,
+            "height": 313,
+            "panels": [
+                {
+                    "aliasColors": {
+                        "ap-north": "#0A437C",
+                        "au-syd": "#EAB839",
+                        "eu-de": "#7EB26D",
+                        "eu-gb": "#6ED0E0",
+                        "us-south": "#EF843C"
+                    },
+                    "bars": false,
+                    "datasource": null,
+                    "description": "Data from before 11/8 is for 200Mb image",
+                    "fill": 0,
+                    "id": 9,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de.international_pull.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-gb.international_pull.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "E",
+                            "target": "alias(aliasByNode(performance.carrier1_stage.registry.ng.international_pull.sparse-avg, 3), 'us-south')",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.au-syd.international_pull.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ap-north.international_pull.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "F",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ap-north-syd.international_pull.sparse-avg, 3)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Pull 50MB image from Global registry",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "50",
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "ap-north": "#0A437C",
+                        "au-syd": "#EAB839",
+                        "eu-de": "#7EB26D",
+                        "eu-gb": "#6ED0E0",
+                        "us-south": "#EF843C"
+                    },
+                    "bars": false,
+                    "datasource": null,
+                    "fill": 0,
+                    "id": 2,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de.international_push.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-gb.international_push.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "B",
+                            "target": "alias(aliasByNode(performance.carrier1_stage.registry.ng.international_push.sparse-avg, 3), 'us-south')",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.au-syd.international_push.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "E",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ap-north.international_push.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "F",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ap-north-syd.international_push.sparse-avg, 3)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Push 50MB  image to Global registry",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "50",
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "ap-north": "#0A437C",
+                        "au-syd": "#EAB839",
+                        "eu-de": "#7EB26D",
+                        "eu-gb": "#6ED0E0",
+                        "us-south": "#EF843C"
+                    },
+                    "bars": false,
+                    "datasource": null,
+                    "fill": 0,
+                    "id": 3,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de.regional_push.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-gb.regional_push.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "C",
+                            "target": "alias(aliasByNode(performance.carrier1_stage.registry.ng.regional_push.sparse-avg, 3), 'us-south')",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.au-syd.regional_push.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": false,
+                            "refId": "E",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ap-north.regional_push.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "F",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ap-north-syd.regional_push.sparse-avg, 3)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Push 50MB image to  regional registries",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "50",
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "ap-north": "#0A437C",
+                        "au-syd": "#EAB839",
+                        "eu-de": "#7EB26D",
+                        "eu-gb": "#6ED0E0",
+                        "us-south": "#EF843C"
+                    },
+                    "bars": false,
+                    "datasource": null,
+                    "fill": 0,
+                    "id": 4,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de.regional_pull.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-gb.regional_pull.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "C",
+                            "target": "alias(aliasByNode(performance.carrier1_stage.registry.ng.regional_pull.sparse-avg, 3), 'us-south')",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.au-syd.regional_pull.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "E",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ap-north.regional_pull.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "F",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ap-north-syd.regional_pull.sparse-avg, 3)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Pull 50MB image from regional registries",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "50",
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 323,
+            "panels": [
+                {
+                    "aliasColors": {
+                        "regional_pull": "#7EB26D",
+                        "regional_push": "#EAB839"
+                    },
+                    "bars": false,
+                    "datasource": null,
+                    "fill": 0,
+                    "id": 13,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de.regional_pull.sparse-avg, 4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de.regional_push.sparse-avg, 4)",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": true,
+                            "refId": "C",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de-149_81_79_158.regional_pull.sparse-avg, 3,4)",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": true,
+                            "refId": "D",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de-161_156_93_22.regional_pull.sparse-avg, 3,4)",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": true,
+                            "refId": "E",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de-169_50_58_110.regional_pull.sparse-avg, 3,4)",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": true,
+                            "refId": "F",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de-149_81_79_158.regional_push.sparse-avg, 3,4)",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": true,
+                            "refId": "G",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de-161_156_93_22.regional_push.sparse-avg, 3,4)",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": true,
+                            "refId": "H",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de-169_50_58_110.regional_push.sparse-avg, 3,4)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Push/Pull 50MB image from EU-DE registry",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "regional_pull": "#7EB26D",
+                        "regional_push": "#EAB839"
+                    },
+                    "bars": false,
+                    "datasource": null,
+                    "fill": 0,
+                    "id": 6,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-gb.regional_pull.sparse-avg, 4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-gb.regional_push.sparse-avg, 4)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Push/Pull 50MB image from EU-GB registry",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "regional_pull": "#7EB26D",
+                        "regional_push": "#EAB839"
+                    },
+                    "bars": false,
+                    "datasource": null,
+                    "fill": 0,
+                    "id": 7,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ng.regional_pull.sparse-avg, 4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ng.regional_push.sparse-avg, 4)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Push/Pull 50MB image from US-South  registry",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "regional_pull": "#7EB26D",
+                        "regional_push": "#EAB839"
+                    },
+                    "bars": false,
+                    "datasource": null,
+                    "fill": 0,
+                    "id": 8,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.au-syd.regional_pull.sparse-avg, 4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.au-syd.regional_push.sparse-avg, 4)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Push/Pull 50MB image from AU-Syd registry",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "regional_pull": "#7EB26D",
+                        "regional_push": "#EAB839"
+                    },
+                    "bars": false,
+                    "datasource": null,
+                    "fill": 0,
+                    "id": 5,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de-149_81_79_158.regional_pull.sparse-avg, 3,4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de-161_156_93_22.regional_pull.sparse-avg, 3,4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "E",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de-169_50_58_110.regional_pull.sparse-avg, 3,4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "F",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de-149_81_79_158.regional_push.sparse-avg, 3,4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "G",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de-161_156_93_22.regional_push.sparse-avg, 3,4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "H",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de-169_50_58_110.regional_push.sparse-avg, 3,4)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Push/Pull 50MB image from EU-DE registry AZ's",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "regional_pull": "#7EB26D",
+                        "regional_push": "#EAB839"
+                    },
+                    "bars": false,
+                    "datasource": null,
+                    "fill": 0,
+                    "id": 14,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-gb-158_175_97_190.regional_pull.sparse-avg, 3,4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-gb-158_175_97_190.regional_push.sparse-avg, 3,4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-gb-158_176_105_70.regional_push.sparse-avg, 3,4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-gb-158_176_105_70.regional_pull.sparse-avg, 3,4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "E",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-gb-141_125_71_142.regional_push.sparse-avg, 3, 4)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "F",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-gb-141_125_71_142.regional_pull.sparse-avg, 3, 4)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Push/Pull 50MB image from EU-GB registry (AZ's)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "regional_pull": "#7EB26D",
+                        "regional_push": "#EAB839"
+                    },
+                    "bars": false,
+                    "datasource": null,
+                    "fill": 0,
+                    "id": 15,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ap-north.regional_pull.sparse-avg, 4)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ap-north.regional_push.sparse-avg, 4)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Push/Pull 50MB image from ap-north (dark registry)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "regional_pull": "#7EB26D",
+                        "regional_push": "#EAB839"
+                    },
+                    "bars": false,
+                    "datasource": null,
+                    "fill": 0,
+                    "id": 16,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ap-north-syd.regional_pull.sparse-avg, 4)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ap-north-syd.regional_push.sparse-avg, 4)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Push/Pull 50MB image from ap-north cluster using au-syd registry",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 303,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": null,
+                    "fill": 0,
+                    "id": 10,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(.performance.carrier1_stage.registry.ng.ng.regional_push.sparse-avg, 4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ng.eu-de.regional_push.sparse-avg, 4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ng.eu-gb.regional_push.sparse-avg, 4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ng.au-syd.regional_push.sparse-avg, 4)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "From US-SOUTH: Push 50MB image to each regional registry",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": null,
+                    "fill": 0,
+                    "id": 11,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ng.ng.regional_pull.sparse-avg, 4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ng.eu-de.regional_pull.sparse-avg, 4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ng.eu-gb.regional_pull.sparse-avg, 4)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ng.au-syd.regional_pull.sparse-avg, 4)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "From US-SOUTH: Pull 50MB image from each regional registry",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "ap-north": "#0A437C",
+                        "au-syd": "#EAB839",
+                        "eu-gb": "#6ED0E0",
+                        "ng": "#EF843C",
+                        "regional_pull": "#7EB26D",
+                        "regional_push": "#EAB839"
+                    },
+                    "bars": false,
+                    "datasource": null,
+                    "fill": 0,
+                    "id": 12,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 6,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-de.hyperkube_pull.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.eu-gb.hyperkube_pull.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ng.hyperkube_pull.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.au-syd.hyperkube_pull.sparse-avg, 3)",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "E",
+                            "target": "aliasByNode(performance.carrier1_stage.registry.ap-north-syd.hyperkube_pull.sparse-avg, 3)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Pull 1.8.6 hyperkube image",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        }
+    ],
+    "schemaVersion": 14,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": []
+    },
+    "time": {
+        "from": "now-14d",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "5s",
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ],
+        "time_options": [
+            "5m",
+            "15m",
+            "1h",
+            "6h",
+            "12h",
+            "24h",
+            "2d",
+            "7d",
+            "30d"
+        ]
+    },
+    "timezone": "browser",
+    "title": "Performance - Registry",
+    "version": 113
+}

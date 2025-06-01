@@ -1,0 +1,21 @@
+#!/bin/bash
+# ******************************************************************************
+# * Licensed Materials - Property of IBM
+# * IBM Cloud Kubernetes Service, 5737-D43
+# * (C) Copyright IBM Corp. 2019 All Rights Reserved.
+# * US Government Users Restricted Rights - Use, duplication or
+# * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+# ******************************************************************************
+
+# The kubemark doesn't use the GO version on the perf client machine for the image.
+# See README.md on setting GO version for image.
+GOROOT=/usr/local/go
+GOPATH=/performance
+
+# Set the kube version for the kubemark image
+KUBE_VERSION=1.13
+
+KUBE_ROOT=/performance/src/k8s.io/kubernetes
+KUBEMARK_IMAGE_LOCATION=${KUBE_ROOT}/cluster/images/kubemark
+KUBEMARK_INIT_TAG=kubemark:${KUBE_VERSION}
+KUBEMARK_IMAGE_TAG=${KUBE_VERSION}

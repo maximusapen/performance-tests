@@ -1,0 +1,13 @@
+{
+  "dataCenter": "%DATACENTER%",
+  "diskEncryption": %DISKENCRYPTION%,
+  "machineType": "%MACHINETYPE%",
+  "masterVersion": "%KUBEVERSION%",
+  "name": "%CLUSTERNAME%",
+  "privateVlan": "%PRIVATEVLAN%",
+  "publicVlan": "%PUBLICVLAN%",
+  "workerNum": "%WORKERNUM%",
+  "billing": "%BILLING%",
+  "isolation": "%ISOLATION%",
+  "noSubnet": %NOSUBNET%
+}

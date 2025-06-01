@@ -1,0 +1,51 @@
+---
+- name: Install nfs-common for NFS mount after OS reload
+  apt: pkg=nfs-common state=present
+
+- name: create mount point /mnt/nfs_perf/carrier for NFS share if not present
+  file: path=/mnt/nfs_perf/carrier state=directory
+  when: carrier_nfs_server is defined
+
+- name: mount /mnt/nfs_perf/carrier share 
+  mount:
+    name: /mnt/nfs_perf/carrier
+    src: "{{carrier_nfs_server}}:{{carrier_nfs_path}}"
+    fstype: nfs
+    state: mounted
+  when: carrier_nfs_server is defined
+
+- name: create mount point /mnt/nfs_perf/cruiser for NFS share if not present
+  file: path=/mnt/nfs_perf/cruiser state=directory
+  when: cruiser_nfs is defined
+
+- name: mount /mnt/nfs_perf/cruiser share 
+  mount:
+    name: /mnt/nfs_perf/cruiser
+    src: "{{cruiser_nfs[0].server}}:{{cruiser_nfs[0].path}}"
+    fstype: nfs
+    state: mounted
+  when: cruiser_nfs is defined
+
+- name: create mount point /mnt/nfs_perf/armada for NFS share if not present
+  file: path=/mnt/nfs_perf/armada state=directory
+  when: armada_nfs_server is defined
+
+- name: mount /mnt/nfs_perf/armada share 
+  mount:
+    name: /mnt/nfs_perf/armada
+    src: "{{armada_nfs_server}}:{{armada_nfs_path}}"
+    fstype: nfs
+    state: mounted
+  when: armada_nfs_server is defined
+
+- name: create mount point /mnt/nfs_perf/armada_ops for NFS share if not present
+  file: path=/mnt/nfs_perf/armada_ops state=directory
+  when: armada_ops_nfs_server is defined
+
+- name: mount /mnt/nfs_perf/armada_ops share 
+  mount:
+    name: /mnt/nfs_perf/armada_ops
+    src: "{{armada_ops_nfs_server}}:{{armada_ops_nfs_path}}"
+    fstype: nfs
+    state: mounted
+  when: armada_ops_nfs_server is defined

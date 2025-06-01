@@ -1,0 +1,44 @@
+---
+# Delete all pods for the service in the namespace.
+# Kubenetes should restart all pods after deletion to ensure 
+# carrier is running with latest service.
+
+# On dev, need to restart armada-etcd first as other pods will keep re-starting
+# and stuck in ContainerCreating state if armada-etcd is not running.
+# 
+# On stage, compose.io is used but the script here will work on stage.
+# Unlikely, but this also allows us to switch to using armada-etcd if we wish.
+
+# Restart armada-etcd
+- name: Get pods for armada-etcd
+  shell: kubectl get pods -n armada --no-headers | grep etcd | awk ' {print $1} '
+  register: pods
+- name: pods details
+  debug: var=pods.stdout_lines
+- name: Delete armada-etcd
+  shell: kubectl -n armada delete pod {{ item }}
+  with_items: '{{ pods.stdout_lines }}'
+- name: Ensure armada-etcd is ready
+  shell: kubectl get pods -n armada | grep etcd; kubectl get pods -n armada --no-headers | grep etcd | grep -v Running | grep -v Pending | wc -l | grep ^0$
+  register: ks
+  until: ks.rc == 0
+  retries: "{{ validation_retries | int }}"
+  delay: "{{ validation_delay | int }}"
+
+# Restart rest of the pods in armada namespace 
+# only if armada-etcd is restarted successfully
+- name: Get pods in armada except armada-etcd
+  shell: kubectl get pods -n armada --no-headers | grep -v etcd | awk ' {print $1} '
+  register: pods
+- name: pods details
+  debug: var=pods.stdout_lines
+- name: Delete pod in armada except armada-etcd
+  shell: kubectl -n armada delete pod {{ item }}
+  with_items: '{{ pods.stdout_lines }}'
+- name: Ensure armada namespace is ready
+  shell: kubectl get pods -n armada; kubectl get pods -n armada --no-headers | grep -v Running | grep -v Pending | wc -l | grep ^0$
+  register: ks
+  until: ks.rc == 0
+  retries: "{{ validation_retries | int }}"
+  delay: "{{ validation_delay | int }}"
+  ignore_errors: True

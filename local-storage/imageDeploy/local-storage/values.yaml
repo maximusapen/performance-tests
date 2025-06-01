@@ -1,0 +1,11 @@
+# Default values for local-storage.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+metricsPrefix: ""
+metricsOS: ""
+k8sVersion: ""
+image:
+  registry: stg.icr.io
+  name: armada_performance/persistent-storage
+  tag: latest
+  pullPolicy: Always

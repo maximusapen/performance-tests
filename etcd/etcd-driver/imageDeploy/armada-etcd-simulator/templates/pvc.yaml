@@ -1,0 +1,18 @@
+{{ if .Values.parameters.runId }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+ name: {{ .Values.prefix }}-{{ .Chart.Name }}-pvc
+ namespace: {{ .Values.namespace }}
+ labels:
+   billingType: hourly
+   region: us-south
+   zone: dal10
+spec:
+ accessModes:
+   - ReadWriteMany
+ resources:
+   requests:
+     storage: 20G
+ storageClassName: ibmc-file-bronze
+{{ end }}

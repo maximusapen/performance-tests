@@ -1,0 +1,15 @@
+---
+- debug: var=ansible_ssh_user
+- debug: var=ansible_user
+- debug: var=ansible_user_id
+
+- set_fact: k8s_version="v1.24.9"
+
+- name: Download and verify kubectl
+  become: true
+  get_url:
+    url: https://dl.k8s.io/release/{{ k8s_version }}/bin/linux/amd64/kubectl
+    dest: /usr/local/bin/kubectl
+    force: yes
+    checksum: sha256:7e13f33b7379b6c25c3ae055e4389eb3eef168e563f37b5c5f1be672e46b686e # pragma: allowlist secret
+    mode: 0775

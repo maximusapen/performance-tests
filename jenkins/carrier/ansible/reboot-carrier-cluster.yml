@@ -1,0 +1,7 @@
+---
+# Reboot all carrier masters and workers
+- hosts:
+    - cluster-{{ REALENV }}-{{ CARRIER }}
+  become: yes
+  roles:
+  - reboot-carrier-cluster

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jmeter-slaves-svc
+  labels:
+    app: jmeter-slave
+spec:
+  clusterIP: None
+  ports:
+  - name: server
+    protocol: TCP
+    port: {{ .Values.jmeter.slave.rmiServerPort }}
+    targetPort: {{ .Values.jmeter.slave.rmiServerPort }}
+  - name: rmi
+    protocol: TCP
+    port: {{ .Values.jmeter.slave.rmiLocalPort }}
+    targetPort: {{ .Values.jmeter.slave.rmiLocalPort }}
+  selector:
+    app: jmeter-slave

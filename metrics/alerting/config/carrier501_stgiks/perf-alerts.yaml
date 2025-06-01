@@ -1,0 +1,62 @@
+influxdb:
+  host: "10.38.120.142"
+  port: 8086
+  database: ArmadaPerf
+  username: admin
+  timeout: 30
+
+slack:
+  enabled: true
+  channel: armada-perf-alerts
+  resultsURL: https://alchemy-testing-jenkins.swg-devops.com/job/Armada-Performance/job/Automation/job/Carrier-Generate-Results-Alerts/lastBuild/consoleFull
+
+options:
+  history:
+    count: 24
+    days: 10
+    current: 3
+    minimum: 6
+  leniency: 10
+  verbose: false
+  failures: false
+
+environments:
+  Stage Tugboat 501:
+    carrier: carrier501_stgiks
+    machineType: [""]
+    kubeVersion: [""]
+    operatingSystem: [""]
+    owner:
+      name: Dan
+      slack: W4CCPLQR5
+      notify: WhenFound
+      days: [Monday, Tuesday, Wednesday, Thursday]
+
+tests:
+  # carrier etcd
+  - name: carrier_etcd
+    environment:
+      - kubeVersion: [""]
+        operatingSystem: [""]
+        alerts:
+          - name: request_throughput
+            limitType: ceiling
+            thresholds:
+              "":
+                warn: 1500
+                error: 2000
+                zscore: 2
+          - name: response_time
+            limitType: ceiling
+            thresholds:
+              "":
+                warn: 0.013
+                error: 0.025
+                zscore: 2
+          - name: data_errors
+            limitType: ceiling
+            thresholds:
+              "":
+                warn: 0.2
+                error: 1
+                zscore: 2

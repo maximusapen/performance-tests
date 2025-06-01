@@ -1,0 +1,11 @@
+---
+# Delete all pods in the namespace.  Kubenetes should restart all pods after delete
+- name: Delete pods in namespace for restart
+  shell: kubectl -n {{ namespace }} delete pods --all
+- name: Ensure namespace is ready
+  shell: kubectl get pods -n {{ namespace }}; kubectl get pods -n {{ namespace }} --no-headers | grep -v Running | grep -v Pending | wc -l | grep ^0$
+  register: ks
+  until: ks.rc == 0
+  retries: "{{ validation_retries | int }}"
+  delay: "{{ validation_delay | int }}"
+  ignore_errors: True

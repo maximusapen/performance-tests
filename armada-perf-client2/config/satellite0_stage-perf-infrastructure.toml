@@ -1,0 +1,101 @@
+[classic]
+  billing = "hourly"
+  disable_disk_encryption = false
+  flavor = "u3c.2x4"
+  isolation = "shared"
+  private_vlan = "2263901"
+  public_vlan = "2263903"
+  portable_subnet = true
+  zone = "dal09"
+  ssh_key = 2176464
+  [classic.operating_systems]
+    REDHAT_7_64 = "REDHAT_7_64"
+    REDHAT_8_64 = "REDHAT_8_64"
+
+[vpc-classic]
+
+[vpc-gen2]
+  ssh_key = "armada-perf-key-20230124"
+  [vpc-gen2.operating_systems]
+    REDHAT_7_64 = "ibm-redhat-7-9-minimal-amd64-6"
+    REDHAT_8_64 = "ibm-redhat-8-6-minimal-amd64-1"
+    RHCOS_4_9 = "rhcos-49-84-202207192205-0-ibmcloud-x86-64"
+    RHCOS_4_10 = "rhcos-410-84-202210040010-0-ibmcloud-x86-64"
+    RHCOS_4_11 = "rhcos-411-86-202210041459-0-ibmcloud-x86-64"
+
+[satellite]
+  [satellite.location]
+    [satellite.location.default]
+      name = "default"
+      preconfigured = false
+      managed_from = "dal"
+      coreos_enabled = false
+      [satellite.location.default.hosts]
+        [satellite.location.default.hosts.control]
+          iaas_type = "classic"
+          os = "REDHAT_7_64"
+          [satellite.location.default.hosts.control.servers]
+            [satellite.location.default.hosts.control.servers.dal10]
+              quantity = 2
+              cpu = 16
+              memory = 64
+              disk = 100
+              datacenter = "dal10"
+              zone = "us-south-1"
+              [satellite.location.default.hosts.control.servers.dal10.classic]
+                privateVLAN = "2917054"
+                publicVLAN = "2912560"
+              [satellite.location.default.hosts.control.servers.dal10.vpc]
+                subnet = "us-south-prod-vpc-gen2-dallas1"
+                vpc = "us-south-prod-vpc-gen2"
+            [satellite.location.default.hosts.control.servers.dal12]
+              quantity = 2
+              cpu = 16
+              memory = 64
+              disk = 100
+              datacenter = "dal12"
+              zone = "us-south-2"
+              [satellite.location.default.hosts.control.servers.dal12.classic]
+                privateVLAN = "2917048"
+                publicVLAN = "2917050"
+              [satellite.location.default.hosts.control.servers.dal12.vpc]
+                subnet = "us-south-prod-vpc-gen2-dallas2"
+                vpc = "us-south-prod-vpc-gen2"
+            [satellite.location.default.hosts.control.servers.dal13]
+              quantity = 2
+              cpu = 16
+              memory = 64
+              disk = 100
+              datacenter = "dal13"
+              zone = "us-south-3"
+              [satellite.location.default.hosts.control.servers.dal13.classic]
+                privateVLAN = "2912568"
+                publicVLAN = "2912590"
+              [satellite.location.default.hosts.control.servers.dal13.vpc]
+                subnet = "us-south-prod-vpc-gen2-dallas3"
+                vpc = "us-south-prod-vpc-gen2"
+        [satellite.location.default.hosts.cluster]
+          iaas_type = "classic"
+          os = "REDHAT_7_64"
+          [satellite.location.default.hosts.cluster.servers]
+            [satellite.location.default.hosts.cluster.servers.dal09]
+              quantity = 5
+              cpu = 4
+              memory = 16
+              disk = 100
+              datacenter = "dal09"
+              [satellite.location.default.hosts.cluster.servers.dal09.classic]
+                privateVLAN = "2970788"
+                publicVLAN = "2951366"
+              [satellite.location.default.hosts.cluster.servers.dal09.vpc]
+            [satellite.location.default.hosts.cluster.servers.dal13]
+              quantity = 5
+              cpu = 4
+              memory = 16
+              disk = 100
+              datacenter = "dal13"
+              zone = "us-south-3"
+              [satellite.location.default.hosts.cluster.servers.dal13.classic]
+              [satellite.location.default.hosts.cluster.servers.dal13.vpc]
+                subnet = "us-south-prod-vpc-gen2-dallas3"
+                vpc = "us-south-prod-vpc-gen2"

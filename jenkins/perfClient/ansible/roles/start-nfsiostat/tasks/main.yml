@@ -1,0 +1,20 @@
+---
+
+- set_fact: statsDir=/performance/stats/{{ RUNID }}/nfsiostat
+
+- name: Clean Folder
+  file:
+    path={{ statsDir }}
+    state=absent
+  when: CLEAN_DIR == "TRUE"
+
+- name: Create Folder
+  file:
+   path={{ statsDir }}
+   owner=jenkins
+   group="Domain Users"
+   mode=0775
+   state=directory
+
+- name: Start nfsiostat
+  shell: 'nohup nfsiostat {{ INTERVAL }} {{ REPEATS }} </dev/null >{{ statsDir }}/`hostname -s`-`date "+%Y%m%d-%H%M"`.nfsiostat 2>&1 & sleep 2'

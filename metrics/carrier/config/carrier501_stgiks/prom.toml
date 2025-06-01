@@ -1,0 +1,19 @@
+environment = "stage-dal10"
+carrier = "carrier501"
+port = 30951
+
+devices = "alchemy-netint/network-source/softlayer-data/Acct1858147/devices.csv"
+
+# etcd
+[metrics]
+  [[metrics.carrier_etcd]]
+  name = "response_time"
+  query = "sum(rate(data_etcd_response_seconds_sum{method!=\"crawler\"}[5m])) / sum(rate(data_etcd_response_seconds_count{method!=\"crawler\"}[5m]))"
+
+  [[metrics.carrier_etcd]]
+  name = "request_throughput"
+  query = "sum(rate(data_etcd_response_seconds_count[5m]))"
+
+  [[metrics.carrier_etcd]]
+  name = "data_errors"
+  query = "sum(rate(data_etcd_error_count[1m]))"

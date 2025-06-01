@@ -1,0 +1,6 @@
+---
+- hosts:
+   - "{{ CARRIER }}"
+  become: yes
+  roles:
+  - start-nmon

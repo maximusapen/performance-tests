@@ -1,0 +1,21 @@
+[classic]
+
+[vpc-classic]
+
+[vpc-gen2]
+  disable_disk_encryption = false
+  flavor = "cx1.4x8"
+  id = "r006-650a851e-7113-4337-825c-7b2ad3997ec0" # us-south-prod-vpc-gen2
+  zone = "us-south-1"
+  cos_instance = "crn:v1:bluemix:public:cloud-object-storage:global:a/641f32b9227848fdd5d2ab94f1ab4343:7ad6b641-4ba6-436f-a9c7-9e61ff6c11fa::" # armada-perf-cos
+
+  [vpc-gen2.locations]
+
+    [vpc-gen2.locations.us-south-1]
+    subnet_id = "0717-b526d5cf-c358-41f6-8e63-af1707db7933" # us-south-prod-vpc-gen2-dallas1
+
+    [vpc-gen2.locations.us-south-2]
+    subnet_id = "0727-0c526f33-ca38-4303-aa36-db7700c98b92" # us-south-prod-vpc-gen2-dallas2
+
+    [vpc-gen2.locations.us-south-3]
+    subnet_id = "0737-ebc51816-9bf5-4265-9c79-65c7675e3fc9" # us-south-prod-vpc-gen2-dallas3

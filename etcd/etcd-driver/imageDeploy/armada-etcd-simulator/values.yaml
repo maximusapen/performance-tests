@@ -1,0 +1,55 @@
+# Default values for httpperf.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+prefix: testetcd
+# Having no secretsPrefix removes the etcd-driver cert parameters 
+secretsPrefix: 
+namespace: armada
+
+replicaCount: 1
+image:
+  registry: stg.icr.io
+  name: armada_performance_stage5/etcd-driver
+  tag: latest
+  pullPolicy: Always
+
+parameters:
+  conns: 3
+  clients: 3
+  pattern: /prefix/:ip/%level2-%06d[2]/%level3-%04d[6]/%level4-%04d[2]/%level5-%040d[100]/%level6-%040d[10]/%leaf7-%06d[5];[0-9]{140,160}
+  churnContainer: true
+  churnValRate: 3600
+  churnLevelRate: 3600
+  churnLevel: 5
+  churnLevelPct: 10
+  valSpec: 1000,10000
+  getLevel: 5
+  getRate: 50400
+  pods: 1
+  putRate: 0
+  runId: 
+  endpoints: 
+  watchLevelCounts: 0,0,0,0,0,0,100,0
+  watchPrefixGetInterval: 5m
+  leaseFixedTicker: 1
+  leaseDurationSeconds: 2000
+  leaseRampConstantRate: false
+  leaseRampCycles: 1
+  leaseDelayMinutes: -1
+  leaseRampDurationMinutes: 40
+  leaseIncrementLeases: 5000
+  leaseStartLeases: 5000
+  leaseThreads: 4
+  leaseStartupDelay: 0m
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  #requests:
+  #  cpu: 100m
+  #  memory: 128Mi

@@ -1,0 +1,1 @@
+GET,/v2/classic/getWorkers?cluster=<cluster_id>

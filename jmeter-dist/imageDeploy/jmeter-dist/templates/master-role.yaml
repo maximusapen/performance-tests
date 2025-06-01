@@ -1,0 +1,10 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: jmeter-master-role
+  labels:
+    app: jmeter-master
+rules:
+- apiGroups: [""]
+  resources: ["services","pods"]
+  verbs: ["get", "list"]

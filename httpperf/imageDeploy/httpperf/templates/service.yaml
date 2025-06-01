@@ -1,0 +1,192 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}-np-service
+  labels:
+    app: {{ .Chart.Name }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.nodePort.type }}
+  ports:
+{{- if eq .Release.Name "http-perf" }}
+    - name: http
+      protocol: {{ .Values.service.protocol }}
+      port: {{ .Values.service.internalPort }}
+      nodePort: {{ .Values.service.nodePort.http.nodePort }}
+{{- end }}
+{{- if eq .Release.Name "https-perf" }}
+    - name: https
+      protocol: {{ .Values.service.protocol }}
+      port: {{ .Values.service.internalPortTLS }}
+      nodePort: {{ .Values.service.nodePort.https.nodePort }}
+{{- end }}
+  selector:
+    app: {{ .Chart.Name }}
+    release: {{ .Release.Name }}
+
+---
+
+{{- if and (eq .Values.clusterType "classic") .Values.service.loadBalancer.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}-lb-service
+  labels:
+    app: {{ .Chart.Name }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.loadBalancer.type }}
+  ports:
+{{- if eq .Release.Name "http-perf" }}
+    - name: http
+      protocol: {{ .Values.service.protocol }}
+      port: {{ .Values.service.loadBalancer.http.port }}
+      targetPort: {{ .Values.service.internalPort }}
+{{- end }}
+{{- if eq .Release.Name "https-perf" }}
+    - name: https
+      protocol: {{ .Values.service.protocol }}
+      port: {{ .Values.service.loadBalancer.https.port }}
+      targetPort: {{ .Values.service.internalPortTLS }}
+{{- end }}
+  selector:
+    app: {{ .Chart.Name }}
+    release: {{ .Release.Name }}
+  externalTrafficPolicy: {{ .Values.service.loadBalancer.externalTrafficPolicy }}
+
+---
+{{- end -}}
+
+{{- if and (eq .Values.clusterType "classic") .Values.service.loadBalancer2.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}-lb2-service
+  annotations:
+    service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: public
+    service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "{{ .Values.service.loadBalancer2.zone }}"
+    service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan: {{ .Values.service.loadBalancer2.vlanID }}
+    service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "ipvs"
+  labels:
+    app: {{ .Chart.Name }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.loadBalancer2.type }}
+  ports:
+{{- if eq .Release.Name "http-perf" }}
+    - name: http
+      protocol: {{ .Values.service.protocol }}
+      port: {{ .Values.service.loadBalancer2.http.port }}
+      targetPort: {{ .Values.service.internalPort }}
+{{- end }}
+{{- if eq .Release.Name "https-perf" }}
+    - name: https
+      protocol: {{ .Values.service.protocol }}
+      port: {{ .Values.service.loadBalancer2.https.port }}
+      targetPort: {{ .Values.service.internalPortTLS }}
+{{- end }}
+  selector:
+    app: {{ .Chart.Name }}
+    release: {{ .Release.Name }}
+  externalTrafficPolicy: {{ .Values.service.loadBalancer2.externalTrafficPolicy }}
+
+---
+{{- end -}}
+
+{{- if and (eq .Values.clusterType "vpc-gen2") .Values.service.applicationLoadBalancer.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}-vpc-alb-service
+  annotations:
+    service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: public
+  labels:
+    app: {{ .Chart.Name }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.applicationLoadBalancer.type }}
+  ports:
+{{- if eq .Release.Name "http-perf" }}
+    - name: http
+      protocol: {{ .Values.service.protocol }}
+      port: {{ .Values.service.applicationLoadBalancer.http.port }}
+      targetPort: {{ .Values.service.internalPort }}
+{{- end }}
+{{- if eq .Release.Name "https-perf" }}
+    - name: https
+      protocol: {{ .Values.service.protocol }}
+      port: {{ .Values.service.applicationLoadBalancer.https.port }}
+      targetPort: {{ .Values.service.internalPortTLS }}
+{{- end }}
+  selector:
+    app: {{ .Chart.Name }}
+    release: {{ .Release.Name }}
+  externalTrafficPolicy: {{ .Values.service.applicationLoadBalancer.externalTrafficPolicy }}
+
+---
+{{- end -}}
+
+{{- if and (eq .Values.clusterType "vpc-gen2") .Values.service.networkLoadBalancer.enabled -}}
+{{- if semverCompare ">=1.19-0" .Capabilities.KubeVersion.GitVersion -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}-vpc-nlb-service
+  annotations:
+    service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "nlb"
+    service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: public
+  labels:
+    app: {{ .Chart.Name }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.networkLoadBalancer.type }}
+  ports:
+{{- if eq .Release.Name "http-perf" }}
+    - name: http
+      protocol: {{ .Values.service.protocol }}
+      port: {{ .Values.service.networkLoadBalancer.http.port }}
+      targetPort: {{ .Values.service.internalPort }}
+{{- end }}
+{{- if eq .Release.Name "https-perf" }}
+    - name: https
+      protocol: {{ .Values.service.protocol }}
+      port: {{ .Values.service.networkLoadBalancer.https.port }}
+      targetPort: {{ .Values.service.internalPortTLS }}
+{{- end }}
+  selector:
+    app: {{ .Chart.Name }}
+    release: {{ .Release.Name }}
+  externalTrafficPolicy: {{ .Values.service.networkLoadBalancer.externalTrafficPolicy }}
+
+---
+{{- end }}
+{{- end -}}
+
+{{- if .Values.ingress.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}-ingress-service
+  labels:
+    app: {{ .Chart.Name }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  ports:
+    - protocol: {{ .Values.service.protocol }}
+      port: {{ .Values.service.internalPort }}
+  selector:
+    app: {{ .Chart.Name }}
+    release: {{ .Release.Name }}
+{{- end -}}

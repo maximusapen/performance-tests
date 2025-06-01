@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-slave
+  labels:
+    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+    generator: helm
+    date: {{ now | htmlDate }}
+spec:
+  replicas: {{ .Values.slaveReplicas }}
+  selector:
+    matchLabels:
+      app: jmeter-slave
+  template:
+    metadata:
+      labels:
+        app: jmeter-slave
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}-slave
+        image: "{{ .Values.image.registry }}/{{ .Values.image.name }}-standalone:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        command: [ "/bin/bash", "-c", "source /jmeter/run_test.sh" ]
+        resources:
+          requests:
+            cpu: {{ .Values.jmeter.slave.cpurequest }}
+        ports:
+        - containerPort: {{ .Values.jmeter.slave.rmiServerPort }}
+        - containerPort: {{ .Values.jmeter.slave.rmiLocalPort }}
+        volumeMounts:
+        - name: {{ .Release.Name }}-config
+          mountPath: "/jmeter/clusters.csv"
+          subPath: "clusters.csv"
+        - name: {{ .Release.Name }}-config
+          mountPath: "/jmeter/requests.csv"
+          subPath: "requests.csv"
+        - name: {{ .Release.Name }}-config
+          mountPath: "/jmeter/cert.jks"
+          subPath: "cert.jks"
+        - name: {{ .Release.Name }}-config
+          mountPath: "/jmeter/test.jmx"
+          subPath: "test.jmx"
+        env:
+        - name: JMETER_ARGS
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Release.Name }}-config
+              key: JMETER_ARGS
+        - name: KEYSTORE_PWD
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Release.Name }}-config
+              key: KEYSTORE_PWD
+        - name: JVM_ARGS
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Release.Name }}-config
+              key: JVM_ARGS
+{{ if .Values.restricted }}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 100001
+{{ end }}
+      volumes:
+      - name: {{ .Release.Name }}-config
+        configMap:
+          name: {{ .Release.Name }}-config

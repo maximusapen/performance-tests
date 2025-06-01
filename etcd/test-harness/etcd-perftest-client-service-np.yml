@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: etcd-perftest-client-service-np
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - name: client
+    port: 2379
+    protocol: TCP
+    targetPort: 2379
+  selector:
+    etcd_cluster: etcd-perftest
+  sessionAffinity: None
+  type: NodePort

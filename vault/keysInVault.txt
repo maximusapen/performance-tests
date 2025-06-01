@@ -1,0 +1,27 @@
+# This is file is used as a temporary workaround until https://github.ibm.com/alchemy-conductors/team/issues/10352 is resolved.
+# This file should contain the results of a vault list command (Use your own ID and use https://github.ibm.com/alchemy-containers/armada-performance/blob/master/vault/vault_keylist)
+# Once the above issue is resolved this file can be deleted and the workaround at https://github.ibm.com/alchemy-containers/armada-performance/blob/master/vault/vault_getsecret.sh#L119-L121
+# can be removed, and it can use a real `vault list` command rather than this file.
+Keys
+----
+ARGONAUTS_ARM_PERF_ALERTS_SLACK_OAUTH_TOKEN_20230214
+PROD_GLOBAL_ARMPERF_IBMCLOUD_APIKEY_20230214
+PROD_GLOBAL_ARMPERF_REGDEV_APIKEY_20230214
+PROD_GLOBAL_ARMPERF_SOFTLAYER_1186049_APIKEY_20230214
+PROD_GLOBAL_ARMPERF_SOFTLAYER_1186049_USERID
+PROD_GLOBAL_ARMPERF_SOFTLAYER_1540207_APIKEY_20230214
+PROD_GLOBAL_ARMPERF_SOFTLAYER_1540207_USERID
+PROD_US_SOUTH_ARMPERF_COS_ACCESSKEYID_20230214
+PROD_US_SOUTH_ARMPERF_COS_SECRETACCESSKEY_20230214
+STAGE_GLOBAL_ARMPERF_CONT_JENKINS_TOKEN_20230214
+STAGE_GLOBAL_ARMPERF_CRYPTOKEY_20230214
+STAGE_GLOBAL_ARMPERF_IBMCLOUD_APIKEY_20230214
+STAGE_GLOBAL_ARMPERF_LD_APIKEY_20230214
+STAGE_GLOBAL_ARMPERF_REGISTRY_APIKEY_20230214
+STAGE_GLOBAL_ARMPERF_SLACKTOKEN_20230214
+STAGE_GLOBAL_ARMPERF_TEST_JENKINS_TOKEN_20230214
+STAGE_GLOBAL_ARMPERF_VSI_PRIVATEKEY_20230124
+STAGE_GLOBAL_ARMPERF_VSI_PUBLICKEY_20230124
+armada_performance_db_password
+armada_performance_logdna_ingestion_key
+armada_performance_sysdig_key

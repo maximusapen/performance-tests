@@ -1,0 +1,28 @@
+[classic]
+billing = "hourly"
+disable_disk_encryption = false
+flavor = "u3c.2x4"
+isolation = "shared"
+portable_subnet = true
+portable_subnet_size = 16
+private_vlan = "2263901"
+public_vlan = "2263903"
+zone = "dal09"
+
+[vpc-classic]
+
+[vpc-gen2]
+disable_disk_encryption = false
+flavor = "cx2.2x4"
+id = "r134-16860571-d5d4-4f9f-ae72-66d1e1a96c03" # stage-carrier4-iks-vpc-gen2
+zone = "us-south-3"
+
+  [vpc-gen2.locations]
+    [vpc-gen2.locations.us-south-1]
+    subnet_id = "0716-17eec4e6-e0d2-4aba-93c0-79977df71247" # stage-carrier4-iks-vpc-gen2-dallas1
+
+    [vpc-gen2.locations.us-south-2]
+    subnet_id = "0726-acbf846c-96b6-45e2-a99e-deaeff956e15" # stage-carrier4-iks-vpc-gen2-dallas2
+
+    [vpc-gen2.locations.us-south-3]
+    subnet_id = "0736-cf354ef6-9a31-4e94-913e-dfec68021fcd" # stage-carrier4-iks-vpc-gen2-dallas3

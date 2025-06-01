@@ -1,0 +1,9 @@
+---
+# Reboot carrier cluster
+
+- name: shutdown to reboot now
+  become_user: root
+  shell: 'shutdown -r now "Ansible restart host"'
+  async: 0
+  poll: 0
+  ignore_errors: True

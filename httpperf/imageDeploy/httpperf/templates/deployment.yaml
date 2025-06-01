@@ -1,0 +1,68 @@
+{{ range $index, $zone := $.Values.zones }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{$.Release.Name}}-{{$zone}}
+  labels:
+    app: {{ $.Chart.Name }}
+    chart: {{ $.Chart.Name }}-{{ $.Chart.Version | replace "+" "_" }}
+    release: {{ $.Release.Name }}
+    heritage: {{ $.Release.Service }}
+spec:
+  replicas: {{ $.Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ $.Chart.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ $.Chart.Name }}
+        release: {{ $.Release.Name }}
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - {{ $.Chart.Name }}
+            topologyKey: kubernetes.io/hostname
+      containers:
+        - name: {{ $.Chart.Name }}
+          image: "{{ $.Values.image.registry }}/{{ $.Values.image.name }}:{{ $.Values.image.tag }}"
+          imagePullPolicy: {{ $.Values.image.pullPolicy }}
+          env:
+          - name: "METRICS_PREFIX"
+            value: {{ $.Values.metricsPrefix }}
+          - name: "METRICS_OS"
+            value: {{ $.Values.metricsOS }}
+          - name: "K8S_SERVER_VERSION"
+            value: {{ $.Values.k8sVersion }}          
+          ports:
+            - containerPort: {{ $.Values.service.internalPort }}
+            - containerPort: {{ $.Values.service.internalPortTLS }}
+          livenessProbe:
+            httpGet:
+              path: {{ index $.Values.ingress.paths 0 }}
+              port: {{ $.Values.service.internalPort }}
+          readinessProbe:
+            httpGet:
+              path: {{ index $.Values.ingress.paths 0 }}
+              port: {{ $.Values.service.internalPort }}
+          resources:
+{{ if $.Values.restricted }}
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 100001
+{{ end }}
+      nodeSelector:
+        "ibm-cloud.kubernetes.io/zone": {{$zone}}
+---
+{{end}}

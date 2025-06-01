@@ -1,0 +1,80 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ .Release.Name }}-job
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    generator: helm
+    date: {{ now | htmlDate }}
+spec:
+  backoffLimit: 5
+  template:
+    metadata:
+      name: {{ template "parallel-storage.fullname" . }}
+    spec:
+      schedulerName: {{ .Values.pod.scheduler }}
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: {{ .Values.pod.affinity.label }}
+                operator: In
+                values:
+                - {{ .Values.pod.affinity.value }}
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.registry }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env:
+        - name: "METRICS_PREFIX"
+          value: {{ .Values.metricsPrefix }}
+        - name: "K8S_SERVER_VERSION"
+          value: {{ .Values.k8sVersion }}
+        - name: PERF_PS_VERBOSE
+          valueFrom:
+            configMapKeyRef:
+              name: perf-persistent-storage-config
+              key: PERF_PS_VERBOSE
+        - name: PERF_PS_METRICS
+          valueFrom:
+            configMapKeyRef:
+              name: perf-persistent-storage-config
+              key: PERF_PS_METRICS
+        - name: PERF_PS_DIR
+          valueFrom:
+            configMapKeyRef:
+              name: perf-persistent-storage-config
+              key: PERF_PS_DIR
+        - name: PERF_PS_TESTNAME
+          valueFrom:
+            configMapKeyRef:
+              name: perf-persistent-storage-config
+              key: PERF_PS_TESTNAME
+        - name: PERF_PS_PODCOUNT
+          valueFrom:
+            configMapKeyRef:
+              name: perf-persistent-storage-config
+              key: PERF_PS_PODCOUNT
+        - name: PERF_PS_IOPING
+          valueFrom:
+            configMapKeyRef:
+              name: perf-persistent-storage-config
+              key: PERF_PS_IOPING
+        - name: PERF_PS_BLOCKSIZE
+          value: {{ .Values.blockSize }}
+        - name: PERF_PS_RWMODE
+          value: {{ .Values.rwMode }}
+        # For the parallel test case we do not supply an fio file. Instead we use supplied parameters to ensure that 
+        # each run is separated. This is to make sure that all of the tests run in parallel are the same e.g. 4K reads.
+        args: ["/go/bin/persistent-storage", "--verbose=$(PERF_PS_VERBOSE)", "--metrics=$(PERF_PS_METRICS)", "--testname=$(PERF_PS_TESTNAME)", "--dir=$(PERF_PS_DIR)", "--blockSize=$(PERF_PS_BLOCKSIZE)", "--readWriteMode=$(PERF_PS_RWMODE)", "--podcount=$(PERF_PS_PODCOUNT)", "--ioping=$(PERF_PS_IOPING)"]
+        volumeMounts:
+        - name: persistent-storage-mount
+          mountPath: "/var/perfps"
+        securityContext:
+          runAsUser: 0
+      volumes:
+      - name: persistent-storage-mount
+        persistentVolumeClaim:
+          claimName: {{ .Values.pvc.name }}
+      restartPolicy: Never

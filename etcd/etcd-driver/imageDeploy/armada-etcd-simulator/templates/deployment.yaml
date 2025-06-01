@@ -1,0 +1,204 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.prefix }}-{{ .Chart.Name }}
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.parameters.pods }}
+  selector:
+    matchLabels:
+      app: armada-etcd-simulator
+  template:
+    metadata:
+      labels:
+        app: armada-etcd-simulator
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - etcd
+            topologyKey: kubernetes.io/hostname
+      containers:
+{{ if .Values.parameters.churnContainer }}
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.registry }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - /etcd-driver
+            - pattern
+{{ if .Values.secretsPrefix }}
+{{ if .Values.parameters.endpoints }}
+            - --endpoints={{ .Values.parameters.endpoints }}
+{{ else }}
+            - --endpoints=https://{{ .Values.prefix }}-client.{{ .Values.namespace }}.svc:2379
+{{ end }}
+            - --cert=/etc/etcdtls/operator/etcd-tls/etcd-client.crt
+            - --key=/etc/etcdtls/operator/etcd-tls/etcd-client.key
+            - --cacert=/etc/etcdtls/operator/etcd-tls/etcd-client-ca.crt
+{{ else }}
+{{ if .Values.parameters.endpoints }}
+            - --endpoints={{ .Values.parameters.endpoints }}
+{{ else }}
+            - --endpoints=http://{{ .Values.prefix }}-client.{{ .Values.namespace }}.svc:2379
+{{ end }}
+{{ end }}
+            - --conns={{ .Values.parameters.conns }}
+            - --clients={{ .Values.parameters.clients }}
+            - --pattern={{ .Values.parameters.pattern }}
+{{ if .Values.parameters.runId }}
+            - --csv-dir=/results/{{ .Values.parameters.runId }}/driver
+{{ end }}
+            - --csv-file=churn_results.csv
+            - --churn-val-rate={{ .Values.parameters.churnValRate }}
+            - --churn-level-rate={{ .Values.parameters.churnLevelRate }}
+            - --churn-level={{ .Values.parameters.churnLevel }}
+            - --churn-level-pct={{ .Values.parameters.churnLevelPct }}
+            - --test-end-key=/test1/end
+            - --val-spec={{ .Values.parameters.valSpec }}
+            - --get-level={{ .Values.parameters.getLevel }}
+            - --get-rate={{ .Values.parameters.getRate }}
+            - --stats-interval=300
+            - --put-rate={{ .Values.parameters.putRate }}
+            - --client-timeout=60
+            - --do-not-exit
+
+{{ if or .Values.parameters.runId .Values.secretsPrefix}}
+          volumeMounts:
+{{ end }}
+{{ if .Values.parameters.runId }}
+            - name: {{ .Values.prefix }}-{{ .Chart.Name }}-pvc
+              mountPath: /results
+{{ end }}
+{{ if .Values.secretsPrefix }}
+            - mountPath: /etc/etcdtls/operator/etcd-tls
+              name: etcd-client-tls
+{{ end }}
+{{ end }}
+
+{{ if .Values.parameters.watchLevelCounts }}
+        - name: {{ .Chart.Name }}-watch
+          image: "{{ .Values.image.registry }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - /etcd-driver
+            - pattern
+{{ if .Values.secretsPrefix }}
+{{ if .Values.parameters.endpoints }}
+            - --endpoints={{ .Values.parameters.endpoints }}
+{{ else }}
+            - --endpoints=https://{{ .Values.prefix }}-client.{{ .Values.namespace }}.svc:2379
+{{ end }}
+            - --cert=/etc/etcdtls/operator/etcd-tls/etcd-client.crt
+            - --key=/etc/etcdtls/operator/etcd-tls/etcd-client.key
+            - --cacert=/etc/etcdtls/operator/etcd-tls/etcd-client-ca.crt
+{{ else }}
+{{ if .Values.parameters.endpoints }}
+            - --endpoints={{ .Values.parameters.endpoints }}
+{{ else }}
+            - --endpoints=http://{{ .Values.prefix }}-client.{{ .Values.namespace }}.svc:2379
+{{ end }}
+{{ end }}
+            - --conns={{ .Values.parameters.conns }}
+            - --clients={{ .Values.parameters.clients }}
+            - --pattern={{ .Values.parameters.pattern }}
+{{ if .Values.parameters.runId }}
+            - --csv-dir=/results/{{ .Values.parameters.runId }}/watch
+{{ end }}
+            - --csv-file=churn_results.csv
+            - --watch-counts-per-level={{ .Values.parameters.watchLevelCounts }}
+            - --watch-prefix-get-interval={{ .Values.parameters.watchPrefixGetInterval }}
+            - --watch-with-prefix
+            - --test-end-key=/test1/end
+            - --stats-interval=300
+            - --put-rate={{ .Values.parameters.putRate }}
+            - --skip-init
+            - --client-timeout=60
+            - --do-not-exit
+
+{{ if or .Values.parameters.runId .Values.secretsPrefix}}
+          volumeMounts:
+{{ end }}
+{{ if .Values.parameters.runId }}
+            - name: {{ .Values.prefix }}-{{ .Chart.Name }}-pvc
+              mountPath: /results
+{{ end }}
+{{ if .Values.secretsPrefix }}
+            - mountPath: /etc/etcdtls/operator/etcd-tls
+              name: etcd-client-tls
+{{ end }}
+{{ end }}
+
+{{ if .Values.parameters.leaseStartLeases }}
+        - name: {{ .Chart.Name }}-lease
+          image: "{{ .Values.image.registry }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - /lease_test
+{{ if .Values.secretsPrefix }}
+{{ if .Values.parameters.endpoints }}
+            - --endpoints={{ .Values.parameters.endpoints }}
+{{ else }}
+            - --endpoints=https://{{ .Values.prefix }}-client.{{ .Values.namespace }}.svc:2379
+{{ end }}
+            - --cert=/etc/etcdtls/operator/etcd-tls/etcd-client.crt
+            - --key=/etc/etcdtls/operator/etcd-tls/etcd-client.key
+            - --cacert=/etc/etcdtls/operator/etcd-tls/etcd-client-ca.crt
+{{ else }}
+{{ if .Values.parameters.endpoints }}
+            - --endpoints={{ .Values.parameters.endpoints }}
+{{ else }}
+            - --endpoints=http://{{ .Values.prefix }}-client.{{ .Values.namespace }}.svc:2379
+{{ end }}
+{{ end }}
+            - --fixed-lease-ticker-seconds={{ .Values.parameters.leaseFixedTicker }}
+            - --lease-duration-seconds={{ .Values.parameters.leaseDurationSeconds }}
+            - --ramp-at-constant-rate={{ .Values.parameters.leaseRampConstantRate }}
+            - --ramp-cycles={{ .Values.parameters.leaseRampCycles }}
+            - --ramp-delay-minutes={{ .Values.parameters.leaseDelayMinutes }}
+            - --ramp-duration-minutes={{ .Values.parameters.leaseRampDurationMinutes }}
+            - --ramp-increment-leases={{ .Values.parameters.leaseIncrementLeases }}
+            - --ramp-start-leases={{ .Values.parameters.leaseStartLeases }}
+            - --startup-delay={{ .Values.parameters.leaseStartupDelay }}
+            - --threads={{ .Values.parameters.leaseThreads }}
+
+{{ if .Values.secretsPrefix }}
+          volumeMounts:
+            - mountPath: /etc/etcdtls/operator/etcd-tls
+              name: etcd-client-tls
+{{ end }}
+{{ end }}
+
+      imagePullSecrets:
+            - name: perf-stg-icr-io
+      tolerations:
+      - effect: NoSchedule
+        key: multi-az-worker
+        operator: Equal
+        value: "true"
+      - effect: NoSchedule
+        key: dedicated
+        operator: Equal
+        value: "armada"
+{{ if or .Values.parameters.runId .Values.secretsPrefix }}
+      volumes:
+{{ end }}
+{{ if .Values.secretsPrefix }}
+      - name: etcd-client-tls
+        secret:
+          defaultMode: 420
+          secretName: {{ .Values.secretsPrefix }}-client-tls
+{{ end }}
+{{ if .Values.parameters.runId }}
+      - name: {{ .Values.prefix }}-{{ .Chart.Name }}-pvc
+        persistentVolumeClaim:
+          claimName: {{ .Values.prefix }}-{{ .Chart.Name }}-pvc
+{{ end }}

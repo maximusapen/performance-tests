@@ -1,0 +1,47 @@
+---
+- name: Install Docker dependencies
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - software-properties-common
+    - curl
+    - make
+
+- name: Add docker apt key
+  become: true
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
+    state: present
+
+
+- name: Create /etc/apt/sources.list.d for docker repository if not exist
+  become: true
+  file:
+   path=/etc/apt/sources.list.d
+   mode=0775
+   state=directory
+
+- name: Add docker repository
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable
+    state: present
+    update_cache: True
+
+- name: Install Docker
+  apt:
+    name: docker-ce
+    state: present
+
+- name: Remove Upstart config file
+  file:
+    path: /etc/default/docker
+    state: absent
+
+- name: Restart docker service
+  service:
+    name: docker
+    state: restarted

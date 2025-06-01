@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: httpperf-lb2-multiport-service
+  annotations:
+    service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: public
+    service.kubernetes.io/ibm-load-balancer-cloud-provider-zone: "dal09"
+    service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan: "2263903"
+    service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "ipvs"
+  labels:
+    app: httpperf
+    chart: httpperf-1.0.0
+    release: RELEASE
+spec:
+  type: LoadBalancer
+  selector:
+    app: httpperf
+    release: RELEASE
+  externalTrafficPolicy: Local
+  ports:

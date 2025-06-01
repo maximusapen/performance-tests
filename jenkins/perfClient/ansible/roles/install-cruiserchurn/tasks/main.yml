@@ -1,0 +1,35 @@
+---
+# Install cruiserchurn
+
+- name: Create churn stats dir
+  become: true
+  file:
+    path: /performance/stats/churn
+    state: directory
+    owner: jenkins
+    mode: 0775
+    recurse: yes
+
+- name: Find cruisermon service files
+  find: 
+    paths: /performance/armada-perf/api/cruiser_churn 
+    recurse: no 
+    patterns: "*churn.service"
+  register: files_to_copy
+
+- name: Copy service to lib
+  become: true
+  copy:
+    src: "{{ item.path }}"
+    dest: /lib/systemd/system
+    remote_src: yes
+  with_items: "{{ files_to_copy.files }}"
+
+- name: Copy service to etc
+  become: true
+  copy:
+    src: "{{ item.path }}"
+    dest: /etc/systemd/system
+    remote_src: yes
+    mode: 0644
+  with_items: "{{ files_to_copy.files }}"

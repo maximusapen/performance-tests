@@ -1,0 +1,1 @@
+/:region/actual/clusters/:clusterid/ssh_key_public;[a-z0-9]{1000}[a-z0-9]{1000}[a-z0-9]{1000}[a-z0-9]{1000}[a-z0-9]{1000}[a-z0-9]{1000}[a-z0-9]{1000}[a-z0-9]{1000}

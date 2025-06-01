@@ -1,0 +1,8 @@
+---
+# Delete docker files on all carrier masters and workers
+# before deploying carrier without os reload
+
+- name: Delete carrier docker files on masters and workers
+  become_user: root
+  shell: rm -fr /root/.docker
+  ignore_errors: True

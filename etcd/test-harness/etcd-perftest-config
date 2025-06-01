@@ -1,0 +1,63 @@
+# ******************************************************************************
+# * Licensed Materials - Property of IBM
+# * IBM Cloud Kubernetes Service, 5737-D43
+# * (C) Copyright IBM Corp. 2021 All Rights Reserved.
+# * US Government Users Restricted Rights - Use, duplication or
+# * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+# ******************************************************************************
+# Defines the etcd cluster and how it will be accessed
+
+KUBECONFIG_PATH=/performance/config/carrier501_stage/admin-kubeconfig
+
+# If ETCDCLUSTER_NAME is changed then the yaml files must be updated. This is done by running deploy-etcd.sh after ETCDCLUSTER_NAME is set.
+ETCDCLUSTER_NAME=etcd-5node
+
+# Namespace where etcd cluster is located
+NAMESPACE=armada
+
+# Setup cluster with certificates: true or false
+USE_CERTIFICATES=true
+CERT_DIR=cfssl_cert_directory
+
+# ---------------- start of section that shouldn't be changed ---------------- 
+# KUBECONFIG for location of the etcd cluster
+# The conditional allows for config on the perf-client machines, or a laptop
+if [[ -d /performance/config/ ]]; then
+    export KUBECONFIG=${KUBECONFIG_PATH}
+else
+    export KUBECONFIG=${HOME}/${KUBECONFIG_PATH}
+fi
+
+# Etcd dndpoint(s) for different types of access
+# nodeport
+ETCD_NP_ENDPOINTS=10.209.43.27:31538
+# lb
+ETCD_LB_ENDPOINTS=169.61.187.38:31963
+# VIP - DNS is the same as what armada microservices use
+ETCD_VIP_ENDPOINTS=etcd-5-1.us-south.containers.test.cloud.ibm.com:31538,etcd-5-2.us-south.containers.test.cloud.ibm.com:31538,etcd-5-3.us-south.containers.test.cloud.ibm.com:31538
+VIP_DNS1=etcd-5-1.us-south.containers.test.cloud.ibm.com
+VIP_DNS2=etcd-5-2.us-south.containers.test.cloud.ibm.com
+VIP_DNS3=etcd-5-3.us-south.containers.test.cloud.ibm.com
+
+# Service endpoint
+ETCD_SVC_ENDPOINTS=${ETCDCLUSTER_NAME}-client.armada.svc:2379
+# ---------------- end of section that shouldn't be changed ---------------- 
+
+# Change the order so the last ETCD_ENDPOINTS is uses the access method that makes the most sense. For access via a laptop this is likely to be ETCD_LB_ENDPOINTS.
+ETCD_ENDPOINTS=${ETCD_NP_ENDPOINTS}
+ETCD_ENDPOINTS=${ETCD_SVC_ENDPOINTS}
+ETCD_ENDPOINTS=${ETCD_VIP_ENDPOINTS}
+ETCD_ENDPOINTS=${ETCD_LB_ENDPOINTS}
+
+# ---------------- start of section that shouldn't be changed ---------------- 
+# For some old scripts
+DEFRAG_TIMEOUT=5m
+COMPACT_WAIT=120
+
+ENDPOINTS=${ETCD_ENDPOINTS}
+export ETCDCTL_API=3
+
+if [[ ${USE_CERTIFICATES} == "true" ]]; then
+    ETCDCREDS="--cacert=${CERT_DIR}/etcd-client-ca.crt --cert=${CERT_DIR}/etcd-client.crt --key=${CERT_DIR}/etcd-client.key"
+    SERVER_ETCDCREDS="--cacert=/etc/etcdtls/member/server-tls/server-ca.crt --cert=/etc/etcdtls/member/server-tls/server.crt --key=/etc/etcdtls/member/server-tls/server.key"
+fi

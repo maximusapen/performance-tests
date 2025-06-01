@@ -1,0 +1,4344 @@
+{
+    "annotations": {
+        "list": []
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "hideControls": false,
+    "id": 7961391,
+    "links": [
+        {
+            "icon": "external link",
+            "tags": [],
+            "type": "link"
+        }
+    ],
+    "refresh": false,
+    "rows": [
+        {
+            "collapse": false,
+            "height": 250,
+            "panels": [
+                {
+                    "aliasColors": {
+                        "Tokyo": "#1F78C1",
+                        "au-syd": "#EF843C",
+                        "eu-de": "#6ED0E0",
+                        "eu-gb": "#EAB839",
+                        "us-south": "#7EB26D"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 21,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 2,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "H",
+                            "target": "aliasByNode($MachineType.performance.carrier1_stage.registry.eu-de.international_pull.sparse-avg, 4)",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": false,
+                            "refId": "F",
+                            "target": "alias(aliasByNode($MachineType.performance.carrier1_stage.registry.eu-gb.international_pull.sparse-avg, 4), 'UK')",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": false,
+                            "refId": "E",
+                            "target": "alias(aliasByNode($MachineType.performance.carrier1_stage.registry.eu-de.international_pull.sparse-avg, 4), 'Germany')",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": false,
+                            "refId": "G",
+                            "target": "alias(aliasByNode($MachineType.performance.carrier1_stage.registry.au-syd.international_pull.sparse-avg, 4), 'Sydney')",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": false,
+                            "refId": "A",
+                            "target": "alias(aliasByNode($MachineType.performance.carrier1_stage.registry.ap-north.international_pull.sparse-avg, 4), 'Tokyo')",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": true,
+                            "refId": "B",
+                            "target": "$MachineType.performance.carrier1_stage.registry.{ng,eu-gb,eu-de,au-syd,ap-north}.international_pull.sparse-avg",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Global Registry : Image PULL Times by region (50MB Image)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "Tokyo": "#1F78C1",
+                        "au-syd": "#EF843C",
+                        "eu-de": "#6ED0E0",
+                        "eu-gb": "#EAB839",
+                        "us-south": "#7EB26D"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 24,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 2,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "E",
+                            "target": "alias(aliasByNode($MachineType.performance.carrier1_stage.registry.ng.international_push.sparse-avg, 4), 'US-South')",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "B",
+                            "target": "alias(aliasByNode($MachineType.performance.carrier1_stage.registry.eu-gb.international_push.sparse-avg, 4), 'UK')",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "A",
+                            "target": "alias(aliasByNode($MachineType.performance.carrier1_stage.registry.eu-de.international_push.sparse-avg, 4), 'Germany')",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "D",
+                            "target": "alias(aliasByNode($MachineType.performance.carrier1_stage.registry.au-syd.international_push.sparse-avg, 4), 'Sydney')",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": true,
+                            "refId": "C",
+                            "target": "$MachineType.performance.carrier1_stage.registry.{ng,eu-gb,eu-de,au-syd,ap-north}.international_push.sparse-avg",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "F",
+                            "target": "alias(aliasByNode($MachineType.performance.carrier1_stage.registry.ap-north.international_push.sparse-avg, 4), 'Tokyo')",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Global Registry : Image PUSH Times by region (50MB Image)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "ap-north": "#6D1F62",
+                        "au-syd (from jp-tok)": "#1F78C1",
+                        "regional_pull": "#7EB26D",
+                        "regional_push": "#EAB839"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 25,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 2,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "alias($MachineType.performance.carrier1_stage.registry.ng.hyperkube_pull.sparse-avg, 'us-south')",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode($MachineType.performance.carrier1_stage.registry.eu-gb.hyperkube_pull.sparse-avg, 4)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode($MachineType.performance.carrier1_stage.registry.eu-de.hyperkube_pull.sparse-avg, 4)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode($MachineType.performance.carrier1_stage.registry.au-syd.hyperkube_pull.sparse-avg, 4)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": true,
+                            "refId": "E",
+                            "target": "$MachineType.performance.carrier1_stage.registry.{ng,eu-gb,eu-de,au-syd,ap-north}.regional_pull.sparse-avg",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "F",
+                            "target": "alias($MachineType.performance.carrier1_stage.registry.ap-north.hyperkube_pull.sparse-avg, 'au-syd (from jp-tok)')",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Regional Registry: PULL Hyperkube 1.8.6 Image",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "ap-north": "#6D1F62",
+                        "au-syd (from-jp-tok)": "#1F78C1",
+                        "regional_pull": "#7EB26D",
+                        "regional_push": "#EAB839"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 26,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 2,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "B",
+                            "target": "alias($MachineType.performance.carrier1_stage.registry.ng.regional_push.sparse-avg, 'us-south')"
+                        },
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode($MachineType.performance.carrier1_stage.registry.eu-gb.regional_push.sparse-avg, 4)"
+                        },
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode($MachineType.performance.carrier1_stage.registry.eu-de.regional_push.sparse-avg, 4)"
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode($MachineType.performance.carrier1_stage.registry.au-syd.regional_push.sparse-avg, 4)"
+                        },
+                        {
+                            "hide": true,
+                            "refId": "E",
+                            "target": "$MachineType.performance.carrier1_stage.registry.{ng,eu-gb,eu-de,au-syd,ap-north}.regional_push.sparse-avg",
+                            "textEditor": true
+                        },
+                        {
+                            "refId": "F",
+                            "target": "alias($MachineType.performance.carrier1_stage.registry.ap-north.regional_push.sparse-avg, 'au-syd (from-jp-tok)')",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Regional Registry : Image PUSH Times (50MB Image)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time(s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 250,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 23,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.APIResponsiveness.nodes5.*.pods.Perc90.max, 3), 6, 7, 8)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Kubernetes E2E Tests : POD : API Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 31,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.APIResponsiveness.nodes5.*.nodes.Perc90.max, 3), 6, 7, 8)",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": true,
+                            "refId": "C",
+                            "target": "$MachineType.performance.{carrier4_stage,carrier3_stage}.1_1*.load.APIResponsiveness.nodes5.*.nodes.Perc90.max",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Kubernetes E2E Tests : NODE : API Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 27,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.APIResponsiveness.nodes5.*.services.Perc90.max, 3), 6, 7, 8)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Kubernetes E2E Tests : SERVICE : API Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 250,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 29,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode($MachineType.performance.$CarrierName.$KubeVersion.load.APIResponsiveness.nodes5.*.deployments.Perc90.max,7, 8,9,3)",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": true,
+                            "refId": "A",
+                            "target": "$MachineType.performance.carrier4_stage.1_1*.load.APIResponsiveness.nodes5.GET.deployments.Perc90.max",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Kubernetes E2E Tests : DEPLOYMENT : API Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 28,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 8,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.APIResponsiveness.nodes5.*.replicationcontrollers.Perc90.max, 3), 6, 7, 8)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": true,
+                            "refId": "A",
+                            "target": "$MachineType.performance.{carrier3_stage,carrier4_stage}.1_1*.load.APIResponsiveness.nodes5.DELETE.replicationcontrollers.Perc90.max",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Kubernetes E2E Tests : REPLICATION CONTROLLER : API Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 253,
+            "panels": [
+                {
+                    "aliasColors": {
+                        "HTTPNodePort": "#B7DBAB",
+                        "HTTPSNodePort": "#508642",
+                        "http": "#E0F9D7",
+                        "httpNodePort.threads_100": "#7EB26D",
+                        "httpNodePort.threads_200": "#3F6833",
+                        "https": "#7EB26D",
+                        "httpsNodePort.threads_100": "#EF843C",
+                        "httpsNodePort.threads_200": "#C15C17"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 10,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": true,
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.vegeta.*.HTTPNodePort.nodes5_replicas3.Request_Rate.max, 3), 5)"
+                        },
+                        {
+                            "hide": true,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.vegeta.*.HTTPSNodePort.nodes5_replicas3.Request_Rate.max, 3), 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.httpNodePort.nodes5_replicas3.*.throughput.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "E",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.httpsNodePort.nodes5_replicas3.*.throughput.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "NODE PORT  : HTTP  Request/s",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Throughput (req/sec)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "HTTPLoadBalancer": "#6ED0E0",
+                        "HTTPSLoadBalancer": "#1F78C1",
+                        "httpLoadBalancer.threads_100": "#7EB26D",
+                        "httpLoadBalancer.threads_200": "#508642",
+                        "httpsLoadBalancer.threads_100": "#EF843C",
+                        "httpsLoadBalancer.threads_200": "#C15C17",
+                        "httpsNodePort.threads_100": "#C15C17",
+                        "httpsNodePort.threads_200": "#EF843C"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 19,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [
+                        {}
+                    ],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": true,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.vegeta.*.HTTPLoadBalancer.*.Request_Rate.max, 3), 5)"
+                        },
+                        {
+                            "hide": true,
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.vegeta.*.HTTPSLoadBalancer.*.Request_Rate.max, 3), 5)"
+                        },
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.httpLoadBalancer.nodes5_replicas3.*.throughput.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.httpsLoadBalancer.nodes5_replicas3.*.throughput.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "LOAD BALANCER  : HTTP Request/s",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Throughput (req/sec)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "HTTPIngress": "#EF843C",
+                        "HTTPSIngress": "#E24D42",
+                        "httpIngress.threads_100": "#7EB26D",
+                        "httpIngress.threads_200": "#508642",
+                        "httpsIngress.threads_100": "#EF843C",
+                        "httpsIngress.threads_200": "#C15C17"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 20,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": true,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.vegeta.*.HTTPIngress.*.Request_Rate.max, 3), 5)"
+                        },
+                        {
+                            "hide": true,
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.vegeta.*.HTTPSIngress.*.Request_Rate.max, 3), 5)"
+                        },
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.httpIngress.nodes5_replicas3.*.throughput.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.httpsIngress.nodes5_replicas3.*.throughput.sparse-avg, 3), 3, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "INGRESS  : HTTP Request/s",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Throughput (req/sec)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "HTTPIngress": "#EF843C",
+                        "HTTPIngress.cpu": "#EF843C",
+                        "HTTPNodePort": "#9AC48A",
+                        "HTTPNodePort.cpu": "#E0F9D7",
+                        "HTTPSIngress": "#BF1B00",
+                        "HTTPSIngress.cpu": "#E24D42",
+                        "HTTPSLoadBalancer": "#1F78C1",
+                        "HTTPSLoadBalancer.cpu": "#1F78C1",
+                        "HTTPSNodePort": "#508642",
+                        "HTTPSNodePort.cpu": "#7EB26D"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 55,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": false,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.httpNodePort.nodes5_replicas3.*.errorPercentage.sparse-avg, 3, 9), 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.httpsNodePort.nodes5_replicas3.*.errorPercentage.sparse-avg, 3, 9), 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.httpLoadBalancer.nodes5_replicas3.*.errorPercentage.sparse-avg, 3, 9), 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.httpsLoadBalancer.nodes5_replicas3.*.errorPercentage.sparse-avg, 3, 9), 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "E",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.httpIngress.nodes5_replicas3.*.errorPercentage.sparse-avg, 3, 9), 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "F",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.httpsIngress.nodes5_replicas3.*.errorPercentage.sparse-avg, 3, 9), 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "% Request Error",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "CPU Utilisation (millicores)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 250,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": null,
+                    "fill": 1,
+                    "id": 57,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": false,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": false,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode($MachineType.performance.$CarrierName.$KubeVersion.httpNodePort.nodes5_replicas3.threads_200.nodes.*.metrics.cpu.usage_rate.max, 3)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "NodePort : Max CPU Per Worker CPU (HTTP : 200 threads)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": null,
+                    "fill": 1,
+                    "id": 58,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": false,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": false,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode($MachineType.performance.$CarrierName.$KubeVersion.httpLoadBalancer.nodes5_replicas3.threads_200.nodes.*.metrics.cpu.usage_rate.max, 3)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "LoadBalancer : Max CPU Per Worker (HTTP : 200 threads)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": null,
+                    "fill": 1,
+                    "id": 59,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": false,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": false,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode($MachineType.performance.$CarrierName.$KubeVersion.httpIngress.nodes5_replicas3.threads_200.nodes.*.metrics.cpu.usage_rate.max, 3)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Ingress : Max CPU Per Worker CPU (HTTP : 200 threads)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": null,
+                    "fill": 1,
+                    "id": 60,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": false,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "$MachineType.performance.$CarrierName.$KubeVersion.httpNodePort.nodes5_replicas3.*.cpu.usage_rate.select metric"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": false,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 327,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 14,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 2,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 12,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": true,
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.requested.time.max, 7), 7)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": true,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.provision_pending.time.max, 7), 7)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": true,
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.provisioning.time.max, 7), 7)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": true,
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.deploying.time.max, 7), 7)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": true,
+                            "refId": "E",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.deployed.time.max, 7), 7)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": true,
+                            "refId": "F",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.Mean_Worker_Creation_Time.sparse-avg, 7), 8)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": true,
+                            "refId": "G",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.Max_Worker_Creation_Time.max, 7), 8)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "H",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.normal.start_time.max, 7), 7)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "I",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.requested.start_time.max, 7), 7)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "J",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.provision_pending.start_time.max, 7), 7)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "K",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.provisioning.start_time.max, 7), 7)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "L",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.deploying.start_time.max, 7), 7)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "M",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.armada_api.requests_1_workers_5.CreateCluster.*.deployed.start_time.max, 7), 7)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Cluster Creation Time (1 Master + 5 Workers)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "dtdurations",
+                            "label": "Cluster Creation Time",
+                            "logBase": 1,
+                            "max": "2500",
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 250,
+            "panels": [
+                {
+                    "aliasColors": {
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.0_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.100_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.10_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.20_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.30_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.40_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.50_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.60_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.70_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.80_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.90_Pcnt.sparse-avg": "#890F02",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_down.not_deleted.httpperf.duration.sparse-avg": "#BF1B00",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.0_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.100_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.10_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.20_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.30_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.40_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.50_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.60_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.80_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.90_Pcnt.sparse-avg": "#508642",
+                        "$MachineType.performance_rgs.carrier7_dev.k8s.pod_scaling_up.available_replicas.httpperf.duration.sparse-avg": "#7EB26D",
+                        "pod_scaling_down.not_deleted": "#890F02",
+                        "pod_scaling_down.not_deleted.duration": "#D683CE",
+                        "pod_scaling_down.not_deleted.httpperf": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.0_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.100_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.10_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.20_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.30_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.40_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.50_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.60_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.70_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.80_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.90_Pcnt": "#58140C",
+                        "pod_scaling_down.not_deleted.httpperf.duration": "#B7DBAB",
+                        "pod_scaling_down.not_deleted.pod-scaling": "#890F02",
+                        "pod_scaling_down.not_deleted.pod-scaling.duration": "#EF843C",
+                        "pod_scaling_up.available_replicas": "#3F6833",
+                        "pod_scaling_up.available_replicas.duration": "#B7DBAB",
+                        "pod_scaling_up.available_replicas.httpperf": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.0_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.100_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.10_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.20_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.30_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.40_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.50_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.60_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.70_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.80_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.httpperf.90_Pcnt": "#3F6833",
+                        "pod_scaling_up.available_replicas.pod-scaling": "#508642",
+                        "pod_scaling_up.available_replicas.pod-scaling.duration": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 22,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 12,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.k8s.pod_scaling_up.available_replicas.pod-scaling.duration.sparse-avg, 3), 4, 6, 7)"
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.k8s.pod_scaling_down.not_deleted.pod-scaling.duration.sparse-avg, 3), 4, 6, 7)"
+                        },
+                        {
+                            "hide": true,
+                            "refId": "A",
+                            "target": "$MachineType.performance.{carrier4_stage,carrier3_stage}.1_1*.k8s.pod_scaling_up.available_replicas.pod-scaling.duration.sparse-avg",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Pod Scaling Duration  (70 pods/node, 5 nodes = 350 pods)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Scale up/down Duration (s)",
+                            "logBase": 1,
+                            "max": "400",
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "Duration(s)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": false
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 250,
+            "panels": [
+                {
+                    "aliasColors": {
+                        "nodes5.threads_100": "#EF843C",
+                        "nodes5.threads_20": "#7EB26D",
+                        "nodes5.threads_40": "#EAB839",
+                        "nodes5.threads_60": "#6ED0E0",
+                        "threads_100.throughput": "#EF843C",
+                        "threads_20.errorPercentage": "#705DA0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 44,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [
+                        {
+                            "alias": "threads_60.errorPercentage",
+                            "yaxis": 2
+                        },
+                        {
+                            "alias": "threads_20.errorPercentage",
+                            "yaxis": 2
+                        },
+                        {
+                            "alias": "threads_40.errorPercentage",
+                            "yaxis": 2
+                        }
+                    ],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.threads_20.throughput.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "E",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.threads_40.throughput.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "F",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.threads_60.throughput.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "G",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.threads_100.throughput.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.nodes5.threads_100.throughput.sparse-avg, 3), 4, 5)",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": false,
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.nodes5.threads_20.throughput.sparse-avg, 3), 4, 5)",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": false,
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.nodes5.threads_40.throughput.sparse-avg, 3), 4, 5)",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": false,
+                            "refId": "H",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.nodes5.threads_60.throughput.sparse-avg, 3), 4, 5)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "AcmeAir Throughput",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Transactions (per sec)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": "100",
+                            "min": "0",
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "nodes5.threads_100": "#EF843C",
+                        "nodes5.threads_20": "#7EB26D",
+                        "nodes5.threads_40": "#EAB839",
+                        "nodes5.threads_60": "#6ED0E0"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 45,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [
+                        {
+                            "alias": "threads_60.errorPercentage",
+                            "yaxis": 2
+                        },
+                        {
+                            "alias": "threads_20.errorPercentage",
+                            "yaxis": 2
+                        },
+                        {
+                            "alias": "threads_40.errorPercentage",
+                            "yaxis": 2
+                        }
+                    ],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.threads_20.percentile95.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "E",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.threads_40.percentile95.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "F",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.threads_60.percentile95.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "G",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.threads_100.percentile95.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.nodes5.threads_20.percentile95.sparse-avg, 3), 4, 5)",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": false,
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.nodes5.threads_40.percentile95.sparse-avg, 3), 4, 5)",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": false,
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.nodes5.threads_60.percentile95.sparse-avg, 3), 4, 5)",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": false,
+                            "refId": "H",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.nodes5.threads_100.percentile95.sparse-avg, 3), 4, 5)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "AcmeAir Response Time (95th Percentile)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": "100",
+                            "min": "0",
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {
+                        "nodes5.threads_100": "#EF843C",
+                        "nodes5.threads_20": "#7EB26D",
+                        "nodes5.threads_40": "#EAB839",
+                        "nodes5.threads_60": "#6ED0E0",
+                        "threads_100.throughput": "#EF843C",
+                        "threads_20.errorPercentage": "#7EB26D"
+                    },
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 46,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [
+                        {
+                            "alias": "threads_60.errorPercentage",
+                            "yaxis": 1
+                        },
+                        {
+                            "alias": "threads_20.errorPercentage",
+                            "yaxis": 1
+                        },
+                        {
+                            "alias": "threads_40.errorPercentage",
+                            "yaxis": 1
+                        }
+                    ],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.threads_20.errorPercentage.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.threads_40.errorPercentage.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.threads_60.errorPercentage.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.threads_100.errorPercentage.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "E",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.nodes5.threads_20.errorPercentage.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "F",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.nodes5.threads_40.errorPercentage.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "G",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.nodes5.threads_60.errorPercentage.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "H",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.nodes5.threads_100.errorPercentage.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "AcmeAir Error %",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Errors (%)",
+                            "logBase": 1,
+                            "max": "100",
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 56,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": false,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": false,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.acmeair.nodes.*.metrics.cpu.usage_rate.max, 3), 7, 8)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Max CPU Per Worker",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "CPU Utilisation (millicores)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 250,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 47,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.http-scale.reqPerSec.sparse-avg, 3), 4)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "HTTP-SCALE (In-Cluster) Requests/s",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Requests/s ",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 48,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.http-scale.latency.sparse-avg, 3), 4, 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.http-scale.latency.max, 3), 4, 5)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "HTTP-SCALE (In-Cluster)  Latency",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "ns",
+                            "label": "Latency ",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 54,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": false,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": false,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.http-scale.nodes.*.metrics.cpu.usage_rate.max, 3), 7, 8)"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Max CPU Per Worker",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "CPU Utilisation (millicores)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 250,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 34,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.k8s-netperf.iperf_TCP.*.max, 3), 5, 6)",
+                            "textEditor": true
+                        },
+                        {
+                            "hide": true,
+                            "refId": "A",
+                            "target": "$MachineType.performance.{carrier4_stage,carrier3_stage}.1_1*.k8s-netperf.iperf_TCP.Remote_VM_using_Pod_IP.max, 3",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "IPerf TCP",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Throughput (Mbits/sec)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 35,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.k8s-netperf.iperf_UDP.*.max, 3), 5, 6)"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "IPerf UDP",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Throughput (Mbits/sec)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "description": "",
+                    "fill": 0,
+                    "id": 36,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.k8s-netperf.netperf.Remote_VM_using_Pod_IP.max, 3), 5, 6)"
+                        },
+                        {
+                            "hide": false,
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.k8s-netperf.netperf.Same_VM_using_Pod_IP.max, 3), 5, 6)"
+                        },
+                        {
+                            "hide": true,
+                            "refId": "A",
+                            "target": "$MachineType.performance.{carrier4_stage,carrier3_stage}.1_1*.k8s-netperf.netperf.Remote_VM_using_Pod_IP.max, 3",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "netperf",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Throughput (Mbits/sec)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": "",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 250,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 1,
+                    "id": 39,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": false,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.sysbench.cpu.threads_2.u2c_2x4_encrypted.*.95thpercentile.sparse-avg, 3), 6, 7)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Sysbench  CPU - 95th percentile - 2 threads",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time per-request (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 1,
+                    "id": 38,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": false,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.sysbench.memory.threads_2.u2c_2x4_encrypted.*.95thpercentile.sparse-avg, 3), 6, 7)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Sysbench Memory - 95th percentile - 2 threads",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time per-request (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 1,
+                    "id": 37,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": false,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.sysbench.fileio.threads_2.u2c_2x4_encrypted.{w1,w2,w3,w4,w5}.95thpercentile.sparse-avg, 3), 6, 7)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Sysbench FileIO - 95th Percentile - 2 Threads",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time per-request (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 252,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 12,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.append-to-big-files.instances-50.*.duration.sparse-avg, 3), 5)"
+                        },
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.append-to-big-files.instances-10.*.duration.sparse-avg, 3), 5)"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Docker Storage  : Append to Big FIles",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time to Read/Write Data (s)",
+                            "logBase": 1,
+                            "max": "1",
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 32,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.append-to-file-tree.instances-50.*.duration.sparse-avg, 3), 5)"
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.append-to-file-tree.instances-10.*.duration.sparse-avg, 3), 5)"
+                        },
+                        {
+                            "hide": true,
+                            "refId": "A",
+                            "target": "$MachineType.performance.{carrier4_stage,carrier3_stage}.1_1*.docker_storage.append-to-file-tree.instances-50.overlay2.duration.sparse-avg",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Docker Storage  : Append to FIle Tree",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time to Read/Write Data (s)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 15,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.append-to-small-files.instances-50.*.duration.sparse-avg, 3), 5)"
+                        },
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.append-to-small-files.instances-10.*.duration.sparse-avg, 3), 5)"
+                        },
+                        {
+                            "hide": true,
+                            "refId": "C",
+                            "target": "aliasByNode($MachineType.performance.{carrier3_stage,carrier4_stage}.docker_storage.append-to-small-files.instances-50.overlay2.duration.sparse-avg, 6)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Docker Storage  : Append to Small Files",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time to Read/Write Data (s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 13,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.read-big-files.instances-50.*.duration.sparse-avg, 3), 6)"
+                        },
+                        {
+                            "hide": false,
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.read-big-files.instances-10.*.duration.sparse-avg, 3), 5)"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Docker Storage  : Read Big FIles",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time to Read/Write Data (s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 33,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.read-file-tree.instances-50.*.duration.sparse-avg, 3), 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.read-file-tree.instances-10.*.duration.sparse-avg, 3), 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": true,
+                            "refId": "C",
+                            "target": "aliasByNode($MachineType.performance.{carrier3_stage,carrier4_stage}.docker_storage.read-file-tree.instances-50.overlay2.duration.sparse-avg, 6, 7)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Docker Storage  : Read File Tree",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time to Read/Write Data (s)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 16,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.read-small-files.instances-50.*.duration.sparse-avg, 3), 5)"
+                        },
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.read-small-files.instances-10.*.duration.sparse-avg, 3), 5)"
+                        },
+                        {
+                            "hide": true,
+                            "refId": "C",
+                            "target": "$MachineType.performance.{carrier4_stage,carrier3_stage}.1_1*.docker_storage.read-small-files.instances-50.overlay2.duration.sparse-avg",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Docker Storage  : Read Small FIles",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time to Read/Write Data (s)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 250,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 40,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.persistent_storage.fio-ibmc-file-silver-200Gi.job_4k_bs.iops.sparse-avg, 3), 4, 5, 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.persistent_storage.fio-ibmc-file-silver-200Gi.job_16k_bs.iops.sparse-avg, 3), 4, 5, 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.persistent_storage.fio-ibmc-file-silver-200Gi.job_64k_bs.iops.sparse-avg, 3), 4, 5, 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.persistent_storage.fio-ibmc-block-silver-200Gi.job_4k_bs.iops.sparse-avg, 3), 4, 5, 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "E",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.persistent_storage.fio-ibmc-block-silver-200Gi.job_16k_bs.iops.sparse-avg, 3), 4, 5, 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "F",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.persistent_storage.fio-ibmc-block-silver-200Gi.job_64k_bs.iops.sparse-avg, 3), 4, 5, 6)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Persistent Storage : Silver 200GiB : IOPS",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "IOPS ",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 41,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.persistent_storage.ioping-ibmc-block-silver-200Gi.latency.sparse-avg, 3), 4)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.persistent_storage.ioping-ibmc-file-silver-200Gi.latency.sparse-avg, 3), 4)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Persistent File Storage : Silver 200GiB : Average Latency (ms)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Average Latency (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 42,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.persistent_storage.ioping-ibmc-block-silver-200Gi.latency.max, 3), 4)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.persistent_storage.ioping-ibmc-file-silver-200Gi.latency.max, 3), 4)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Persistent File Storage : Silver 200GiB : Max Latency (ms)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": " Max Latency (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 43,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 3,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.persistent_storage.fio-ibmc-file-silver-200Gi.job_4k_bs.bw.sparse-avg, 3), 4, 5, 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.persistent_storage.fio-ibmc-file-silver-200Gi.job_16k_bs.bw.sparse-avg, 3), 4, 5, 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.persistent_storage.fio-ibmc-file-silver-200Gi.job_64k_bs.bw.sparse-avg, 3), 4, 5, 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.persistent_storage.fio-ibmc-block-silver-200Gi.job_4k_bs.bw.sparse-avg, 3), 4, 5, 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "E",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.persistent_storage.fio-ibmc-block-silver-200Gi.job_16k_bs.bw.sparse-avg, 3), 4, 5, 6)",
+                            "textEditor": false
+                        },
+                        {
+                            "refId": "F",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.persistent_storage.fio-ibmc-block-silver-200Gi.job_64k_bs.bw.sparse-avg, 3), 4, 5, 6)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Persistent Storage : Silver 200GiB : Bandwidth (Kb/s)",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Kb/s",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 250,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 49,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.APIResponsiveness.hollow_nodes200.*.pods.Perc90.max, 3), 6, 7, 8)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "HOLLOW NODES : Kubernetes E2E Tests : POD : API Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 50,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.APIResponsiveness.hollow_nodes200.*.nodes.Perc90.max, 3), 6, 7, 8)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "HOLLOW NODES : Kubernetes E2E Tests : NODE : API Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 51,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.APIResponsiveness.hollow_nodes200.*.services.Perc90.max, 3), 6, 7, 8)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "HOLLOW NODES : Kubernetes E2E Tests : SERVICE : API Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 250,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 52,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.APIResponsiveness.hollow_nodes200.*.deployments.Perc90.max, 3), 6, 7, 8)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "HOLLOW NODE : Kubernetes E2E Tests : DEPLOYMENT : API Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 53,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 8,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.load.APIResponsiveness.hollow_nodes200.*.replicationcontrollers.Perc90.max, 3), 6, 7, 8)",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "HOLLOW NODES : Kubernetes E2E Tests : REPLICATION CONTROLLER : API Response Time",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Response Time (ms)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        }
+    ],
+    "schemaVersion": 14,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "tags": [],
+                    "text": "carrier3_stage",
+                    "value": "carrier3_stage"
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "CarrierName",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "carrier1_stage",
+                        "value": "carrier1_stage"
+                    },
+                    {
+                        "selected": false,
+                        "text": "carrier2_stage",
+                        "value": "carrier2_stage"
+                    },
+                    {
+                        "selected": true,
+                        "text": "carrier3_stage",
+                        "value": "carrier3_stage"
+                    },
+                    {
+                        "selected": false,
+                        "text": "carrier4_stage",
+                        "value": "carrier4_stage"
+                    }
+                ],
+                "query": "carrier1_stage, carrier2_stage,carrier3_stage,carrier4_stage",
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "text": "1_10*",
+                    "value": "1_10*"
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": "Kubernetes Major Version",
+                "multi": false,
+                "name": "KubeVersion",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "*",
+                        "value": "*"
+                    },
+                    {
+                        "selected": true,
+                        "text": "1_10*",
+                        "value": "1_10*"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1_11*",
+                        "value": "1_11*"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1_12*",
+                        "value": "1_12*"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1_13*",
+                        "value": "1_13*"
+                    }
+                ],
+                "query": "*,1_10*,1_11*,1_12*,1_13*",
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "tags": [],
+                    "text": "u2c_2x4",
+                    "value": [
+                        "u2c_2x4"
+                    ]
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": "Machine Type",
+                "multi": false,
+                "name": "MachineType",
+                "options": [
+                    {
+                        "selected": true,
+                        "text": "u2c_2x4",
+                        "value": "u2c_2x4"
+                    },
+                    {
+                        "selected": false,
+                        "text": "u3c_2x4",
+                        "value": "u3c_2x4"
+                    },
+                    {
+                        "selected": false,
+                        "text": "dal09",
+                        "value": "dal09"
+                    },
+                    {
+                        "selected": false,
+                        "text": "dg",
+                        "value": "dg"
+                    },
+                    {
+                        "selected": false,
+                        "text": "dm",
+                        "value": "dm"
+                    },
+                    {
+                        "selected": false,
+                        "text": "nr",
+                        "value": "nr"
+                    },
+                    {
+                        "selected": false,
+                        "text": "js",
+                        "value": "js"
+                    },
+                    {
+                        "selected": false,
+                        "text": "rgs",
+                        "value": "rgs"
+                    },
+                    {
+                        "selected": false,
+                        "text": "kt",
+                        "value": "kt"
+                    }
+                ],
+                "query": "u2c_2x4, u3c_2x4, dal09, dg, dm, nr, js, rgs, kt",
+                "type": "custom"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-7d",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "5s",
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ],
+        "time_options": [
+            "5m",
+            "15m",
+            "1h",
+            "6h",
+            "12h",
+            "24h",
+            "2d",
+            "7d",
+            "30d"
+        ]
+    },
+    "timezone": "browser",
+    "title": "Performance - Summary",
+    "version": 76
+}

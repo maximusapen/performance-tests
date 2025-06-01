@@ -1,0 +1,2469 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "hideControls": false,
+  "id": 10135579,
+  "links": [
+    {
+      "icon": "external link",
+      "tags": [],
+      "type": "link"
+    }
+  ],
+  "refresh": false,
+  "rows": [
+    {
+      "collapse": false,
+      "height": 224,
+      "panels": [
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 16,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "B",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_14.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "A",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_17.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_3.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_117.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "E",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_122.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "F",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_75.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "G",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_179.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "H",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_181.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "I",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_163.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [
+            {
+              "colorMode": "critical",
+              "fill": true,
+              "line": true,
+              "op": "gt",
+              "value": 1540
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "WORKER NODES : %CPU - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "% CPU Used",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 211,
+      "panels": [
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 25,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "B",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_19.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "A",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_79.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_164.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_19.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "E",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_6.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "F",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_89.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "G",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_92.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "H",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_184.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "I",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_177.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [
+            {
+              "colorMode": "critical",
+              "fill": true,
+              "line": true,
+              "op": "gt",
+              "value": 1540
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "ARMADA NODES : %CPU - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "% CPU Used",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 207,
+      "panels": [
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 27,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "B",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_21.cpu.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [
+            {
+              "colorMode": "critical",
+              "fill": true,
+              "line": true,
+              "op": "gt",
+              "value": 1540
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "MASTER NODE : %CPU - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "% CPU Used",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 28,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "B",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_14.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "A",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_17.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_3.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_117.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "E",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_122.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "F",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_75.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "G",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_179.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "H",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_181.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "I",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_163.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [
+            {
+              "colorMode": "critical",
+              "fill": true,
+              "line": true,
+              "op": "gt",
+              "value": 1540
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "WORKER NODES : %Memory Used - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "% Memory Used",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 29,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "B",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_19.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "A",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_79.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_164.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_19.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "E",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_6.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "F",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_89.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "G",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_92.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "H",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_184.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "I",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_177.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [
+            {
+              "colorMode": "critical",
+              "fill": true,
+              "line": true,
+              "op": "gt",
+              "value": 1540
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "ARMADA NODES : %Memory Used - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "% Memory Used",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 30,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "B",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_21.memory.pcnt_used.sparse-avg, 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [
+            {
+              "colorMode": "critical",
+              "fill": true,
+              "line": true,
+              "op": "gt",
+              "value": 1540
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "MASTER NODE : %Memory Used - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "% Memory Used",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 36,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_14.eth0.network.transmit.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_17.eth0.network.transmit.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_3.eth0.network.transmit.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_117.eth0.network.transmit.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "E",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_122.eth0.network.transmit.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "F",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_75.eth0.network.transmit.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "G",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_179.eth0.network.transmit.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "H",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_181.eth0.network.transmit.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "I",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_163.eth0.network.transmit.private.sparse-avg, 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "WORKER NODES : Network Tx : eth0 (private) - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bps",
+              "label": "Network Traffic",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 37,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_14.eth0.network.receive.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_17.eth0.network.receive.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_3.eth0.network.receive.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_117.eth0.network.receive.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "E",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_122.eth0.network.receive.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "F",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_75.eth0.network.receive.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "G",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_179.eth0.network.receive.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "H",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_181.eth0.network.receive.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "I",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_163.eth0.network.receive.private.sparse-avg, 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "WORKER NODES : Network Rx : eth0 (private) - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bps",
+              "label": "Network Traffic",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 39,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_14.eth1.network.transmit.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_17.eth1.network.transmit.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_3.eth1.network.transmit.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_117.eth1.network.transmit.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "E",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_122.eth1.network.transmit.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "F",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_75.eth1.network.transmit.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "G",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_179.eth1.network.transmit.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "H",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_181.eth1.network.transmit.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "I",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_163.eth1.network.transmit.public.sparse-avg, 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "WORKER NODES : Network Tx : eth1 (public) - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bps",
+              "label": "Network Traffic",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 40,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_14.eth1.network.receive.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_17.eth1.network.receive.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_3.eth1.network.receive.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_117.eth1.network.receive.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "E",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_122.eth1.network.receive.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "F",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_75.eth1.network.receive.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "G",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_179.eth1.network.receive.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "H",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_181.eth1.network.receive.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "I",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_163.eth1.network.receive.public.sparse-avg, 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "WORKER NODES : Network Rx : eth1 (public) - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bps",
+              "label": "Network Traffic",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 31,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_19.eth0.network.transmit.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_79.eth0.network.transmit.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_164.eth0.network.transmit.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_19.eth0.network.transmit.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "E",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_6.eth0.network.transmit.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "F",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_89.eth0.network.transmit.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "G",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_92.eth0.network.transmit.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "H",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_184.eth0.network.transmit.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "I",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_177.eth0.network.transmit.private.sparse-avg, 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "ARMADA NODES: Network Tx : eth0 (private) - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bps",
+              "label": "Network Traffic",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 44,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_19.eth0.network.receive.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_79.eth0.network.receive.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_164.eth0.network.receive.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_19.eth0.network.receive.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "E",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_6.eth0.network.receive.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "F",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_89.eth0.network.receive.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "G",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_92.eth0.network.receive.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "H",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_184.eth0.network.receive.private.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "I",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_177.eth0.network.receive.private.sparse-avg, 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "ARMADA NODES: Network Rx : eth0 (private) - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bps",
+              "label": "Network Traffic",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 45,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_19.eth1.network.transmit.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_79.eth1.network.transmit.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_164.eth1.network.transmit.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_19.eth1.network.transmit.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "E",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_6.eth1.network.transmit.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "F",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_89.eth1.network.transmit.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "G",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_92.eth1.network.transmit.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "H",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_184.eth1.network.transmit.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "I",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_177.eth1.network.transmit.public.sparse-avg, 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "ARMADA NODES: Network Tx : eth1 (public) - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bps",
+              "label": "Network Traffic",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 46,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_19.eth1.network.receive.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_79.eth1.network.receive.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "C",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_164.eth1.network.receive.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_19.eth1.network.receive.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "E",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_94_114_6.eth1.network.receive.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "F",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_89.eth1.network.receive.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "G",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_184_18_92.eth1.network.receive.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "H",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_184.eth1.network.receive.public.sparse-avg, 3)",
+              "textEditor": false
+            },
+            {
+              "refId": "I",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.10_73_120_177.eth1.network.receive.public.sparse-avg, 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "ARMADA NODES: Network Rx : eth1 (public) - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bps",
+              "label": "Network Traffic",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 35,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(performance.$CarrierName.LargeCluster.10_94_114_21.eth0.network.transmit.private.sparse-avg, 'Carrier Master')",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "alias(performance.$CarrierName.LargeCluster.10_94_114_5.eth0.network.transmit.private.sparse-avg, 'Prometheus')",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "MASTER/PROMETHEUS NODES: Network Tx: eth0 (private) - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bps",
+              "label": "Network Traffic",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 41,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(performance.$CarrierName.LargeCluster.10_94_114_21.eth0.network.receive.private.sparse-avg, 'Carrier Master')",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "alias(performance.$CarrierName.LargeCluster.10_94_114_5.eth0.network.receive.private.sparse-avg, 'Prometheus')",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "MASTER/PROMETHEUS NODES: Network Rx: eth0 (private) - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bps",
+              "label": "Network Traffic",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 42,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(performance.$CarrierName.LargeCluster.10_94_114_21.eth1.network.transmit.public.sparse-avg, 'Carrier Master')",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "alias(performance.$CarrierName.LargeCluster.10_94_114_5.eth1.network.transmit.public.sparse-avg, 'Prometheus')",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "MASTER/PROMETHEUS NODES: Network Tx: eth1 (public) - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bps",
+              "label": "Network Traffic",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 43,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(performance.$CarrierName.LargeCluster.10_94_114_21.eth1.network.receive.public.sparse-avg, 'Carrier Master')",
+              "textEditor": false
+            },
+            {
+              "refId": "B",
+              "target": "alias(performance.$CarrierName.LargeCluster.10_94_114_5.eth1.network.receive.public.sparse-avg, 'Prometheus')",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "MASTER/PROMETHEUS NODES: Network Rx: eth1 (public) - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bps",
+              "label": "Network Traffic",
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 20,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.*.xvda.disk.pcnt_busy.sparse-avg, 3)",
+              "textEditor": true
+            }
+          ],
+          "thresholds": [
+            {
+              "colorMode": "critical",
+              "fill": true,
+              "line": true,
+              "op": "gt",
+              "value": 1540
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "ALL NODES : %Disk Busy : xvda - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "% DIsk Busy",
+              "logBase": 1,
+              "max": "100",
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 21,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.*.xvdb.disk.pcnt_busy.sparse-avg, 3)",
+              "textEditor": true
+            }
+          ],
+          "thresholds": [
+            {
+              "colorMode": "critical",
+              "fill": true,
+              "line": true,
+              "op": "gt",
+              "value": 1540
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "ALL NODES : %Disk Busy : xvdv - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "% DIsk Busy",
+              "logBase": 1,
+              "max": "100",
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {
+            "waiting_for_master_deployment": "#BA43A9"
+          },
+          "bars": false,
+          "datasource": "IBM Cloud Monitoring",
+          "fill": 0,
+          "id": 22,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+              "dashboard": "Overview - Home",
+              "includeVars": true,
+              "title": "Overview - Home",
+              "type": "dashboard"
+            }
+          ],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(performance.$CarrierName.LargeCluster.*.xvdc.disk.pcnt_busy.sparse-avg, 3)",
+              "textEditor": true
+            }
+          ],
+          "thresholds": [
+            {
+              "colorMode": "critical",
+              "fill": true,
+              "line": true,
+              "op": "gt",
+              "value": 1540
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "ALL NODES : %Disk Busy Per Worker : xvdc - $CarrierName",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "% DIsk Busy",
+              "logBase": 1,
+              "max": "100",
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    }
+  ],
+  "schemaVersion": 14,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "text": "carrier3_stage",
+          "value": "carrier3_stage"
+        },
+        "hide": 2,
+        "label": null,
+        "name": "CarrierName",
+        "options": [
+          {
+            "selected": true,
+            "text": "carrier3_stage",
+            "value": "carrier3_stage"
+          }
+        ],
+        "query": "carrier3_stage",
+        "type": "constant"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "1_11*",
+          "value": "1_11*"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "Kubernetes Major Version",
+        "multi": false,
+        "name": "KubeVersion",
+        "options": [
+          {
+            "selected": false,
+            "text": "*",
+            "value": "*"
+          },
+          {
+            "selected": false,
+            "text": "1_10*",
+            "value": "1_10*"
+          },
+          {
+            "selected": true,
+            "text": "1_11*",
+            "value": "1_11*"
+          },
+          {
+            "selected": false,
+            "text": "1_12*",
+            "value": "1_12*"
+          },
+          {
+            "selected": false,
+            "text": "1_13*",
+            "value": "1_13*"
+          }
+        ],
+        "query": "*,1_10*,1_11*,1_12*,1_13*",
+        "type": "custom"
+      }
+    ]
+  },
+  "time": {
+    "from": "2018-10-19T08:00:00.000Z",
+    "to": "2018-10-19T19:00:00.000Z"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "browser",
+  "title": "PrometheusMetrics-Carrier3",
+  "version": 23
+}

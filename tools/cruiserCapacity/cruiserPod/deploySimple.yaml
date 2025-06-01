@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpperf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: httpperf
+  template:
+    metadata:
+      labels:
+        app: httpperf
+    spec:
+      imagePullSecrets:
+      - name: performance-registry-token
+      containers:
+        - name: httpperf1
+          image: "stg.icr.io/armada_performance_stage4/httpperf:latest"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+            - containerPort: 443

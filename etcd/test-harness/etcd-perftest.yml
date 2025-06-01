@@ -1,0 +1,99 @@
+apiVersion: etcd.database.coreos.com/v1beta2
+kind: EtcdCluster
+metadata:
+  name: etcd-perftest
+spec:
+  TLS:
+    static:
+      member:
+        peerSecret: etcd-perftest-peer-tls # pragma: allowlist secret
+        serverSecret: etcd-perftest-server-tls # pragma: allowlist secret
+      operatorSecret: etcd-perftest-client-tls # pragma: allowlist secret
+  pod:
+    ClusterDomain: ""
+    annotations:
+      prometheus.io/port: "2381"
+      prometheus.io/scrape: "true"
+      sidecar.istio.io/inject: "false"
+    affinity:
+      podAntiAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+              - key: etcd_cluster
+                operator: In
+                values:
+                - etcd-501-armada-stage5-south
+            topologyKey: failure-domain.beta.kubernetes.io/zone
+          weight: 100
+        - podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+              - key: etcd_cluster
+                operator: In
+                values:
+                - etcd-perftest
+            topologyKey: failure-domain.beta.kubernetes.io/zone
+          weight: 100
+        requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+            - key: etcd_cluster
+              operator: In
+              values:
+              - etcd-501-armada-stage5-south
+          topologyKey: kubernetes.io/hostname
+        - labelSelector:
+            matchExpressions:
+            - key: etcd_cluster
+              operator: In
+              values:
+              - etcd-perftest
+          topologyKey: kubernetes.io/hostname
+    busyboxImage: icr.io/armada-master/busybox:1.33.1-glibc
+    etcdEnv:
+    - name: ETCD_ELECTION_TIMEOUT
+      value: "15000"
+    - name: ETCD_HEARTBEAT_INTERVAL
+      value: "100"
+    - name: ETCD_SNAPSHOT_COUNT
+      value: "10000"
+    - name: ETCD_MAX_SNAPSHOTS
+      value: "5"
+    - name: ETCD_AUTO_COMPACTION_RETENTION
+      value: "1"
+    - name: ETCD_QUOTA_BACKEND_BYTES
+      value: "8000000000"
+    livenessProbe:
+      failureThreshold: 3
+      initialDelaySeconds: 300
+      periodSeconds: 60
+      successThreshold: 1
+      timeoutSeconds: 10
+    readinessProbe:
+      failureThreshold: 3
+      initialDelaySeconds: 1
+      periodSeconds: 60
+      successThreshold: 1
+      timeoutSeconds: 10
+    resources:
+      requests:
+        cpu: 50m
+        memory: 100Mi
+    tolerations:
+    - effect: NoSchedule
+      key: etcd
+      operator: Equal
+      value: armada
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 600
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 600
+  repository: gcr.io/etcd-development/etcd
+  size: 5
+  version: 3.4.14

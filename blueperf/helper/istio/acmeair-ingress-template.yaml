@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: acmeairingressresource
+ namespace: istio-system
+ annotations:
+   kubernetes.io/ingress.class: public-iks-k8s-nginx
+   nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+ tls:
+ - hosts:
+   - acmeair.INGRESS_HOST
+   secretName: INGRESS_SECRET
+ rules:
+ - host: acmeair.INGRESS_HOST
+   http:
+     paths:
+     - path: /
+       pathType: Prefix 
+       backend:
+         service:
+           name: istio-ingressgateway
+           port:
+             number: 80

@@ -1,0 +1,769 @@
+{
+    "annotations": {
+        "list": []
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "hideControls": false,
+    "id": 9211419,
+    "links": [
+        {
+            "icon": "external link",
+            "tags": [],
+            "type": "link"
+        }
+    ],
+    "refresh": false,
+    "rows": [
+        {
+            "collapse": false,
+            "height": 252,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 12,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.append-to-big-files.instances-50.*.duration.sparse-avg, 3), 5)"
+                        },
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.append-to-big-files.instances-10.*.duration.sparse-avg, 3), 5)"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Docker Storage  : Append to Big FIles",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time to Read/Write Data (s)",
+                            "logBase": 1,
+                            "max": "1",
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 32,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.append-to-file-tree.instances-50.*.duration.sparse-avg, 3), 5)"
+                        },
+                        {
+                            "refId": "D",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.append-to-file-tree.instances-10.*.duration.sparse-avg, 3), 5)"
+                        },
+                        {
+                            "hide": true,
+                            "refId": "A",
+                            "target": "$MachineType.performance.{carrier4_stage,carrier3_stage}.1_1*.docker_storage.append-to-file-tree.instances-50.overlay2.duration.sparse-avg",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Docker Storage  : Append to FIle Tree",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time to Read/Write Data (s)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 15,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.append-to-small-files.instances-50.*.duration.sparse-avg, 3), 5)"
+                        },
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.append-to-small-files.instances-10.*.duration.sparse-avg, 3), 5)"
+                        },
+                        {
+                            "hide": true,
+                            "refId": "C",
+                            "target": "aliasByNode($MachineType.performance.{carrier3_stage,carrier4_stage}.docker_storage.append-to-small-files.instances-50.overlay2.duration.sparse-avg, 6)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Docker Storage  : Append to Small Files",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time to Read/Write Data (s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 13,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.read-big-files.instances-50.*.duration.sparse-avg, 3), 6)"
+                        },
+                        {
+                            "hide": false,
+                            "refId": "C",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.read-big-files.instances-10.*.duration.sparse-avg, 3), 5)"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Docker Storage  : Read Big FIles",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time to Read/Write Data (s)",
+                            "logBase": 1,
+                            "max": "30",
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 33,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.read-file-tree.instances-50.*.duration.sparse-avg, 3), 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.read-file-tree.instances-10.*.duration.sparse-avg, 3), 5)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": true,
+                            "refId": "C",
+                            "target": "aliasByNode($MachineType.performance.{carrier3_stage,carrier4_stage}.docker_storage.read-file-tree.instances-50.overlay2.duration.sparse-avg, 6, 7)",
+                            "textEditor": true
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Docker Storage  : Read File Tree",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time to Read/Write Data (s)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "datasource": "IBM Cloud Monitoring",
+                    "fill": 0,
+                    "id": 16,
+                    "legend": {
+                        "avg": false,
+                        "current": false,
+                        "max": false,
+                        "min": false,
+                        "show": true,
+                        "total": false,
+                        "values": false
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-home",
+                            "dashboard": "Overview - Home",
+                            "title": "Overview - Home",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "nullPointMode": "connected",
+                    "percentage": false,
+                    "pointradius": 3,
+                    "points": true,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "span": 4,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "A",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.read-small-files.instances-50.*.duration.sparse-avg, 3), 5)"
+                        },
+                        {
+                            "hide": false,
+                            "refId": "B",
+                            "target": "aliasByNode(averageSeriesWithWildcards($MachineType.performance.$CarrierName.$KubeVersion.docker_storage.read-small-files.instances-10.*.duration.sparse-avg, 3), 5)"
+                        },
+                        {
+                            "hide": true,
+                            "refId": "C",
+                            "target": "$MachineType.performance.{carrier4_stage,carrier3_stage}.1_1*.docker_storage.read-small-files.instances-50.overlay2.duration.sparse-avg",
+                            "textEditor": false
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeShift": null,
+                    "title": "Docker Storage  : Read Small FIles",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "format": "short",
+                            "label": "Time to Read/Write Data (s)",
+                            "logBase": 1,
+                            "max": null,
+                            "min": "0",
+                            "show": true
+                        },
+                        {
+                            "format": "short",
+                            "label": null,
+                            "logBase": 1,
+                            "max": null,
+                            "min": null,
+                            "show": true
+                        }
+                    ]
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        },
+        {
+            "collapse": false,
+            "height": 90,
+            "panels": [
+                {
+                    "content": "# $TestName : Cruiser CPU/Memory Stats\n(Click top left corner of this box to get stats)",
+                    "id": 34,
+                    "links": [
+                        {
+                            "dashUri": "db/a-4a160c3a25d49f6171b796555191f7da_overview-cruiserstats",
+                            "dashboard": "Overview - CruiserStats",
+                            "includeVars": true,
+                            "keepTime": true,
+                            "title": "Overview - CruiserStats",
+                            "type": "dashboard"
+                        }
+                    ],
+                    "mode": "markdown",
+                    "span": 12,
+                    "title": "",
+                    "type": "text"
+                }
+            ],
+            "repeat": null,
+            "repeatIteration": null,
+            "repeatRowId": null,
+            "showTitle": false,
+            "title": "Dashboard Row",
+            "titleSize": "h6"
+        }
+    ],
+    "schemaVersion": 14,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": "carrier4_stage",
+                    "value": "carrier4_stage"
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "CarrierName",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "carrier1_stage",
+                        "value": "carrier1_stage"
+                    },
+                    {
+                        "selected": false,
+                        "text": "carrier2_stage",
+                        "value": "carrier2_stage"
+                    },
+                    {
+                        "selected": false,
+                        "text": "carrier3_stage",
+                        "value": "carrier3_stage"
+                    },
+                    {
+                        "selected": true,
+                        "text": "carrier4_stage",
+                        "value": "carrier4_stage"
+                    }
+                ],
+                "query": "carrier1_stage, carrier2_stage,carrier3_stage,carrier4_stage",
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "text": "1_11*",
+                    "value": "1_11*"
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": "Kubernetes Major Version",
+                "multi": false,
+                "name": "KubeVersion",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "*",
+                        "value": "*"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1_10*",
+                        "value": "1_10*"
+                    },
+                    {
+                        "selected": true,
+                        "text": "1_11*",
+                        "value": "1_11*"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1_12*",
+                        "value": "1_12*"
+                    },
+                    {
+                        "selected": false,
+                        "text": "1_13*",
+                        "value": "1_13*"
+                    }
+                ],
+                "query": "*,1_10*,1_11*,1_12*,1_13*",
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "text": "docker-storage",
+                    "value": "docker-storage"
+                },
+                "hide": 2,
+                "includeAll": false,
+                "label": "TestName",
+                "multi": false,
+                "name": "TestName",
+                "options": [
+                    {
+                        "selected": true,
+                        "text": "docker-storage",
+                        "value": "docker-storage"
+                    }
+                ],
+                "query": "docker-storage",
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "text": "u2c_2x4",
+                    "value": "u2c_2x4"
+                },
+                "hide": 0,
+                "includeAll": false,
+                "label": "Machine Type",
+                "multi": false,
+                "name": "MachineType",
+                "options": [
+                    {
+                        "selected": true,
+                        "text": "u2c_2x4",
+                        "value": "u2c_2x4"
+                    },
+                    {
+                        "selected": false,
+                        "text": "u3c_2x4",
+                        "value": "u3c_2x4"
+                    },
+                    {
+                        "selected": false,
+                        "text": "dal09",
+                        "value": "dal09"
+                    },
+                    {
+                        "selected": false,
+                        "text": "dg",
+                        "value": "dg"
+                    },
+                    {
+                        "selected": false,
+                        "text": "dm",
+                        "value": "dm"
+                    },
+                    {
+                        "selected": false,
+                        "text": "nr",
+                        "value": "nr"
+                    },
+                    {
+                        "selected": false,
+                        "text": "js",
+                        "value": "js"
+                    },
+                    {
+                        "selected": false,
+                        "text": "rgs",
+                        "value": "rgs"
+                    },
+                    {
+                        "selected": false,
+                        "text": "kt",
+                        "value": "kt"
+                    }
+                ],
+                "query": "u2c_2x4, u3c_2x4, dal09, dg, dm, nr, js, rgs, kt",
+                "type": "custom"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-7d",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "5s",
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ],
+        "time_options": [
+            "5m",
+            "15m",
+            "1h",
+            "6h",
+            "12h",
+            "24h",
+            "2d",
+            "7d",
+            "30d"
+        ]
+    },
+    "timezone": "browser",
+    "title": "Overview - Docker Storage",
+    "version": 7
+}

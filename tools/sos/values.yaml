@@ -1,0 +1,6 @@
+crowdstrike:
+  install: true
+changetracker:
+  install: true
+nessus:
+  install: true  

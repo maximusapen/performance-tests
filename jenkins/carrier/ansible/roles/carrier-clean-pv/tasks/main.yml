@@ -1,0 +1,48 @@
+---
+# /mnt/nfs/<carrier> is mounted by armada-carrier-deploy Jenkins job
+# with /mnt/nfs mount point.
+# The template in this job mounts the same PV to /mnt/nfs_perf/cruiser/.
+- name: Check if the /mnt/nfs_perf/cruiser/<carrier> directory exists
+  stat:
+      path: "/mnt/nfs_perf/cruiser/{{CARRIER}}"
+  register: carrier_data_exists
+  become: true
+  
+- name: Clean up old nfs carrier data
+  shell: rm -fr /mnt/nfs_perf/cruiser/{{CARRIER}}
+  when: carrier_data_exists
+  become: true
+  
+- name: Check if the /mnt/nfs_perf/carrier directory exists
+  stat:
+      path: "/mnt/nfs_perf/carrier"
+  register: carrier_etcd_exists
+  become: true
+  
+- name: Clean up old carrier etcd data
+  shell: ls /mnt/nfs_perf/carrier; rm -fr /mnt/nfs_perf/carrier/*; ls /mnt/nfs_perf/carrier
+  when: carrier_etcd_exists
+  become: true
+  
+- name: Check if the /mnt/nfs_perf/armada directory exists
+  stat:
+      path: "/mnt/nfs_perf/armada"
+  register: carrier_armada_exists
+  become: true
+  
+- name: Clean up old carrier etcd data
+  shell: ls /mnt/nfs_perf/armada; rm -fr /mnt/nfs_perf/armada/*; ls /mnt/nfs_perf/armada
+  when: carrier_armada_exists
+  become: true
+
+- name: Check if the /mnt/nfs_perf/armada_ops directory exists
+  stat:
+      path: "/mnt/nfs_perf/armada_ops"
+  register: carrier_armada_ops_exists
+  become: true
+  
+- name: Clean up old armada_ops data ignore errors
+  shell: ls /mnt/nfs_perf/armada_ops; rm -fr /mnt/nfs_perf/armada_ops/*; ls /mnt/nfs_perf/armada_ops
+  when: carrier_armada_ops_exists
+  become: true
+  ignore_errors: True

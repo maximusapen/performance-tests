@@ -1,0 +1,122 @@
+influxdb:
+  host: "10.38.120.142"
+  port: 8086
+  database: ArmadaPerf
+  username: admin
+  timeout: 30
+
+slack:
+  enabled: true
+  channel: armada-perf-alerts
+  resultsURL: https://alchemy-testing-jenkins.swg-devops.com/job/Armada-Performance/job/Automation/job/Carrier-Generate-Results-Alerts/lastBuild/consoleFull
+
+options:
+  history:
+    count: 100
+    days: 10
+    current: 30
+    minimum: 50
+  leniency: 10
+  verbose: false
+  failures: false
+
+environments:
+  Stage Carrier 5:
+    carrier: carrier5_stage
+    machineType: [""]
+    kubeVersion: [""]
+    operatingSystem: [""]
+    owner:
+      name: Dan
+      slack: W4CCPLQR5
+      notify: WhenFound
+      days: [Monday, Tuesday, Wednesday, Thursday]
+
+tests:
+  # Cruiser Churn
+  - name: cruiserchurn
+    environment:
+      - kubeVersion: [""]
+        operatingSystem: [""]
+        alerts:
+          - name: armada_api_workers_0_CreateCluster_Mean_Action_Time
+            limitType: ceiling
+            thresholds:
+              "":
+                warn: 1100
+                error: 1800
+                zscore: 2
+          - name: armada_api_workers_1_CreateCluster_Mean_Action_Time
+            limitType: ceiling
+            thresholds:
+              "":
+                warn: 1200
+                error: 1800
+                zscore: 2
+          - name: armada_api__UpdateCluster_Mean_Action_Time
+            limitType: ceiling
+            thresholds:
+              "":
+                warn: 1100
+                error: 1800
+                zscore: 2
+          - name: armada_api__DeleteCluster_Mean_Action_Time
+            limitType: ceiling
+            thresholds:
+              "":
+                warn: 600
+                error: 900
+                zscore: 2
+  - name: cruiserchurn_openshift
+    environment:
+      - kubeVersion: [""]
+        operatingSystem: [""]
+        alerts:
+          - name: armada_api_workers_0_CreateCluster_Mean_Action_Time
+            limitType: ceiling
+            thresholds:
+              "":
+                warn: 1500
+                error: 2000
+                zscore: 2
+          - name: armada_api__UpdateCluster_Mean_Action_Time
+            limitType: ceiling
+            thresholds:
+              "":
+                warn: 3000
+                error: 3600
+                zscore: 2
+          - name: armada_api__DeleteCluster_Mean_Action_Time
+            limitType: ceiling
+            thresholds:
+              "":
+                warn: 600
+                error: 900
+                zscore: 2
+
+  # Cruiser Mon
+  - name: dummycruisermaster
+    environment:
+      - kubeVersion: [""]
+        operatingSystem: [""]
+        alerts:
+          - name: kube_api_services_Latency_Mean
+            limitType: ceiling
+            thresholds:
+              "":
+                warn: 30
+                error: 50
+                zscore: 2
+  - name: dummycruisermaster_tugboat
+    environment:
+      - kubeVersion: [""]
+        operatingSystem: [""]
+        alerts:
+          - name: kube_api_services_Latency_Mean
+            limitType: ceiling
+            thresholds:
+              "":
+                warn: 30
+                error: 50
+                zscore: 2
+

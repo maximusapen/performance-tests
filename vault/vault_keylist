@@ -1,0 +1,53 @@
+# Message:  This file list the keys in Vault and is parsed by Jenkins job to retrieve the key values.
+# Message:  Following the rule:
+# Message:      - Prepend message with "# Message:"
+# Message:  Any carrier specific secrets, group them as stage_carrier<carrier number>_<key>
+
+# Message:  client bluemix credentials
+armada_performance_db_password
+STAGE_GLOBAL_ARMPERF_IBMCLOUD_APIKEY
+PROD_GLOBAL_ARMPERF_IBMCLOUD_APIKEY
+
+# Message: Key for encypting/decrypting secrets
+STAGE_GLOBAL_ARMPERF_CRYPTOKEY
+
+# Message:  Jenkins api token for https://alchemy-containers-jenkins.swg-devops.com/job/Armada-Performance/
+STAGE_GLOBAL_ARMPERF_CONT_JENKINS_TOKEN
+# Message:  Jenkins api token for https://alchemy-testing-jenkins.swg-devops.com/job/Armada-Performance/
+STAGE_GLOBAL_ARMPERF_TEST_JENKINS_TOKEN
+
+# Message:  apikey for service id with Reader/Viewer role for all container registry resources in Armada Performance account
+STAGE_GLOBAL_ARMPERF_REGISTRY_APIKEY
+PROD_GLOBAL_ARMPERF_REGDEV_APIKEY
+
+# Message: IBM Cloud Object Storage HMAC credentials
+PROD_US_SOUTH_ARMPERF_COS_ACCESSKEYID
+PROD_US_SOUTH_ARMPERF_COS_SECRETACCESSKEY
+
+# Message:  client sl credentials
+PROD_GLOBAL_ARMPERF_SOFTLAYER_1186049_USERID
+PROD_GLOBAL_ARMPERF_SOFTLAYER_1186049_APIKEY
+
+# Message: IBM Cloud Classic Infrastructure credentials
+PROD_GLOBAL_ARMPERF_SOFTLAYER_1540207_USERID
+PROD_GLOBAL_ARMPERF_SOFTLAYER_1540207_APIKEY
+
+# Message:  token for slack
+# Message: Slack token for #armada-perf-metrics & #armada-perf-private (https://hooks.slack.com/services/T4LT36D1N/B01KW68CKPD/<STAGE_GLOBAL_ARMPERF_SLACKTOKEN)
+STAGE_GLOBAL_ARMPERF_SLACKTOKEN
+
+# Message: Slack oauth token for armada-perf-alerts App
+ARGONAUTS_ARM_PERF_ALERTS_SLACK_OAUTH_TOKEN
+
+# Message:  launchdarkly api key with description "Armada Performance team - @armada.performance"
+STAGE_GLOBAL_ARMPERF_LD_APIKEY
+
+# Message:  sysdig monitoring access key
+armada_performance_sysdig_key
+
+# Message: logDNA ingestion key for armada-performance
+armada_performance_logdna_ingestion_key
+
+# Message: Satellite VSI ssh keys
+STAGE_GLOBAL_ARMPERF_VSI_PUBLICKEY
+STAGE_GLOBAL_ARMPERF_VSI_PRIVATEKEY

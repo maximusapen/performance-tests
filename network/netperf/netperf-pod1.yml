@@ -1,0 +1,17 @@
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: netperf-pod1
+  name: netperf-pod1
+spec:
+  containers:
+  - name: netperf-pod1
+    image: stg.icr.io/armada_performance_stage5/netperf:latest
+    imagePullPolicy: Always
+    ports:
+    - containerPort: 5201
+      name: iperf
+      protocol: TCP

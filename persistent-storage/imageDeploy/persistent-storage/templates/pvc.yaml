@@ -1,0 +1,19 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: perf-pvc
+  labels:
+    billingType: "hourly"
+  annotations:
+    ibm.io/auto-create-bucket: "false"
+    ibm.io/auto-delete-bucket: "false"
+    ibm.io/bucket: "armada-perf-cos-bucket1"
+    ibm.io/secret-name: "cos-write-access"
+    ibm.io/endpoint: "https://s3.us-south.cloud-object-storage.appdomain.cloud"
+spec:
+  accessModes:
+    - {{ .Values.pvc.accessMode }}
+  resources:
+    requests:
+      storage: {{ .Values.pvc.storageSize }}
+  storageClassName: {{ .Values.pvc.storageClassName }}

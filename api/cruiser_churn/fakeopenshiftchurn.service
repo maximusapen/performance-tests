@@ -1,0 +1,15 @@
+[Unit]
+Description=Fake Openshift Cruiser_churn systemd service.
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /performance/armada-perf/api/cruiser_churn/startChurn.sh fakeopenshift
+Restart=on-failure
+RestartSec=60
+TimeoutStopSec=3600
+KillSignal=SIGINT
+LimitNOFILE=20000
+LimitNPROC=20000
+
+[Install]
+WantedBy=multi-user.target

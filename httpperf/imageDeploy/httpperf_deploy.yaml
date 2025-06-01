@@ -1,0 +1,96 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpperf
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: httpperf
+    spec:
+      containers:
+        - name: httpperf
+          image: "stg.icr.io/armada_performance_stage1/httpperf:latest"
+          ports:
+            - containerPort: 8080
+            - containerPort: 8443
+          imagePullPolicy: Always
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: httpperf-np-service
+spec:
+  type: NodePort
+  selector:
+    app: httpperf
+  ports:
+   - protocol: TCP
+     port: 8080
+     nodePort: 30079
+     name: http
+   - protocol: TCP
+     port: 8443
+     nodePort: 30042
+     name: https
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: httpperf-lb-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: httpperf
+  ports:
+   - protocol: TCP
+     port: 30080
+     targetPort: 8080
+     name: http
+   - protocol: TCP
+     port: 30043
+     targetPort: 8443
+     name: https
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: httpperf-ingress-service
+spec:
+  selector:
+    app: httpperf
+  ports:
+   - protocol: TCP
+     port: 8080
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: httpperf-ingress
+spec:
+  rules:
+  - host: dgcruiser1.us-south.containers.mybluemix.net
+    http:
+      paths:
+      - path: /hello
+        pathType: Prefix
+        backend:
+          service:
+            name: httpperf-ingress-service
+            port:
+              number:  8080
+      - path: /request
+        pathType: Prefix
+        backend:
+          service:
+            name: httpperf-ingress-service
+            port:
+              number: 8080

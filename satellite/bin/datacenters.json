@@ -1,0 +1,16 @@
+[{
+    "dc": "dal10",
+    "public_vlan": "2917088",
+    "private_vlan": "2917094"
+},
+{
+    "dc": "dal12",
+    "public_vlan": "2917050",
+    "private_vlan": "2917048"
+},
+{
+    "dc": "dal13",
+    "public_vlan": "2912590",
+    "private_vlan": "2912568"
+}
+]

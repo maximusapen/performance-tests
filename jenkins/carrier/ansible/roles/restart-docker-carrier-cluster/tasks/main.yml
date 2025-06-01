@@ -1,0 +1,6 @@
+---
+# Start docker on carrier cluster
+
+- name: start docker
+  become_user: root
+  shell: systemctl start docker

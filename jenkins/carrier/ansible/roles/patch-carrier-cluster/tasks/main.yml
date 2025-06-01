@@ -1,0 +1,41 @@
+---
+# Patch carrier
+
+- name: List os details before patch
+  become_user: root
+  shell: uname -rv; cat /proc/version; lsb_release -a
+
+- name: List packages installed before patch
+  become_user: root
+  shell: apt list --installed
+
+- name: Remove test patch - remove test repository if found
+  become_user: root
+  shell: cd /etc/apt/sources.list.d; rm canonical-kernel-team-ubuntu-pti-xenial.list canonical-kernel-team-ubuntu-pti-xenial.list.save
+  ignore_errors: True
+  
+- name: Remove old kernels - copy remove old kernels script
+  copy:
+    src: remove-old-kernels.sh
+    dest: /tmp/remove-old-kernels.sh
+    owner: root
+    group: root
+    mode: 0700
+
+- name: Remove old kernels - run remove old kernels script
+  become_user: root
+  shell: /tmp/remove-old-kernels.sh
+
+- name: Apply official patch - get update
+  become_user: root
+  shell: apt-get update
+
+- name: Apply official patch - install official linux-generic-hwe-16.04
+  become_user: root
+  shell: apt-get -y install linux-generic-hwe-16.04 
+
+- name: List packages installed after old kernal purge and kernal patch
+  become_user: root
+  shell: apt list --installed
+
+  # Need to reboot before getting os details after patch

@@ -1,0 +1,104 @@
+apiVersion: v1
+kind: Service
+metadata:
+  # This service is meant to be used by clients of the database. It exposes a ClusterIP that will
+  # automatically load balance connections to the different database pods.
+  name: etcdcm-public
+  labels:
+    app: etcdcm
+spec:
+  ports:
+  - port: 2379
+    targetPort: 2379
+    name: client
+  - port: 2380
+    targetPort: 2380
+    name: peer
+  type: NodePort
+  selector:
+    app: etcdcm
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: etcdcm
+  labels:
+    app: etcdcm
+spec:
+  ports:
+    - name: peer
+      port: 2380
+    - name: client
+      port: 2379
+  clusterIP: None
+  selector:
+    app: etcdcm
+
+---
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: etcdcm
+data:
+  # create by `echo -n "MyEtcdToken" | base64"
+  token: TXlFdGNkVG9rZW4=
+
+---
+
+apiVersion: apps/v1beta1
+kind: StatefulSet
+metadata:
+  name: etcdcm
+spec:
+  serviceName: "etcdcm"
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: etcdcm
+      annotations:
+        pod.alpha.kubernetes.io/initialized: "true"
+    spec:
+      containers:
+        - name: etcdcm
+          image: quay.io/coreos/etcd:v3.1.5
+          env:
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            - name: POD_NS
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: ETCD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: ETCD_INITIAL_CLUSTER_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: etcdcm
+                  key: token
+            - name: ETCD_DATA_DIR
+              value: "/data/$(ETCD_NAME)"
+            - name: ETCD_INITIAL_CLUSTER
+              value: "etcdcm-0=http://etcdcm-0.etcdcm.$(POD_NS).svc.cluster.local:2380,etcdcm-1=http://etcdcm-1.etcdcm.$(POD_NS).svc.cluster.local:2380,etcdcm-2=http://etcdcm-2.etcdcm.$(POD_NS).svc.cluster.local:2380"
+            - name: ETCD_INITIAL_ADVERTISE_PEER_URLS
+              value: "http://$(ETCD_NAME).etcdcm.$(POD_NS).svc.cluster.local:2380"
+            - name: ETCD_LISTEN_PEER_URLS
+              value: "http://$(POD_IP):2380"
+            - name: ETCD_LISTEN_CLIENT_URLS
+              value: "http://$(POD_IP):2379"
+            - name: ETCD_ADVERTISE_CLIENT_URLS
+              value: "http://$(ETCD_NAME).etcdcm.$(POD_NS).svc.cluster.local:2379"
+            - name: ETCD_QUOTA_BACKEND_BYTES
+              value: "$((1024*1024))"
+          ports:
+            - name: peer
+              containerPort: 2380
+            - name: client
+              containerPort: 2379

@@ -1,0 +1,10 @@
+{{- if eq .Values.action "backup" -}}
+kind: VolumeSnapshot
+apiVersion: snapshot.storage.k8s.io/v1
+metadata:
+  name: snapshot-csi-block-perf-pvc
+spec:
+  volumeSnapshotClassName: ibmc-vpcblock-snapshot
+  source:
+    persistentVolumeClaimName: perf-pvc-cos
+{{- end -}}

@@ -1,0 +1,36 @@
+handler:
+  slack:
+    token: ""
+    channel: ""
+  hipchat:
+    token: ""
+    room: ""
+    url: ""
+  mattermost:
+    channel: ""
+    url: ""
+    username: ""
+  flock:
+    url: ""
+  webhook:
+    url: ""
+  msteams:
+    webhookurl: ""
+  performance:
+    flag: always
+    filter: master-bp7brt120h3f2hi5bnt0
+resource:
+  deployment: true
+  replicationcontroller: false
+  replicaset: true
+  daemonset: false
+  services: true
+  pod: true
+  job: false
+  persistentvolume: false
+  namespace: true
+  secret: false
+  configmap: true
+  ingress: false
+  endpoints: true
+namespace: ""

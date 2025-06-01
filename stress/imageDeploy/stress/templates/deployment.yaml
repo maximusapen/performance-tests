@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-deployment
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    generator: helm
+    date: {{ now | htmlDate }}
+spec:
+  replicas: {{ .Values.podCount }}
+  selector:
+    matchLabels:
+      app: stress
+  template:
+    metadata:
+      name: {{ template "fullname" . }}
+      labels:
+        app: stress
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.registry }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        resources:
+          requests:
+            cpu: {{ .Values.cpu }}
+            memory: {{ .Values.vmBytes }}
+        env:
+        - name: PERF_STRESS_ARGS
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Release.Name }}-config
+              key: PERF_STRESS_ARGS
+        args: ["$(PERF_STRESS_ARGS)"]

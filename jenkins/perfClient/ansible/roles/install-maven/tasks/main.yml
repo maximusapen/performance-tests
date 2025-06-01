@@ -1,0 +1,8 @@
+---
+
+- name: Install maven
+  become: true
+  apt:
+    name: maven
+    state: latest
+    install_recommends: yes

@@ -1,0 +1,28 @@
+# Workaround for armada-chief which uses armada-deploy-nfs but not claiming it.
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: armada-deploy-nfs
+  namespace: armada
+spec:
+  capacity:
+    storage: "{{cruiser_nfs[0].capacity}}"
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: "{{cruiser_nfs[0].server}}"
+    path: "{{cruiser_nfs[0].path}}"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: armada-deploy-nfs
+  namespace: armada
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: "{{cruiser_nfs[0].capacity}}"
+  volumeName: armada-deploy-nfs

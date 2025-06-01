@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: logger
+  namespace: default
+  labels:
+    app: logger
+spec:
+  updateStrategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 100
+  selector:
+    matchLabels:
+      name: logger
+  template:
+    metadata:
+      labels:
+        name: logger
+    spec:
+      tolerations:
+      - operator: Exists
+      initContainers:
+        - image: alpine:3.6
+          name: genlogs
+          command: ["/bin/sh", "-c"]
+          args:
+            - >
+              i=1;
+              while [ "$i" -le 100000 ]; do
+                str=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 500 | head -n 1);
+                echo "TESTING $i: $str";
+                i=$(( i + 1 ));
+              done;
+      containers:
+        - resources:
+            requests:
+              cpu: 0.01
+          image: alpine:3.6
+          name: wait
+          command: ["/bin/sh", "-c"]
+          args:
+            - >
+              while true; do
+                sleep 100000;
+              done

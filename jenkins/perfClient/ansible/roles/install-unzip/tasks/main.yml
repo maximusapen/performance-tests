@@ -1,0 +1,15 @@
+---
+
+- name: Install unzip
+  become: true
+  apt:
+    name: unzip
+    state: latest
+    install_recommends: yes
+
+- name: Install zip
+  become: true
+  apt:
+    name: zip
+    state: latest
+    install_recommends: yes

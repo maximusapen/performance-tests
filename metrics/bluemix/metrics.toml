@@ -1,0 +1,13 @@
+[metrics]
+root = "performance.carrier"
+scheme = "https"
+host = "metrics.stage1.ng.bluemix.net"
+path = "/v1/metrics"
+verbose = false
+ratelimit = 1
+influxdbHost = "10.38.120.142"
+influxdbPort = "8086"
+influxdbName = "ArmadaPerf"
+influxdbUser = "admin"
+influxdbPassword = ""
+influxdbVerbose = true

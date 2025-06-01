@@ -1,0 +1,15 @@
+---
+# Update Influxdb which is installed on perf client 1-3
+
+- name: install the deb file 
+  become: true
+  apt:
+    deb: "https://dl.influxdata.com/influxdb/releases/influxdb_{{ influxdb_version }}_amd64.deb"
+    state: present
+
+- name: restart the influx service
+  service:
+     name: influxdb
+     state: restarted
+     enabled: yes    
+  

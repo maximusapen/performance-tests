@@ -1,0 +1,34 @@
+# Setup kubectl to point to the correct carrier
+# Create priv pods : kubectl apply -f sshdaemon.yaml (this file)
+# Show pods and nodes : kubectl get pods -o wide
+# Exec into pod on a node of interest : kubectl exec <ssh-daemonset pod name> -it -- sh
+# e.g. kubectl exec ssh-daemonset- -it -- sh
+# ssh to host of that pod : Carrier: ssh <username>@localhost or Cruiser: ssh root@localhost
+# Finally delete with :  kubectl delete -f sshdaemon.yaml 
+
+# https://github.ibm.com/alchemy-containers/armada/wiki/SSH-into-any-worker-node
+
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  labels:
+    name: ssh-daemonset
+  name: ssh-daemonset
+spec:
+  template:
+    metadata:
+      labels:
+        name: ssh-daemonset
+    spec:
+      hostNetwork: true
+      containers:
+      - image: kitch/sshdaemonset
+        name: ssh-daemonset
+        volumeMounts:
+        - mountPath: /host
+          name: test-volume
+      volumes:
+      - name: test-volume
+        hostPath:
+          # directory location on host
+          path: /

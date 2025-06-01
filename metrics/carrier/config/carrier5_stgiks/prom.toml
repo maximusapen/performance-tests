@@ -1,0 +1,34 @@
+environment = "stage-dal10"
+carrier = "carrier5"
+port = 30950
+
+devices = "alchemy-netint/network-source/softlayer-data/Acct1858147/devices.csv"
+
+[metrics]
+  [[metrics.carrier_nodes]]
+  name = "cpu.pcnt_used"
+  query = "100 - (avg by (hostname) (irate(node_cpu_seconds_total{mode=\"idle\"}[10m])) * 100)"
+
+  [[metrics.carrier_nodes]]
+  name = "memory.pcnt_used"
+  query = "sum by (hostname) (node_memory_MemTotal_bytes-node_memory_MemAvailable_bytes) / sum by (hostname) (node_memory_MemTotal_bytes) *100"
+
+  [[metrics.carrier_nodes]]
+  name = "network.receive.private"
+  query = "sum by (hostname,device) (irate(node_network_receive_bytes_total{device=\"eth0\"}[10m])*8)"
+
+  [[metrics.carrier_nodes]]
+  name = "network.receive.public"
+  query = "sum by (hostname,device) (irate(node_network_receive_bytes_total{device=\"eth1\"}[10m])*8)"
+
+  [[metrics.carrier_nodes]]
+  name = "network.transmit.private"
+  query = "sum by (hostname,device) (irate(node_network_transmit_bytes_total{device=\"eth0\"}[10m])*8)"
+
+  [[metrics.carrier_nodes]]
+  name = "network.transmit.public"
+  query = "sum by (hostname,device) (irate(node_network_transmit_bytes_total{device=\"eth1\"}[10m])*8)"
+
+  [[metrics.carrier_nodes]]
+  name = "disk.pcnt_busy"
+  query = "sum by (hostname,device) (irate(node_disk_io_time_seconds_total[10m])*100)"

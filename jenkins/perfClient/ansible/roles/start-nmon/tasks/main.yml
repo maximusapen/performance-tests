@@ -1,0 +1,35 @@
+---
+
+- set_fact: statsDir=/performance/stats/{{ RUNID }}/nmon
+
+- name: Clean Folder
+  file:
+    path={{ statsDir }}
+    state=absent
+  when: CLEAN_DIR == "TRUE"
+
+- name: Create Folder
+  file:
+   path={{ statsDir }}
+   owner=jenkins
+   group="Domain Users"
+   mode=0775
+   state=directory
+
+- name: Check for nmon binary
+  stat:
+    path: /performance/stats/nmon16e_x86_ubuntu1510
+  register: nmon_binary
+
+- name: Download nmon binary
+  become: true
+  get_url:
+    url: https://sourceforge.net/projects/nmon/files/nmon16e_x86_ubuntu1510
+    dest: /performance/stats
+    validate_certs: False
+    mode: 0775
+  when: nmon_binary.stat.exists == False
+
+
+- name: Start nnmon
+  shell: 'nohup /performance/stats/nmon16e_x86_ubuntu1510 -s {{ INTERVAL }} -c {{ REPEATS }} -F "{{ statsDir }}/`hostname -s`-`date "+%Y%m%d-%H%M"`.nmon" -T </dev/null >{{ statsDir }}/nmonLog.txt 2>&1 & sleep 2'

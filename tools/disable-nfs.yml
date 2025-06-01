@@ -1,0 +1,25 @@
+- apiVersion: v1
+  kind: policy
+  metadata:
+    name: disable-nfs
+  spec:
+    egress:
+    - action: deny
+      protocol: tcp
+      source: {}
+      destination:
+        ports: 
+        - 111
+        - 2049
+    - action: deny
+      protocol: udp
+      source: {}
+      destination:
+        ports: 
+        - 111
+        - 2049
+    order: 500
+    selector: has(calico/k8s_ns)
+        # Alternatives
+        # calico/k8s_ns in {'kubx-masters'}
+        # ibm.role in { 'worker_public', 'master_public' }

@@ -1,0 +1,8 @@
+{
+  "dataCenter": "dev-mex01",
+  "machineType": "%MACHINETYPE%",
+  "name": "%CLUSTERNAME%",
+  "privateVlan": "100",
+  "publicVlan": "101",
+  "workerNum": "%WORKERNUM%"
+}

@@ -1,0 +1,11 @@
+apiVersion: v1
+name: sysbench
+description: A Sysbench Performance Test Helm chart for Armada
+version: 1.0.0
+home: https://github.ibm.com/alchemy-containers/armada-performance/tree/master/sysbench
+sources:
+  - https://github.ibm.com/alchemy-containers/armada-performance/tree/master/sysbench
+maintainers:
+  - name: Janet Schofield
+    email: janet_moody@uk.ibm.com
+appVersion: 1.1

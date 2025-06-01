@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: httpperf-lb-multiport-service
+  labels:
+    app: httpperf
+    chart: httpperf-1.0.0
+    release: RELEASE
+spec:
+  type: LoadBalancer
+  selector:
+    app: httpperf
+    release: RELEASE
+  ports:

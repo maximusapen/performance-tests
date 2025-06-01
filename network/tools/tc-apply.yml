@@ -1,0 +1,94 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: tc-apply
+  namespace: kube-system
+  labels:
+    app: tc-apply
+spec:
+  selector:
+    matchLabels:
+      name: tc-apply
+  updateStrategy:
+    rollingUpdate:
+      maxUnavailable: 100
+  template:
+    metadata:
+      labels:
+        name: tc-apply
+    spec:
+      hostNetwork: true
+      hostPID: true
+      hostIPC: true
+      nodeSelector:
+          failure-domain.beta.kubernetes.io/zone: dal13
+      tolerations:
+      - operator: Exists
+      priorityClassName: system-node-critical
+      schedulerName: default-scheduler
+      initContainers:
+        - command:
+          - nsenter
+          - --mount=/proc/1/ns/mnt
+          - --
+          - sh
+          - -c
+          - "sudo tc qdisc show dev eth1; echo eth0; 
+             sudo tc qdisc show dev eth0;
+             sudo tc qdisc add dev eth0 root netem loss 50%;
+             sudo tc qdisc add dev eth1 root netem loss 50%;
+             sudo tc qdisc show dev eth1; echo eth0;
+             sudo tc qdisc show dev eth0"
+            #- "ifconfig eth1; ifconfig tunl0; sudo tc qdisc show dev eth1; sudo tc qdisc show dev tunl0"
+            #- sudo tc qdisc add dev eth0 root netem delay 200ms
+          image: alpine:3.6
+          imagePullPolicy: IfNotPresent
+          name: applytc
+          resources: {}
+          securityContext:
+            privileged: true
+            capabilities:
+              add:
+               - NET_ADMIN
+        - command:
+          - sh
+          - -c
+          - sleep 1802
+          image: alpine:3.6
+          imagePullPolicy: IfNotPresent
+          name: sleeper
+        - command:
+          - nsenter
+          - --mount=/proc/1/ns/mnt
+          - --
+          - sh
+          - -c
+          - "sudo tc qdisc show dev eth1; echo eth0; 
+             sudo tc qdisc show dev eth0;
+             sudo tc qdisc del dev eth0 root netem loss 50%;
+             sudo tc qdisc del dev eth1 root netem loss 50%;
+             sudo tc qdisc show dev eth1; echo eth0;
+             sudo tc qdisc show dev eth0"
+            #- "sudo tc qdisc show dev eth1; sudo tc qdisc show dev tunl0"
+            #- sudo tc qdisc del dev eth0 root netem delay 200ms
+          image: alpine:3.6
+          imagePullPolicy: IfNotPresent
+          name: removetc
+          resources: {}
+          securityContext:
+            privileged: true
+            capabilities:
+              add:
+               - NET_ADMIN
+      containers:
+        - resources:
+            requests:
+              cpu: 0.01
+          image: alpine:3.6
+          name: sleepforever
+          command: ["/bin/sh", "-c"]
+          args:
+            - >
+              while true; do
+                 sleep 100000;
+              done

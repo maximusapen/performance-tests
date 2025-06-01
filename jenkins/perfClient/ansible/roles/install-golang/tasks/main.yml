@@ -1,0 +1,57 @@
+---
+
+- name: Download golang tar
+  become: true
+  get_url:
+    url: https://storage.googleapis.com/golang/go1.19.6.linux-amd64.tar.gz
+    dest: /usr/local
+    validate_certs: False
+    mode: 0775
+
+- name: Remove any previous version
+  become: true
+  file:
+    state: absent
+    path: "/usr/local/go/"
+
+- name: Unpack tar
+  unarchive:
+    src: /usr/local/go1.19.6.linux-amd64.tar.gz
+    remote_src: True
+    dest: /usr/local
+
+- name: Delete the tar file
+  command: rm /usr/local/go1.19.6.linux-amd64.tar.gz
+
+- name: Create symbolic links
+  command: ln -sf /usr/local/go/bin/go /usr/local/go/bin/gofmt /usr/local/go/bin/godoc /usr/local/bin/
+
+- name: Test for PATH
+  shell: grep '^export PATH=' /etc/profile
+  register: test_path
+  failed_when: test_path.rc >= 2
+
+- name: Insert PATH definition if it doesn't already exist
+  become: true
+  lineinfile: dest=/etc/profile
+              line='export PATH=$PATH'
+  when: test_path.stdout == ""
+
+- name: Add golang binaries to path
+  become: true
+  lineinfile: dest=/etc/profile
+              state=present
+              backrefs=yes
+              regexp='export PATH=(["]*)((?!.*?/usr/local/go/bin).*?)(["]*)$'
+              line='export PATH=\1/usr/local/go/bin:\2\3'
+
+- name: Test for GOPATH
+  shell: grep '^export GOPATH=' /etc/profile
+  register: test_gopath
+  failed_when: test_gopath.rc >= 2
+
+- name: Insert GOPATH definition if it doesn't already exist
+  become: true
+  lineinfile: dest=/etc/profile
+              line='export GOPATH=/performance'
+  when: test_gopath.stdout == ""

@@ -1,0 +1,11 @@
+---
+
+# Install Open JDK Java8 (IBM java has performance issue with jmeter)
+
+- name: Install Java 8
+  become: true
+  apt: name=openjdk-8-jdk force=yes
+
+- name: Set as default Java
+  become: true
+  command: update-java-alternatives --set java-1.8.0-openjdk-amd64

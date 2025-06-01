@@ -1,0 +1,3 @@
+---
+validation_retries: 30
+validation_delay: 15

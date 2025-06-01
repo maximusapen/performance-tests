@@ -1,0 +1,89 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ .Release.Name }}-job
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    generator: helm
+    date: {{ now | htmlDate }}
+spec:
+  parallelism: {{ .Values.podCount }}
+  completions: {{ .Values.podCount }}
+  template:
+    metadata:
+      name: {{ template "fullname" . }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.registry }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        securityContext:
+          privileged: true
+        env:
+        - name: "METRICS_PREFIX"
+          value: {{ .Values.metricsPrefix }}
+        - name: "METRICS_OS"
+          value: {{ .Values.metricsOS }}
+        - name: "K8S_SERVER_VERSION"
+          value: {{ .Values.k8sVersion }}
+        - name: PERF_REG_VERBOSE
+          valueFrom:
+            configMapKeyRef:
+              name: perf-registry-config
+              key: PERF_REG_VERBOSE
+        - name: PERF_REG_INTERNATIONAL
+          valueFrom:
+            configMapKeyRef:
+              name: perf-registry-config
+              key: PERF_REG_INTERNATIONAL
+        - name: PERF_REG_ALLREGIONS
+          valueFrom:
+            configMapKeyRef:
+              name: perf-registry-config
+              key: PERF_REG_ALLREGIONS
+        - name: PERF_REG_CLUSTERREGION
+          valueFrom:
+            configMapKeyRef:
+              name: perf-registry-config
+              key: PERF_REG_CLUSTERREGION
+        - name: PERF_REG_METRICS
+          valueFrom:
+            configMapKeyRef:
+              name: perf-registry-config
+              key: PERF_REG_METRICS
+        - name: PERF_REG_REGKEY
+          valueFrom:
+            configMapKeyRef:
+              name: perf-registry-config
+              key: PERF_REG_REGKEY
+        - name: PERF_REG_REGIONAL
+          valueFrom:
+            configMapKeyRef:
+              name: perf-registry-config
+              key: PERF_REG_REGIONAL
+        - name: PERF_REG_HYPERKUBE
+          valueFrom:
+            configMapKeyRef:
+              name: perf-registry-config
+              key: PERF_REG_HYPERKUBE
+        {{ if .Values.ip }}
+        - name: "SPECIAL_DNS_RUN"
+          value: "DNS_RUN"
+        {{ end }}
+        args: ["--hyperkubeImage=$(PERF_REG_HYPERKUBE)", "--international=$(PERF_REG_INTERNATIONAL)", "--allRegions=$(PERF_REG_ALLREGIONS)", "--clusterRegion=$(PERF_REG_CLUSTERREGION)", "--verbose=$(PERF_REG_VERBOSE)", "--metrics=$(PERF_REG_METRICS)", "--registrykey=$(PERF_REG_REGKEY)", "--regionalRegistry=$(PERF_REG_REGIONAL)"]
+        volumeMounts:
+        - mountPath: /host
+          name: host-root
+      restartPolicy: Never
+      {{ if and (.Values.ip) (.Values.host) }}
+      hostAliases:
+        # registry-prod-eu-central-az1
+      - ip: {{ .Values.ip }}
+        hostnames:
+        - {{ .Values.host }}
+      {{ end }}
+      volumes:
+      - name: host-root
+        hostPath:
+          # directory location on host
+          path: /

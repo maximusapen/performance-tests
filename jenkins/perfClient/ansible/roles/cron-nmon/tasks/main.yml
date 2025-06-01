@@ -1,0 +1,45 @@
+---
+
+- set_fact: statsDir=/performance/stats/{{ RUNID }}/nmon
+
+- name: Clean Folder
+  file:
+    path={{ statsDir }}
+    state=absent
+  when: CLEAN_DIR == "TRUE"
+
+- name: Create Folder
+  file:
+   path={{ statsDir }}
+   owner=jenkins
+   group="Domain Users"
+   mode=0777
+   state=directory
+
+- name: Check for nmon binary
+  stat:
+    path: /performance/stats/nmon16e_x86_ubuntu1510
+  register: nmon_binary
+
+- name: Download nmon binary
+  become: true
+  get_url:
+    url: https://sourceforge.net/projects/nmon/files/nmon16e_x86_ubuntu1510
+    dest: /performance/stats
+    validate_certs: False
+    mode: 0775
+  when: nmon_binary.stat.exists == False
+
+- name: Clean cron
+  cron: 
+    cron_file=nmon
+    state=absent
+
+- name: Cron nnmon
+  cron: 
+    minute={{CRON_MINUTE}}
+    hour={{CRON_HOUR}}
+    user="root"
+    job="mkdir -p {{ statsDir }} && /performance/stats/nmon16e_x86_ubuntu1510 -s {{ INTERVAL }} -c {{ REPEATS }} -F {{ statsDir }}/$(hostname -s)-$(date +\%Y\%m\%d-\%H\%M).nmon -T && chmod 666 {{ statsDir }}/$(hostname -s)-*.nmon; n=$(ls {{ statsDir }}/*.nmon | wc -l) && if [[ $n -gt 10 ]]; then for i in `ls {{ statsDir }}/*.nmon | head -$((n-10))`; do echo $i; gzip $i; done; fi && total=$(ls {{ statsDir }} | wc -l) && cut=$((total-40)) && if [[ $cut -gt 0 ]]; then for i in `ls -t {{ statsDir }}/* | tail -$cut`; do rm -rf $i; done; fi"
+    cron_file=nmon
+

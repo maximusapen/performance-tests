@@ -1,0 +1,9 @@
+{
+    "stage-dal10-carrier4": "carrier_base.json",
+    "stage-dal10-carrier5": "carrier_base.json",
+    "stage-dal10-carrier200": "tugboat_spoke.json",
+    "stage-dal10-carrier500": "tugboat_spoke.json",
+    "stage-dal10-carrier401": "tugboat_hub_istio.json",
+    "stage-dal10-carrier402": "tugboat_spoke.json",
+    "stage-dal10-carrier501": "tugboat_hub_istio.json"
+}

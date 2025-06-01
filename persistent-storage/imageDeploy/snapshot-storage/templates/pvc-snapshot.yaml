@@ -1,0 +1,17 @@
+{{- if eq .Values.action "restore" -}}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: perf-pvc-snapshot
+spec:
+  accessModes:
+    - {{ .Values.pvc.accessMode }}
+  resources:
+    requests:
+      storage: {{ .Values.pvc.storageSize }}
+  storageClassName: {{ .Values.pvc.storageClassName }}
+  dataSource:
+    name: snapshot-csi-block-perf-pvc
+    kind: VolumeSnapshot
+    apiGroup: snapshot.storage.k8s.io
+{{- end -}}

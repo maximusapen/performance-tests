@@ -1,0 +1,37 @@
+---
+
+- name: Download IBM Cloud Developer Tools - CLI installer script
+  # This tool will install ibmcloud, container-service, container-registry and other plugins.
+  # Also with deprecated bx and ic commands are linked to ibmcloud in /usr/local/bin
+  # More details of CLI in https://cloud.ibm.com/docs/cli/idt/setting_up_idt.html
+  get_url:
+    url: https://ibm.biz/idt-installer
+    dest: /tmp
+    validate_certs: False
+    mode: 0775
+
+# Script installs ibmcloud as system install and cs and cr as user-install.
+# so set install/uninstall to run as user jenkins who needs cs and cr for tests.
+- name: Run IBM Cloud Developer Tools - CLI installer script for MacOS and Linux systems
+  # Command cannot tolerate | so need to use shell to pipe in yes answer to script
+  # Uninstall existing tools first to simplify install, i.e. no need to update plugin versions 
+  # Script will pass even if CLI not installed so should work after os reload.
+  become_user: jenkins
+  become: true
+  shell: yes | /tmp/idt-installer uninstall
+
+- name: Run IBM Cloud Developer Tools - CLI installer script for MacOS and Linux systems
+  # command cannot tolerate | and need to use shell to pipe in yes answer to script
+  # Script installs cs and cr which are user-install and not system-install,
+  # so set install/uninstall to run as user jenkins
+  become_user: jenkins
+  become: true
+  shell: yes | /tmp/idt-installer
+
+- name: update ibmcloud config
+  become_user: jenkins
+  command: ibmcloud config --check-version false
+
+- name: Add stage repo
+  become_user: jenkins
+  command: ibmcloud plugin repo-add stage https://plugins.test.cloud.ibm.com

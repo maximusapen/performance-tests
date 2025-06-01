@@ -1,0 +1,10 @@
+{
+  "diskEncryption": %DISKENCRYPTION%,
+  "isolation": "%ISOLATION%",
+  "machineType": "%MACHINETYPE%",
+  "name": "%WORKERPOOLNAME%",
+  "sizePerZone": "%SIZEPERZONE%",
+  "labels": {
+    "%LABELNAME%": "%LABEL%"
+  }
+}

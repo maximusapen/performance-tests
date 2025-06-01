@@ -1,0 +1,3 @@
+GET,/api/v1/namespaces,
+POST,/api/v1/namespaces,create_namespace
+DELETE,/api/v1/namespaces/fred,delete_namespace

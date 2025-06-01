@@ -1,0 +1,6 @@
+---
+- hosts: 
+    - k8s_master-{{ REALENV }}-{{ CARRIER }}
+  become: yes  
+  roles:
+  - delete-pods-in-armada

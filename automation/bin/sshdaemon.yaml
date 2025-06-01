@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  labels:
+    name: ssh-daemonset
+  name: ssh-daemonset
+spec:
+  template:
+    metadata:
+      labels:
+        name: ssh-daemonset
+    spec:
+      hostNetwork: true
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: ssh-key-secret
+      - name: test-volume
+        hostPath:
+          # directory location on host
+          path: /
+      containers:
+      - image: stg.icr.io/armada_performance/enable-worker-node-ssh
+        name: ssh-daemonset
+        volumeMounts:
+        - name: secret-volume
+          readOnly: true
+          mountPath: "/etc/secret-volume"
+        - name: test-volume
+          mountPath: /host

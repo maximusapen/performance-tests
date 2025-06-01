@@ -1,0 +1,67 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ .Release.Name }}-job
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    generator: helm
+    date: {{ now | htmlDate }}
+spec:
+  backoffLimit: 5
+  template:
+    metadata:
+      name: {{ template "persistent-storage.fullname" . }}
+    spec:
+      schedulerName: {{ .Values.pod.scheduler }}
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.registry }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env:
+        - name: "METRICS_PREFIX"
+          value: {{ .Values.metricsPrefix }}
+        - name: "METRICS_OS"
+          value: {{ .Values.metricsOS }}
+        - name: "K8S_SERVER_VERSION"
+          value: {{ .Values.k8sVersion }}
+        - name: PERF_PS_VERBOSE
+          valueFrom:
+            configMapKeyRef:
+              name: perf-persistent-storage-config
+              key: PERF_PS_VERBOSE
+        - name: PERF_PS_METRICS
+          valueFrom:
+            configMapKeyRef:
+              name: perf-persistent-storage-config
+              key: PERF_PS_METRICS
+        - name: PERF_PS_DIR
+          valueFrom:
+            configMapKeyRef:
+              name: perf-persistent-storage-config
+              key: PERF_PS_DIR
+        - name: PERF_PS_JOBFILE
+          valueFrom:
+            configMapKeyRef:
+              name: perf-persistent-storage-config
+              key: PERF_PS_JOBFILE
+        - name: PERF_PS_TESTNAME
+          valueFrom:
+            configMapKeyRef:
+              name: perf-persistent-storage-config
+              key: PERF_PS_TESTNAME
+        - name: PERF_PS_NUMJOBS
+          valueFrom:
+            configMapKeyRef:
+              name: perf-persistent-storage-config
+              key: PERF_PS_NUMJOBS
+        args: ["/go/bin/persistent-storage", "--verbose=$(PERF_PS_VERBOSE)", "--metrics=$(PERF_PS_METRICS)", "--testname=$(PERF_PS_TESTNAME)", "--dir=$(PERF_PS_DIR)", "--jobfile=$(PERF_PS_JOBFILE)", "--numjobs=$(PERF_PS_NUMJOBS)"]
+        volumeMounts:
+        - name: persistent-storage-mount
+          mountPath: "/var/perfps"
+        securityContext:
+          runAsUser: 0
+      volumes:
+      - name: persistent-storage-mount
+        persistentVolumeClaim:
+          claimName: perf-pvc
+      restartPolicy: Never

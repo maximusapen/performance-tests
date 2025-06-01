@@ -1,0 +1,29 @@
+{% if armada_nfs_server is defined %}
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs
+  namespace: armada
+spec:
+  capacity:
+    storage: "{{armada_nfs_capacity}}"
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: "{{armada_nfs_server}}"
+    path: "{{armada_nfs_path}}"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: nfs
+  namespace: armada
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: "{{armada_nfs_capacity}}"
+  volumeName: nfs
+{% endif %}

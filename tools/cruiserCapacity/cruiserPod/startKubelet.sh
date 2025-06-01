@@ -1,0 +1,24 @@
+#!/bin/bash
+# ******************************************************************************
+# * Licensed Materials - Property of IBM
+# * IBM Cloud Kubernetes Service, 5737-D43
+# * (C) Copyright IBM Corp. 2019 All Rights Reserved.
+# * US Government Users Restricted Rights - Use, duplication or
+# * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+# ******************************************************************************
+
+# Stop kubelet on all nodes in cluster
+
+# Set up your KUBECONFIG before running this script
+#export KUBECONFIG=<cruiser kube config file>
+
+nodes=$(kubectl get nodes | grep -v NAME | awk '{print $1}')
+echo $nodes
+
+echo "Start kubelet on all nodes `date +%Y%m%d-%H%M%S`"
+for node in $nodes; do
+    echo "`date +%Y%m%d-%H%M%S` Starting kubelet for node $node"
+    ssh -o StrictHostKeyChecking=no root@$node sudo systemctl start kubelet &
+done
+echo "End start kubelet `date +%Y%m%d-%H%M%S`"
+

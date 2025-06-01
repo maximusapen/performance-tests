@@ -1,0 +1,15 @@
+- apiVersion: v1
+  kind: policy
+  metadata:
+    name: deny-compose
+  spec:
+    ingress:
+    - action: deny
+      protocol: tcp
+      destination: {}
+      source: 
+        net: 10.143.91.71/32
+        ports: 
+        - 15112
+    order: 500
+    selector: calico/k8s_ns in {'monitoring', 'armada'}

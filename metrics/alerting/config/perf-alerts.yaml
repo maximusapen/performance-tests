@@ -1,0 +1,1812 @@
+influxdb:
+  host: "10.38.120.142"
+  port: 8086
+  database: ArmadaPerf
+  username: admin
+  timeout: 30
+
+slack:
+  enabled: true
+  channel: armada-perf-alerts
+  resultsURL: https://alchemy-testing-jenkins.swg-devops.com/job/Armada-Performance/job/Automation/job/Generate-Results-Alerts/lastBuild/consoleFull
+
+options:
+  history:
+    count: 15
+    days: 30
+    current: 2
+    minimum: 5
+  leniency: 10
+  verbose: false
+  failures: true
+
+environments:
+  IKS on Classic:
+    carrier: carrier4_stage
+    machineType: [b3c.4x16]
+    kubeVersion: [1_23, 1_24, 1_25, 1_26]
+    operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+    owner:
+      name: Janet
+      slack: W47CHBVJB
+      notify: Always
+      days: [Monday, Tuesday, Thursday]
+  IKS on VPC:
+    carrier: carrier4_stage
+    machineType: [bx2.4x16]
+    kubeVersion: [1_23, 1_24, 1_25, 1_26]
+    operatingSystem: [UBUNTU_18_64]
+    owner:
+      name: Richard
+      slack: W4D9JNV6J
+      notify: Always
+      days: [Monday, Tuesday, Wednesday, Thursday, Friday]
+  ROKS on Classic:
+    carrier: carrier4_stage
+    machineType: [b3c.4x16]
+    kubeVersion: [4_10, 4_11, 4_12]
+    operatingSystem: [REDHAT_8_64]
+    owner:
+      name: Janet
+      slack: W47CHBVJB
+      notify: Always
+      days: [Monday, Tuesday, Thursday]
+  ROKS on VPC:
+    carrier: carrier4_stage
+    machineType: [bx2.4x16]
+    kubeVersion: [4_10, 4_11, 4_12]
+    operatingSystem: [REDHAT_8_64]
+    owner:
+      name: Richard
+      slack: W4D9JNV6J
+      notify: Always
+      days: [Monday, Tuesday, Wednesday, Thursday, Friday]
+  Satellite - RHEL:
+    carrier: satellite0-perf-rhel
+    machineType: [b1.4x16]
+    kubeVersion: [4_10, 4_11, 4_12]
+    operatingSystem: [REDHAT_8_64]
+    owner:
+      name: Gareth
+      slack: W4DKCCV40
+      notify: Always
+      days: [Monday, Tuesday, Wednesday, Thursday, Friday]
+  Satellite - CoreOS:
+    carrier: satellite0-perf-coreos
+    machineType: [b1.4x16]
+    kubeVersion: [4_10, 4_11, 4_12]
+    operatingSystem: [RHCOS]
+    owner:
+      name: Gareth
+      slack: W4DKCCV40
+      notify: Always
+      days: [Monday, Tuesday, Wednesday, Thursday, Friday]
+
+tests:
+  # Cluster Creation
+  - name: apc2
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: armada_perf_client2_workers_5_create_cluster_duration_mean
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 1200
+                error: 1500
+                zscore: 2
+              b3c.4x16:
+                warn: 1200
+                error: 1500
+                zscore: 2
+          - name: armada_perf_client2_rm_cluster_duration_mean
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 330
+                error: 450
+                zscore: 2
+              b3c.4x16:
+                warn: 360
+                error: 480
+                zscore: 2
+          - name: armada_perf_client2_workers_5_resize_worker_pool_up_duration_max
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 570
+                error: 630
+                zscore: 2
+              bx2.4x16:
+                warn: 500
+                error: 620
+                zscore: 2
+          - name: armada_perf_client2_workers_5_resize_worker_pool_down_duration_max
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 400
+                error: 480
+                zscore: 2
+              bx2.4x16:
+                warn: 260
+                error: 360
+                zscore: 2
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: armada_perf_client2_workers_5_create_cluster_duration_mean
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 1400
+                error: 1600
+                zscore: 2
+          - name: armada_perf_client2_rm_cluster_duration_mean
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 300
+                error: 360
+                zscore: 2
+          - name: armada_perf_client2_workers_5_resize_worker_pool_up_duration_max
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 1200
+                error: 1440
+                zscore: 2
+              bx2.4x16:
+                warn: 600
+                error: 720
+                zscore: 2
+          - name: armada_perf_client2_workers_5_resize_worker_pool_down_duration_max
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 420
+                error: 540
+                zscore: 2
+              bx2.4x16:
+                warn: 260
+                error: 360
+                zscore: 2
+      # Satellite Specific
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: armada_perf_client2_create_location_duration_max
+            limitType: ceiling
+            thresholds:
+              b1.4x16:
+                warn: 850
+                error: 1000
+          - name: armada_perf_client2_attach_host_control_duration_max
+            limitType: ceiling
+            thresholds:
+              b1.4x16:
+                warn: 900
+                error: 1000
+          - name: armada_perf_client2_attach_host_cluster_duration_max
+            limitType: ceiling
+            thresholds:
+              b1.4x16:
+                warn: 850
+                error: 1000
+          - name: armada_perf_client2_assign_host_location_duration_max
+            limitType: ceiling
+            thresholds:
+              b1.4x16:
+                warn: 1800
+                error: 2100
+          - name: armada_perf_client2_assign_host_cluster_duration_max
+            limitType: ceiling
+            thresholds:
+              b1.4x16:
+                warn: 1500
+                error: 1800
+          - name: armada_perf_client2_create_cluster_duration_max
+            limitType: ceiling
+            thresholds:
+              b1.4x16:
+                warn: 1500
+                error: 1800
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [RHCOS]
+        alerts:
+          - name: armada_perf_client2_create_location_coreos_duration_max
+            limitType: ceiling
+            thresholds:
+              b1.4x16:
+                warn: 1000
+                error: 1200
+          - name: armada_perf_client2_attach_host_control_duration_max
+            limitType: ceiling
+            thresholds:
+              b1.4x16:
+                warn: 200
+                error: 350
+          - name: armada_perf_client2_attach_host_cluster_duration_max
+            limitType: ceiling
+            thresholds:
+              b1.4x16:
+                warn: 200
+                error: 350
+          - name: armada_perf_client2_assign_host_coreos_location_duration_max
+            limitType: ceiling
+            thresholds:
+              b1.4x16:
+                warn: 1500
+                error: 1800
+          - name: armada_perf_client2_assign_host_cluster_duration_max
+            limitType: ceiling
+            thresholds:
+              b1.4x16:
+                warn: 600
+                error: 800
+          - name: armada_perf_client2_create_cluster_duration_max
+            limitType: ceiling
+            thresholds:
+              b1.4x16:
+                warn: 1200
+                error: 1500
+  # ClusterLoader2
+  - name: k8s_e2e_performance_load
+    disableInfo: true
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_20_64]
+        alerts:
+          - name: load_APIResponsivenessOverall_nodes100_LIST_namespace_nodes_mean
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 25
+                error: 35
+              b3c.4x16:
+                warn: 25
+                error: 35
+          - name: load_APIResponsivenessOverall_nodes100_DELETE_namespace_nodes_mean
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 50
+                error: 75
+              b3c.4x16:
+                warn: 50
+                error: 75
+          - name: load_APIResponsivenessOverall_nodes100_LIST_namespace_pods_mean
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 25
+                error: 35
+              b3c.4x16:
+                warn: 25
+                error: 35
+          - name: load_APIResponsivenessOverall_nodes100_DELETE_namespace_pods_mean
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 50
+                error: 75
+              b3c.4x16:
+                warn: 50
+                error: 75
+          - name: load_APIResponsivenessOverall_nodes100_LIST_namespace_secrets_mean
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 25
+                error: 35
+              b3c.4x16:
+                warn: 25
+                error: 35
+          - name: load_APIResponsivenessOverall_nodes100_DELETE_namespace_secrets_mean
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 50
+                error: 75
+              b3c.4x16:
+                warn: 50
+                error: 75
+          - name: load_PodStartupLatency_nodes100_pod_startup_Perc50_max
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 3500
+                error: 4000
+              b3c.4x16:
+                warn: 3500
+                error: 4000
+          - name: load_PodStartupLatency_nodes100_pod_startup_Perc90_max
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 4200
+                error: 4700
+              b3c.4x16:
+                warn: 4200
+                error: 4700
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: load_PodStartupLatency_nodes100_pod_startup_Perc50_max
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 5500
+                error: 6000
+          - name: load_PodStartupLatency_nodes100_pod_startup_Perc90_max
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 9200
+                error: 10000
+  # Pod Scaling
+  - name: pod_scaling
+    environment: 
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: k8s_up_1_401_available_replicas_pod_scaling_duration
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 35
+                error: 45
+              b3c.4x16:
+                warn: 30
+                error: 35
+          - name: k8s_down_401_1_not_deleted_pod_scaling_duration
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 45
+                error: 55
+              b3c.4x16:
+                warn: 40
+                error: 50
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: k8s_up_1_401_available_replicas_pod_scaling_duration
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 55
+                error: 65
+              b3c.4x16:
+                warn: 55
+                error: 65
+              b1.4x16:
+                warn: 60
+                error: 70
+          - name: k8s_down_401_1_not_deleted_pod_scaling_duration
+            limitType: ceiling
+            issues:
+              b3c.4x16:
+                kubeVersion: [4_10]
+                operatingSystem: [REDHAT_8_64]
+                issue: https://github.ibm.com/alchemy-containers/armada-performance/issues/2936
+              b1.4x16:
+                kubeVersion: [4_10]
+                operatingSystem: [REDHAT_8_64]
+                issue: https://github.ibm.com/alchemy-containers/armada-performance/issues/2936
+            thresholds:
+              bx2.4x16:
+                warn: 50
+                error: 60
+              b3c.4x16:
+                warn: 45
+                error: 60
+              b1.4x16:
+                warn: 55
+                error: 65
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [RHCOS]
+        alerts:
+          - name: k8s_up_1_401_available_replicas_pod_scaling_duration
+            limitType: ceiling
+            thresholds:
+              b1.4x16:
+                warn: 60
+                error: 70
+          - name: k8s_down_401_1_not_deleted_pod_scaling_duration
+            limitType: ceiling
+            issues:
+              b1.4x16:
+                kubeVersion: [4_10]
+                operatingSystem: [RHCOS]
+                issue: https://github.ibm.com/alchemy-containers/armada-performance/issues/2936
+            thresholds:
+              b1.4x16:
+                warn: 55
+                error: 65
+
+  # http-perf - node port
+  - name: httpnodeport
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 60000
+                error: 48000
+              bx2.4x16:
+                warn: 68000
+                error: 60000
+          - name: nodes5_replicas3_threads_20_singlezone_average
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 10
+                error: 15
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 45
+                error: 55
+              bx2.4x16:
+                warn: 40
+                error: 60
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 40000
+                error: 35000
+              bx2.4x16:
+                warn: 35000
+                error: 30000
+          - name: nodes5_replicas3_threads_20_singlezone_average
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 20
+                error: 25
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 125
+                error: 150
+              bx2.4x16:
+                warn: 100
+                error: 150
+
+  # http-perf - Classic Load Balancer
+  - name: httploadbalancer
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 85000
+                error: 75000
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 30
+                error: 45
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 55000
+                error: 50000
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 70
+                error: 80
+
+  # http-perf - Classic Load Balancer 2
+  - name: httploadbalancer2
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 70000
+                error: 60000
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 30
+                error: 45
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 55000
+                error: 50000
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 70
+                error: 80
+
+  # http-perf - VPC Application Load Balancer
+  - name: httpvpcapplicationloadbalancer
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              bx2.4x16:
+                warn: 55000
+                error: 45000
+          - name: nodes5_replicas3_threads_20_singlezone_average
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 10
+                error: 15
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 35
+                error: 50
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              bx2.4x16:
+                warn: 45000
+                error: 40000
+          - name: nodes5_replicas3_threads_20_singlezone_average
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 15
+                error: 20
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 75
+                error: 100
+
+  # http-perf - VPC Network Load Balancer
+  - name: httpvpcnetworkloadbalancer
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              bx2.4x16:
+                warn: 75000
+                error: 70000
+          - name: nodes5_replicas3_threads_20_singlezone_average
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 8
+                error: 12
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 30
+                error: 50
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              bx2.4x16:
+                warn: 50000
+                error: 45000
+          - name: nodes5_replicas3_threads_20_singlezone_average
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 13
+                error: 25
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 65
+                error: 100
+
+  # http-perf - Ingress
+  - name: httpingress
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 10000
+                error: 7000
+              bx2.4x16:
+                warn: 15000
+                error: 12000
+          - name: nodes5_replicas3_threads_20_singlezone_average
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 45
+                error: 60
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 160
+                error: 200
+              bx2.4x16:
+                warn: 230
+                error: 350
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 18000
+                error: 15000
+              bx2.4x16:
+                warn: 15000
+                error: 12000
+          - name: nodes5_replicas3_threads_20_singlezone_average
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 40
+                error: 60
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 230
+                error: 250
+              bx2.4x16:
+                warn: 300
+                error: 400
+
+  # https-perf - node port
+  - name: httpsnodeport
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 62000
+                error: 50000
+              bx2.4x16:
+                warn: 50000
+                error: 40000
+          - name: nodes5_replicas3_threads_20_singlezone_average
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 10
+                error: 15
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 45
+                error: 60
+              bx2.4x16:
+                warn: 50
+                error: 80
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 35000
+                error: 30000
+              bx2.4x16:
+                warn: 30000
+                error: 25000
+          - name: nodes5_replicas3_threads_20_singlezone_average
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 17
+                error: 25
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 125
+                error: 150
+              bx2.4x16:
+                warn: 120
+                error: 175
+
+  # https-perf - Classic Load Balancer
+  - name: httpsloadbalancer
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 65000
+                error: 50000
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 35
+                error: 50
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 55000
+                error: 50000
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 70
+                error: 80
+
+  # https-perf - Classic Load Balancer 2
+  - name: httpsloadbalancer2
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 65000
+                error: 60000
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 35
+                error: 50
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 50000
+                error: 45000
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 70
+                error: 80
+
+  # https-perf - VPC Application Load Balancer
+  - name: httpsvpcapplicationloadbalancer
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              bx2.4x16:
+                warn: 40000
+                error: 35000
+          - name: nodes5_replicas3_threads_20_singlezone_average
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 12
+                error: 15
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 50
+                error: 75
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              bx2.4x16:
+                warn: 35000
+                error: 30000
+          - name: nodes5_replicas3_threads_20_singlezone_average
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 15
+                error: 20
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 80
+                error: 150
+
+  # https-perf - VPC Network Load Balancer
+  - name: httpsvpcnetworkloadbalancer
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              bx2.4x16:
+                warn: 65000
+                error: 55000
+          - name: nodes5_replicas3_threads_20_singlezone_average
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 8
+                error: 15
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 30
+                error: 50
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              bx2.4x16:
+                warn: 45000
+                error: 35000
+          - name: nodes5_replicas3_threads_20_singlezone_average
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 13
+                error: 20
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 60
+                error: 120
+
+  # https-perf - Ingress
+  - name: httpsingress
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 10000
+                error: 7000
+              bx2.4x16:
+                warn: 12000
+                error: 10000
+          - name: nodes5_replicas3_threads_20_singlezone_average
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 50
+                error: 70
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 160
+                error: 180
+              bx2.4x16:
+                warn: 200
+                error: 300
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: nodes5_replicas3_threads_20_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 13000
+                error: 10000
+              bx2.4x16:
+                warn: 13000
+                error: 10000
+          - name: nodes5_replicas3_threads_20_singlezone_average
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 45
+                error: 60
+          - name: nodes5_replicas3_threads_20_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 350
+                error: 400
+              bx2.4x16:
+                warn: 300
+                error: 500
+
+  # Acme Air
+  - name: acmeair
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: nodes5_threads_60_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 2500
+                error: 2000
+              bx2.4x16:
+                warn: 2000
+                error: 1800
+          - name: nodes5_threads_60_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 150
+                error: 250
+              bx2.4x16:
+                warn: 175
+                error: 250
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: nodes5_threads_60_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 2700
+                error: 2200
+              bx2.4x16:
+                warn: 2000
+                error: 1800
+          - name: nodes5_threads_60_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 150
+                error: 250
+              bx2.4x16:
+                warn: 175
+                error: 250
+
+  # Acme Air Istio
+  - name: acmeair_istio
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: nodes5_threads_60_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 1800
+                error: 1500
+              bx2.4x16:
+                warn: 2000
+                error: 1500
+          - name: nodes5_threads_60_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 250
+                error: 300
+              bx2.4x16:
+                warn: 200
+                error: 250
+
+  # Online Banking
+  - name: olb_java
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: nodes5_threads_25_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 4000
+                error: 3000
+              bx2.4x16:
+                warn: 4100
+                error: 3700
+          - name: nodes5_threads_25_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 320
+                error: 500
+              bx2.4x16:
+                warn: 350
+                error: 400
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: nodes5_threads_25_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 4000
+                error: 3000
+              bx2.4x16:
+                warn: 4100
+                error: 3700
+          - name: nodes5_threads_25_singlezone_percentile99
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 320
+                error: 500
+              bx2.4x16:
+                warn: 350
+                error: 400
+
+  # Netperf
+  - name: k8s_netperf
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: iperf_TCP_Remote_VM_using_Virtual_IP_calico_singlezone_max
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 3500
+                error: 3000
+              bx2.4x16:
+                warn: 5800
+                error: 5500
+          - name: iperf_UDP_Remote_VM_using_Virtual_IP_calico_singlezone_max
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 1250
+                error: 1000
+              bx2.4x16:
+                warn: 650
+                error: 550
+          - name: iperf_TCP_Remote_VM_using_Virtual_IP_host_singlezone_max
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 3500
+                error: 3000
+              bx2.4x16:
+                warn: 5800
+                error: 5500
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: iperf_TCP_Remote_VM_using_Virtual_IP_calico_singlezone_max
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 3500
+                error: 3000
+              bx2.4x16:
+                warn: 5800
+                error: 5500
+              b1.4x16:
+                warn: 1500
+                error: 1200
+          - name: iperf_UDP_Remote_VM_using_Virtual_IP_calico_singlezone_max
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 750
+                error: 650
+              bx2.4x16:
+                warn: 400
+                error: 350
+              b1.4x16:
+                warn: 1800
+                error: 1600
+          - name: iperf_TCP_Remote_VM_using_Virtual_IP_host_singlezone_max
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 3500
+                error: 3000
+              bx2.4x16:
+                warn: 5800
+                error: 5500
+              b1.4x16:
+                warn: 4600
+                error: 4000
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [RHCOS]
+        alerts:
+          - name: iperf_TCP_Remote_VM_using_Virtual_IP_calico_singlezone_max
+            limitType: floor
+            thresholds:
+              b1.4x16:
+                warn: 1500
+                error: 1200
+          - name: iperf_UDP_Remote_VM_using_Virtual_IP_calico_singlezone_max
+            limitType: floor
+            thresholds:
+              b1.4x16:
+                warn: 1800
+                error: 1600
+          - name: iperf_TCP_Remote_VM_using_Virtual_IP_host_singlezone_max
+            limitType: floor
+            thresholds:
+              b1.4x16:
+                warn: 4600
+                error: 4000
+
+  # Sysbench
+  - name: sysbench
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: cpu_threads_4_w1_95thpercentile
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 1.4
+                error: 1.9
+              bx2.4x16:
+                warn: 2.5
+                error: 3.0
+          - name: memory_threads_4_w1_95thpercentile
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 0.3
+                error: 0.35
+              bx2.4x16:
+                warn: 0.2
+                error: 0.35
+          - name: fileio_threads_4_w1_95thpercentile
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 0.8
+                error: 1.3
+              bx2.4x16:
+                warn: 2.0
+                error: 2.5
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: cpu_threads_4_w1_95thpercentile
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 2.0
+                error: 2.5
+              bx2.4x16:
+                warn: 2.5
+                error: 3.0
+              b1.4x16:
+                warn: 2.5
+                error: 3.0
+          - name: memory_threads_4_w1_95thpercentile
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 0.4
+                error: 0.6
+              bx2.4x16:
+                warn: 0.25
+                error: 0.35
+              b1.4x16:
+                warn: 0.4
+                error: 0.6
+          - name: fileio_threads_4_w1_95thpercentile
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 1.0
+                error: 1.5
+              bx2.4x16:
+                warn: 2.0
+                error: 2.5
+              b1.4x16:
+                warn: 2.0
+                error: 2.5
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [RHCOS]
+        alerts:
+          - name: cpu_threads_4_w1_95thpercentile
+            limitType: ceiling
+            thresholds:
+              b1.4x16:
+                warn: 2.5
+                error: 3.0
+          - name: memory_threads_4_w1_95thpercentile
+            limitType: ceiling
+            thresholds:
+              b1.4x16:
+                warn: 0.4
+                error: 0.6
+          - name: fileio_threads_4_w1_95thpercentile
+            limitType: ceiling
+            thresholds:
+              b1.4x16:
+                warn: 2.0
+                error: 2.5
+
+  # Persistent Storage
+  - name: persistent_storage
+    disableInfo: true
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: fio_ibmc_file_gold_4000Gi_job_read_16k_bs_iops
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 14500
+                error: 13500
+          - name: fio_ibmc_file_gold_4000Gi_job_write_16k_bs_iops
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 16000
+                error: 15000
+          - name: ioping_ibmc_file_gold_4000Gi_latency
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 1.0
+                error: 1.2
+          - name: iopingwrite_ibmc_file_gold_4000Gi_latency
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 1.2
+                error: 1.5
+          - name: fio_ibmc_block_gold_4000Gi_job_read_16k_bs_iops
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 10500
+                error: 9500
+          - name: fio_ibmc_block_gold_4000Gi_job_write_16k_bs_iops
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 22500
+                error: 21500
+          - name: ioping_ibmc_block_gold_4000Gi_latency
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 1.0
+                error: 1.2
+          - name: iopingwrite_ibmc_block_gold_4000Gi_latency
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 1.0
+                error: 1.2
+          - name: fio_ibmc_vpc_block_10iops_tier_4000Gi_job_read_16k_bs_iops
+            limitType: floor
+            thresholds:
+              bx2.4x16:
+                warn: 11000
+                error: 10800
+          - name: fio_ibmc_vpc_block_10iops_tier_4000Gi_job_write_16k_bs_iops
+            limitType: floor
+            thresholds:
+              bx2.4x16:
+                warn: 10800
+                error: 10400
+          - name: ioping_ibmc_vpc_block_10iops_tier_4000Gi_latency
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 0.7
+                error: 1.0
+          - name: iopingwrite_ibmc_vpc_block_10iops_tier_4000Gi_latency
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 2.5
+                error: 3.0
+          - name: fio_ibmc_vpc_file_10iops_tier_4000Gi_job_read_16k_bs_iops
+            limitType: floor
+            thresholds:
+              bx2.4x16:
+                warn: 14000
+                error: 13000
+          - name: fio_ibmc_vpc_file_10iops_tier_4000Gi_job_write_16k_bs_iops
+            limitType: floor
+            thresholds:
+              bx2.4x16:
+                warn: 12000
+                error: 11000
+          - name: ioping_ibmc_vpc_file_10iops_tier_4000Gi_latency
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 3
+                error: 5
+          - name: iopingwrite_ibmc_vpc_file_10iops_tier_4000Gi_latency
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 3
+                error: 5
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: fio_ibmc_file_gold_4000Gi_job_read_16k_bs_iops
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 12000
+                error: 11000
+          - name: fio_ibmc_file_gold_4000Gi_job_write_16k_bs_iops
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 14000
+                error: 13000
+          - name: ioping_ibmc_file_gold_4000Gi_latency
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 1.2
+                error: 2.0
+          - name: iopingwrite_ibmc_file_gold_4000Gi_latency
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 1.2
+                error: 2.0
+          - name: fio_ibmc_block_gold_4000Gi_job_read_16k_bs_iops
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 10500
+                error: 9500
+          - name: fio_ibmc_block_gold_4000Gi_job_write_16k_bs_iops
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 20000
+                error: 19000
+          - name: ioping_ibmc_block_gold_4000Gi_latency
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 1.2
+                error: 2.0
+          - name: iopingwrite_ibmc_block_gold_4000Gi_latency
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 1.2
+                error: 2.0
+          - name: fio_ibmc_vpc_block_10iops_tier_4000Gi_job_read_16k_bs_iops
+            limitType: floor
+            thresholds:
+              bx2.4x16:
+                warn: 11000
+                error: 10500
+          - name: fio_ibmc_vpc_block_10iops_tier_4000Gi_job_write_16k_bs_iops
+            limitType: floor
+            thresholds:
+              bx2.4x16:
+                warn: 10500
+                error: 10000
+          - name: ioping_ibmc_vpc_block_10iops_tier_4000Gi_latency
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 1.0
+                error: 1.5
+          - name: iopingwrite_ibmc_vpc_block_10iops_tier_4000Gi_latency
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 1.8
+                error: 2.3
+          - name: fio_ibmc_vpc_file_10iops_tier_4000Gi_job_read_16k_bs_iops
+            limitType: floor
+            thresholds:
+              bx2.4x16:
+                warn: 10000
+                error: 9000
+          - name: fio_ibmc_vpc_file_10iops_tier_4000Gi_job_write_16k_bs_iops
+            limitType: floor
+            thresholds:
+              bx2.4x16:
+                warn: 9500
+                error: 8500
+          - name: ioping_ibmc_vpc_file_10iops_tier_4000Gi_latency
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 3
+                error: 5
+          - name: iopingwrite_ibmc_vpc_file_10iops_tier_4000Gi_latency
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 2.5
+                error: 4.5
+
+  # Snapshot Storage
+  - name: snapshot_storage
+    environment:
+      - kubeVersion: [1_25]
+        operatingSystem: [UBUNTU_18_64]
+        alerts:
+          - name: block_storage_volume_snapshot_2GB_backup_1000MB
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 30
+                error: 60
+          - name: block_storage_volume_snapshot_2GB_restore_1000MB
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 75
+                error: 120
+          - name: block_storage_volume_snapshot_20GB_backup_10GB
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 30
+                error: 60
+          - name: block_storage_volume_snapshot_20GB_restore_10GB
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 75
+                error: 120
+          - name: block_storage_volume_snapshot_200GB_backup_100GB
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 45
+                error: 75
+          - name: block_storage_volume_snapshot_200GB_restore_100GB
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 105
+                error: 150    
+          - name: block_storage_volume_snapshot_2000GB_backup_1000GB
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 60
+                error: 90
+          - name: block_storage_volume_snapshot_2000GB_restore_1000GB
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 150
+                error: 210      
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: block_storage_volume_snapshot_2GB_backup_1000MB
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 45
+                error: 75
+          - name: block_storage_volume_snapshot_2GB_restore_1000MB
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 60
+                error: 105
+          - name: block_storage_volume_snapshot_20GB_backup_10GB
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 30
+                error: 60
+          - name: block_storage_volume_snapshot_20GB_restore_10GB
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 60
+                error: 105
+          - name: block_storage_volume_snapshot_200GB_backup_100GB
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 45
+                error: 75
+          - name: block_storage_volume_snapshot_200GB_restore_100GB
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 60
+                error: 90   
+          - name: block_storage_volume_snapshot_2000GB_backup_1000GB
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 50
+                error: 90
+          - name: block_storage_volume_snapshot_2000GB_restore_1000GB
+            limitType: ceiling
+            thresholds:
+              bx2.4x16:
+                warn: 90
+                error: 150      
+
+  # Incluster Apiserver
+  - name: incluster_apiserver
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: nodes5_threads_200_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 2000
+                error: 1500
+              bx2.4x16:
+                warn: 2000
+                error: 1500
+          - name: nodes5_threads_200_singlezone_average
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 100
+                error: 120
+              bx2.4x16:
+                warn: 100
+                error: 150
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: nodes5_threads_200_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 2000
+                error: 1800
+              b1.4x16:
+                warn: 2800
+                error: 2500
+          - name: nodes5_threads_200_singlezone_average
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 110
+                error: 130
+              b1.4x16:
+                warn: 65
+                error: 75
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [RHCOS]
+        alerts:
+          - name: nodes5_threads_200_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b1.4x16:
+                warn: 2800
+                error: 2500
+          - name: nodes5_threads_200_singlezone_average
+            limitType: ceiling
+            thresholds:
+              b1.4x16:
+                warn: 65
+                error: 75
+
+  # Zero Worker cluster
+  - name: apc2
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: armada_perf_client2_cluster_cluster_duration_mean
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 810
+                error: 930
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: armada_perf_client2_cluster_cluster_duration_mean
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 1120
+                error: 1340
+
+  - name: zeroworkerclusters
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64]
+        alerts:
+          - name: zeroWorkers_apiserver_load_threads_150_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 3700
+                error: 3400
+          - name: zeroWorkers_apiserver_load_threads_150_singlezone_average
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 35
+                error: 40
+      - kubeVersion: [4_10, 4_11, 4_12]
+        operatingSystem: [REDHAT_8_64]
+        alerts:
+          - name: zeroWorkers_apiserver_load_threads_150_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 1900
+                error: 1500
+          - name: zeroWorkers_apiserver_load_threads_150_singlezone_average
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 85
+                error: 100
+
+  # Armada API Load
+  - name: armada_api_load
+    environment:
+      - kubeVersion: [1_23, 1_24, 1_25, 1_26]
+        operatingSystem: [UBUNTU_18_64, UBUNTU_20_64]
+        alerts:
+          - name: nodes5_get_flavors_threads_50_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 150
+                error: 140
+          - name: nodes5_get_flavors_threads_50_singlezone_average
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 55
+                error: 65
+          - name: nodes5_get_flavors_threads_150_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 460
+                error: 420
+          - name: nodes5_get_flavors_threads_150_singlezone_average
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 60
+                error: 70
+          - name: nodes5_get_vpcs_threads_50_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 130
+                error: 110
+          - name: nodes5_get_vpcs_threads_50_singlezone_average
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 350
+                error: 375
+          - name: nodes5_get_vpcs_threads_150_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 300
+                error: 280
+          - name: nodes5_get_vpcs_threads_150_singlezone_average
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 400
+                error: 420
+          - name: nodes5_get_workers_threads_50_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 140
+                error: 120
+          - name: nodes5_get_workers_threads_50_singlezone_average
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 350
+                error: 375
+          - name: nodes5_get_workers_threads_150_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 350
+                error: 325
+          - name: nodes5_get_workers_threads_150_singlezone_average
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 420
+                error: 450
+          - name: nodes5_get_albs_threads_50_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 100
+                error: 80
+          - name: nodes5_get_albs_threads_50_singlezone_average
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 470
+                error: 500
+          - name: nodes5_get_albs_threads_150_singlezone_throughput
+            limitType: floor
+            thresholds:
+              b3c.4x16:
+                warn: 180
+                error: 160
+          - name: nodes5_get_albs_threads_150_singlezone_average
+            limitType: ceiling
+            thresholds:
+              b3c.4x16:
+                warn: 800
+                error: 820

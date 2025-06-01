@@ -1,0 +1,38 @@
+<F5>apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: data-etcd-slnfs-0
+spec:
+  capacity:
+    storage: "100Gi"
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    server: nfsmex0101a-fz.service.softlayer.com
+    path: "/IBM01SV659397_3/"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: data-etcd-slnfs-1
+spec:
+  capacity:
+    storage: "100Gi"
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    server: nfsmex0101a-fz.service.softlayer.com
+    path: "/IBM01SV659397_3/"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: data-etcd-slnfs-2
+spec:
+  capacity:
+    storage: "100Gi"
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    server: nfsmex0101a-fz.service.softlayer.com
+    path: "/IBM01SV659397_3/"

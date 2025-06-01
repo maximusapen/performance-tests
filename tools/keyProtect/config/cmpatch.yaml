@@ -1,0 +1,13 @@
+data:
+  kms-config: |
+    kind: EncryptionConfiguration
+    apiVersion: apiserver.config.k8s.io/v1
+    resources:
+      - resources:
+        - secrets
+        providers:
+        - kms:
+            name: ibm
+            endpoint: unix:///tmp/keyprotectprovider.sock
+            cachesize: < cache_size >
+        - identity: {}

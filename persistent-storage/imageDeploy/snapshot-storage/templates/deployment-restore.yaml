@@ -1,0 +1,44 @@
+{{- if eq .Values.action "restore" -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{$.Release.Name}}
+  labels:
+    app: {{ $.Chart.Name }}
+    chart: {{ $.Chart.Name }}-{{ $.Chart.Version | replace "+" "_" }}
+    release: {{ $.Release.Name }}
+    heritage: {{ $.Release.Service }}
+spec:
+  replicas: {{ $.Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ $.Chart.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ $.Chart.Name }}
+        release: {{ $.Release.Name }}
+        use : {{ $.Chart.Name }}-restore
+    spec:
+      containers:
+      - name: {{ $.Chart.Name }}
+        image: alpine
+        command:
+        - sleep
+        - "86400"
+        volumeMounts:
+        - name: persistent-storage-mount
+          mountPath: "/var/perf-snapshot-ps"
+        env:
+        - name: "METRICS_PREFIX"
+          value: {{ $.Values.metricsPrefix }}
+        - name: "METRICS_OS"
+          value: {{ $.Values.metricsOS }}
+        - name: "K8S_SERVER_VERSION"
+          value: {{ $.Values.k8sVersion }}          
+      volumes:
+      - name: persistent-storage-mount
+        persistentVolumeClaim:
+          claimName: perf-pvc-snapshot
+---
+{{- end -}}

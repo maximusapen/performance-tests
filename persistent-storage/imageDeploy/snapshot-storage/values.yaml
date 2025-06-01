@@ -1,0 +1,25 @@
+# Default values for persistent-storage.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+action: ""
+fileCount: "10" # Number of files to be written to the volume
+fileSize: "1" # Size of each file
+fileSizeUnits: "GB"
+metricsPrefix: ""
+metricsOS: ""
+k8sVersion: ""
+image:
+  registry: stg.icr.io
+  name: armada_performance/persistent-storage
+  tag: latest
+  pullPolicy: Always
+
+# Default values for persistent volume claim access mode, storage class name and size
+pvc:
+  accessMode: ReadWriteOnce
+  storageClassName: ibmc-vpc-block-10iops-tier
+  storageSize: 40G
+
+# Default values for pod related configuration options
+pod:
+  scheduler: default-scheduler

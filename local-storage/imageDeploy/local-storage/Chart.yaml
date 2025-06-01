@@ -1,0 +1,12 @@
+apiVersion: v1
+name: local-storage
+description: A Helm chart for Kubernetes local storage testing on Armada
+version: 1.0.0
+home: https://github.ibm.com/alchemy-containers/armada-performance/tree/master/local-storage
+sources:
+  - https://github.ibm.com/alchemy-containers/armada-performance/tree/master/local-storage
+maintainers:
+  - name: Dan McGinnes
+    email: mcginnes@uk.ibm.com
+appVersion: 1.0
+

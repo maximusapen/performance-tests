@@ -1,0 +1,40 @@
+{{- if .Values.ingress.enabled -}}
+{{- $serviceName := (printf "%s-ingress-service" .Chart.Name) }}
+{{- $servicePort := .Values.service.externalPort -}}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Chart.Name }}-ingress
+  labels:
+    app: {{ .Chart.Name }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  rules:
+    {{- $hosts := .Values.ingress.hosts -}}
+    {{- $paths := .Values.ingress.paths -}}
+    {{- $pathType := .Values.ingress.pathType -}}
+    {{- range $host := $hosts }}
+    - host: {{ $host }}
+      http:
+        paths:
+          {{- range $path := $paths }}
+          - path: {{ $path }}
+            pathType: {{ $pathType }}
+            backend:
+              service:
+                name: {{ $serviceName }}
+                port:
+                  number: {{ $servicePort }}
+          {{- end }}
+    {{- end }}
+  {{- if .Values.ingress.tls.hosts }}
+  {{- if .Values.ingress.tls.secretName }}
+  tls:
+     - secretName: {{ .Values.ingress.tls.secretName }}
+       hosts:
+         {{ toYaml .Values.ingress.tls.hosts | indent 4 }}
+  {{- end -}}
+  {{- end -}}
+{{- end -}}

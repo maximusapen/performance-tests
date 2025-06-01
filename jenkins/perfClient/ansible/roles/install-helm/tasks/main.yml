@@ -1,0 +1,30 @@
+---
+
+- name: Download helm tar
+  become: true
+  get_url:
+    url: https://get.helm.sh/helm-v3.4.2-linux-amd64.tar.gz
+    dest: /usr/local
+    validate_certs: False
+    mode: 0775
+
+- name: Unpack tar
+  unarchive:
+    src: /usr/local/helm-v3.4.2-linux-amd64.tar.gz
+    remote_src: True
+    dest: /usr/local
+
+- name: Copy helm binary to correct folder
+  copy:
+    remote_src: true
+    src: /usr/local/linux-amd64/helm
+    dest: /usr/local/bin/helm
+    mode: 0775
+
+- name: Delete the unpacked directory
+  command: rm  -r /usr/local/linux-amd64
+
+- name: Delete the tar file
+  file:
+    path: /usr/local/helm-v3.4.2-linux-amd64.tar.gz
+    state: absent

@@ -1,0 +1,25 @@
+---
+- name: create directory for armada-etcd pvc templates in file share
+  file:  path={{item}} state=directory
+  with_items:
+    - /mnt/nfs/{{CARRIER}}/templates
+  
+- name: generate and copy etcd volume template
+  template: src={{ item.src }} dest={{ item.dest }} mode=0644
+  with_items:
+  - { src: "armada-etcd-volume.j2", dest: "/mnt/nfs/{{CARRIER}}/templates/armada-etcd-volume.yaml" }
+  when: REALENV == "dev-mex01"
+  
+- name: apply etcd volume template
+  shell: kubectl apply -f /mnt/nfs/{{CARRIER}}/templates/armada-etcd-volume.yaml
+  when: REALENV == "dev-mex01"
+
+# Comment out the following workaround in case we need it again
+# Workaround below to claim persistence volumes for micro-services who failed to do their jobs
+#- name: generate and copy microservice volumes template
+#  template: src={{ item.src }} dest={{ item.dest }} mode=0644
+#  with_items:
+#  - { src: "microservice-volumes.j2", dest: "/mnt/nfs/{{CARRIER}}/templates/microservice-volumes.yaml" }
+
+#- name: apply microservice volumes template
+#  shell: kubectl apply -f /mnt/nfs/{{CARRIER}}/templates/microservice-volumes.yaml

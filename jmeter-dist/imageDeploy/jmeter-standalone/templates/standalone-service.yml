@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jmeter-slaves-svc
+  labels:
+    app: jmeter-slave
+spec:
+  clusterIP: None
+  ports:
+  - name: controller
+    protocol: TCP
+    port: {{ .Values.controller.port }}
+    targetPort: {{ .Values.controller.nodeport }}
+  selector:
+    app: jmeter-slave

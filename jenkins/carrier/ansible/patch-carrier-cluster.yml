@@ -1,0 +1,7 @@
+---
+# Patch carrier masters and workers
+- hosts:
+    - "{{ PATCH_HOSTS }}"
+  become: yes
+  roles:
+  - patch-carrier-cluster

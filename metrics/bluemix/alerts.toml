@@ -1,0 +1,61 @@
+
+# This toml file is used by Jenkins in Armada-Performance/Automation/Run-Performance-Tests and controls alerts sent to RazeeDash
+
+[config]
+# Meta data included in results sent to RazeeDash
+charts_url = "Full Grafana performance charts are here: https://metrics.stage1.ng.bluemix.net/app/#/grafana4. In the top right corner click on your email address and select the 'Domain = account' and 'account =  Armada Performance account'"
+charts_access = "If you do not have access you can post a request for access in the armada-performance slack channel using @armada-perf. Further details of the performance tests can be found here: https://github.ibm.com/alchemy-containers/armada-performance/blob/master/tests/README.md"
+base_razee_url =  "https://razeedash.oneibmcloud.com/api/v1/clusters"
+armada_perf_razeeUserId = "wSTqsYqdC49JsaBoL"
+# If alerts_active is set to false no alert processing will take place
+alerts_active = true
+# If send_alerts_to_razee is set to false, all alerts are processed but no data will be sent to RazeeDash
+send_alerts_to_razee = true
+verbose = true
+
+[alerts]
+# The structure of each alert group is as follows:
+#   [alerts.test_name] - the name must be the one used by the Jenkins in Armada-Performance/Automation/Run-Performance-Tests # e.g. Acmeair,Sysbench,Registry,K8s-E2e-Performance-Load,K8s-E2e-Performance-Density,K8s-E2e-Scalability-Load,K8s-E2e-Scalability-Density,K8s-Netperf,Kubemark,Pod-Scaling,httpperf,Persistent-Storage,http-scale
+#      test_detail      - this an overall desciption of the test
+#      alerts_detail    - this is an array of alerts with the following structure:
+#                           -- name of the alert (must be a unique substring of the string sent to the metrics service)
+#                           -- boolean (as a string) which dicates whether the limit it is a ceiling (true) or a floor(false
+#                           -- the alert limit
+#                           ( for multiple alert_detail entries - ensure the last entry on a line is a comma or ]] )
+
+  [alerts.CreateCluster]
+    test_detail = "This test creates a single cluster with 5 nodes (2 cores, 4GiB Ram), plots the results and alerts if the creation time exceeds the alert limits."
+    alert_detail = [
+      [ "armada_api.requests_1_workers_5.CreateCluster.Max_Action_Time.max", "true", "1500", "Time (in seconds) to create a new cluster with 5 workers" ]]
+
+  [alerts.Pod-Scaling]
+    test_detail = "This test create a deployment and records how long it takes to scale the replicas from 1 to 50 and 100 pods per node and then back to 1 pod again."
+    alert_detail = [
+      [ "k8s.pod_scaling_up.1-501.available_replicas.pod-scaling.duration.sparse-avg", "true", "220", "Time (in seconds) to increase the number of pod replicas from 1 to 100 per node" ],
+      [ "k8s.pod_scaling_down.501-1.not_deleted.pod-scaling.duration.sparse-avg", "true", "200", "Time (in seconds) to decrease the number of pod replicas from 100 per node to 1" ]]
+
+  [alerts.K8s-E2e-Performance-Load]
+    test_detail = "This test is based on the Kubernetes end to end tests and creates 30 pods per node using a large number of small (5 pods), medium (30 pods) and large (250 pods) replication controllers. The test then measures the api response time getting pods, nodes, services, replication sets etc and records the time to create new aritifacts."
+    alert_detail = [
+      [ "load.APIResponsiveness.nodes5.GET.deployments.Perc90.max", "true", "17.0", "90th percentile response time (in milli-seconds) to get a list of deployments" ]]
+
+  [alerts.K8s-Netperf]
+    test_detail = "These are network tests and send data between docker containers, either on the same VM or across VMs."
+    alert_detail = [
+      [ "k8s-netperf.iperf_TCP.Remote_VM_using_Virtual_IP.max", "false", "3000", "Throughput (in Mbits/s) sending TCP data to a pod on a remote VM using iperf" ],
+      [ "k8s-netperf.netperf.Remote_VM_using_Virtual_IP.max", "false", "3000", "Throughput (in Mbits/s) sending TCP data to a pod on a remote VM using netperf" ]]
+
+  [alerts.Persistent-Storage]
+    test_detail = "This test measures persistent storage performance, measuring IOPS and latency and throughput."
+    alert_detail = [
+      [ "persistent_storage.fio-ibmc-block-silver-200Gi.job_16k_bs.iops.sparse-avg", "false", "780", "IOPS using Silver 200GiB persistent storage" ]]
+
+  [alerts.http-scale]
+    test_detail = "This creates multiple pods sending alerts to mutiple nginx pods within a single cluster to test performance with high CPU and high internal load."
+    alert_detail = [
+      [ "http-scale.reqPerSec.sparse-avg", "false", "19000", "Throughput (req/s) sending http requests within a cluster" ]]
+
+  [alerts.Acmeair]
+     test_detail = "This test uses the open source Acme Air application with java microservices to simulate a flight booking system using data in MongoDB databases."
+     alert_detail = [
+      [ "acmeair.nodes5.threads_60.percentile95.sparse-avg", "true", "400", "95th percentile response time (in milli-seconds) for requests with 60 users" ]]

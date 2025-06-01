@@ -1,0 +1,8 @@
+---
+# Delete docker files on all carrier masters and workers
+# before deploying carrier without os reload
+- hosts:
+    - cluster-{{ REALENV }}-{{ CARRIER }}
+  become: yes
+  roles:
+  - delete-carrier-docker

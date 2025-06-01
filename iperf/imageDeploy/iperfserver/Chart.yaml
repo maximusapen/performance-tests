@@ -1,0 +1,11 @@
+apiVersion: v1
+name: iperfserver
+description: A Helm chart for running iperf server in Armada
+version: 1.0.0
+home: https://github.ibm.com/alchemy-containers/armada-performance/tree/master/iperf
+sources:
+  - https://github.ibm.com/alchemy-containers/armada-performance/tree/master/iperf
+maintainers:
+  - name: Katherine Tsui
+    email: ktsui@uk.ibm.com
+appVersion: 1.0

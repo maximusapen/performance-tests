@@ -1,0 +1,29 @@
+{
+	    "CN": "etcd-peer",
+	    "hosts": [
+            "localhost",
+            "ETCDCLUSTER_NAME",
+            "ETCDCLUSTER_NAME-client-service-np",
+            "ETCDCLUSTER_NAME-client",
+            "*.armada.svc.cluster.local",
+            "*.armada.cluster.local",
+            "*.armada.svc",
+            "*.armada",
+            "*.monitoring.svc.cluster.local",
+            "*.ETCDCLUSTER_NAME.armada.svc.cluster.local",
+            "*.ETCDCLUSTER_NAME.armada.cluster.local",
+            "*.ETCDCLUSTER_NAME.armada.svc",
+            "ETCD_ENDPOINTS_OPERATOR_WILDCARD"
+	    ],
+	    "key": {
+	        "algo": "rsa",
+	        "size": 2048
+	    },
+	    "names": [
+	        {
+	            "C": "US",
+	            "L": "CA",
+	            "ST": "San Francisco"
+	        }
+	    ]
+}

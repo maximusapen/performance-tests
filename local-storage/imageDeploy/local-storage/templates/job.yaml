@@ -1,0 +1,53 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ .Release.Name }}-job
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    generator: helm
+    date: {{ now | htmlDate }}
+spec:
+  backoffLimit: 5
+  template:
+    metadata:
+      name: {{ template "local-storage.fullname" . }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.registry }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env:
+        - name: "METRICS_PREFIX"
+          value: {{ .Values.metricsPrefix }}
+        - name: "METRICS_OS"
+          value: {{ .Values.metricsOS }}
+        - name: "K8S_SERVER_VERSION"
+          value: {{ .Values.k8sVersion }}
+        - name: PERF_PS_VERBOSE
+          valueFrom:
+            configMapKeyRef:
+              name: perf-local-storage-config
+              key: PERF_PS_VERBOSE
+        - name: PERF_PS_METRICS
+          valueFrom:
+            configMapKeyRef:
+              name: perf-local-storage-config
+              key: PERF_PS_METRICS
+        - name: PERF_PS_DIR
+          valueFrom:
+            configMapKeyRef:
+              name: perf-local-storage-config
+              key: PERF_PS_DIR
+        - name: PERF_PS_JOBFILE
+          valueFrom:
+            configMapKeyRef:
+              name: perf-local-storage-config
+              key: PERF_PS_JOBFILE
+        - name: PERF_PS_TESTNAME
+          valueFrom:
+            configMapKeyRef:
+              name: perf-local-storage-config
+              key: PERF_PS_TESTNAME
+        args: ["/go/bin/persistent-storage", "--verbose=$(PERF_PS_VERBOSE)", "--metrics=$(PERF_PS_METRICS)", "--testname=$(PERF_PS_TESTNAME)", "--dir=$(PERF_PS_DIR)", "--jobfile=$(PERF_PS_JOBFILE)"]
+      restartPolicy: Never
+      
