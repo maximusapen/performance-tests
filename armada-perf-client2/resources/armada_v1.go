@@ -1,7 +1,7 @@
 /*******************************************************************************
  *
  * OCO Source Materials
- * IBM Cloud Kubernetes Service, 5737-D43
+ * , 5737-D43
  * (C) Copyright IBM Corp. 2019, 2023 All Rights Reserved.
  * The source code for this program is not  published or otherwise divested of
  * its trade secrets, irrespective of what has been deposited with
@@ -43,7 +43,7 @@ import (
 
 const (
 	requestIDHeader = "X-Request-ID"
-	userAgent       = "IBM Cloud Kubernetes Service Performance Client"
+	userAgent       = " Performance Client"
 )
 
 // ArmadaEndpoint struct defining config info for the Armada API
