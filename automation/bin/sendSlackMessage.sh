@@ -1,12 +1,4 @@
 #!/bin/bash -e
-# ******************************************************************************
-# * Licensed Materials - Property of IBM
-# * IBM Cloud Kubernetes Service, 5737-D43
-# * (C) Copyright IBM Corp. 2021 All Rights Reserved.
-# * US Government Users Restricted Rights - Use, duplication or
-# * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
-# ******************************************************************************
-#
 
 # Send message to slack channel
 # For testing, you can DM yourself by changing channel, e.g. #armada-perf-metrics to @<your slack id>

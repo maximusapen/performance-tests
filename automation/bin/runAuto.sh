@@ -1,12 +1,5 @@
 #!/bin/bash -e
-# ******************************************************************************
-# * Licensed Materials - Property of IBM
-# * IBM Cloud Kubernetes Service, 5737-D43
-# * (C) Copyright IBM Corp. 2017, 2023 All Rights Reserved.
-# * US Government Users Restricted Rights - Use, duplication or
-# * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
-# ******************************************************************************
-#
+
 # Position Parameters
 # 1. Number of Clusters to create (defaults to 1)
 # 2. Number of Workers to create on each cluster (defaults to 1)

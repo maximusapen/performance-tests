@@ -1,12 +1,5 @@
 #!/bin/bash -e
-# ******************************************************************************
-# * Licensed Materials - Property of IBM
-# * IBM Cloud Kubernetes Service, 5737-D43
-# * (C) Copyright IBM Corp. 2021, 2022 All Rights Reserved.
-# * US Government Users Restricted Rights - Use, duplication or
-# * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
-# ******************************************************************************
-#
+
 # This script will make changes to a location based on action:
 # --delete-cluster: Delete cluster from location only
 # --delete-location:  Delete cluster and location

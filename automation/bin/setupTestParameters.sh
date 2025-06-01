@@ -1,12 +1,4 @@
 #!/bin/bash -e
-# ******************************************************************************
-# * Licensed Materials - Property of IBM
-# * IBM Cloud Kubernetes Service, 5737-D43
-# * (C) Copyright IBM Corp. 2020, 2021 All Rights Reserved.
-# * US Government Users Restricted Rights - Use, duplication or
-# * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
-# ******************************************************************************
-#
 
 # Set up test parameters as environment variables using template and test files
 # from https://github.ibm.com/alchemy-containers/armada-performance-data/tree/master/automation
