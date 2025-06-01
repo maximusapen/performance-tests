@@ -1,11 +1,4 @@
 #!/bin/bash -x
-# ******************************************************************************
-# * Licensed Materials - Property of IBM
-# * , 5737-D43
-# * (C) Copyright IBM Corp. 2018, 2019 All Rights Reserved.
-# * US Government Users Restricted Rights - Use, duplication or
-# * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
-# ******************************************************************************
 
 # Set up your KUBECONFIG before running this script
 #export KUBECONFIG=<cruiser kube config file>

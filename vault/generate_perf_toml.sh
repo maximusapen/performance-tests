@@ -1,5 +1,4 @@
-#!/bin/bash -e
-#
+#!/bin/bash
 
 # This script can run in the following scenarios:
 # - With real secrets generated from vault_getsecret.sh
