@@ -1,11 +1,4 @@
 #!/bin/bash
-# ******************************************************************************
-# * Licensed Materials - Property of IBM
-# * , 5737-D43
-# * (C) Copyright Maximus Apen, 2025 All Rights Reserved.
-# * US Government Users Restricted Rights - Use, duplication or
-# * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
-# ******************************************************************************
 
 # This script will build the docker images and publish them to the stage repository
 

@@ -1,11 +1,4 @@
-#!/bin/bash -e
-# ******************************************************************************
-# * Licensed Materials - Property of IBM
-# * , 5737-D43
-# * (C) Copyright IBM Corp. 2020 All Rights Reserved.
-# * US Government Users Restricted Rights - Use, duplication or
-# * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
-# ******************************************************************************
+#!/bin/bash
 
 # Simple manual test provided to measure how long it takes for all 1000 ports to be available
 # after multiport service is created.
