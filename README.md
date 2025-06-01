@@ -1,50 +1,48 @@
-# armada-performance
 
-## Detect-secret tool
+## Detect-Secret Tool
 
-This Repository is guarded by detect-secret tool <https://w3.ibm.com/w3publisher/detect-secrets/developer-tool>.
+This repository is protected by the [detect-secrets tool](https://w3.ibm.com/w3publisher/detect-secrets/developer-tool).
 
-See <https://ibm.ent.box.com/notes/691042726964> for more details for this GIT
+For further details about this repository, refer to the [Box note](https://ibm.ent.box.com/notes/691042726964).
 
-Update baseline command is:
+To update the secrets baseline, run:
 
-    detect-secrets scan --exclude-files go.sum  --update .secrets.baseline
+  detect-secrets scan --exclude-files go.sum --update .secrets.baseline
 
-Only the one who generates/updates the baseline needs to install detect-secrets.
+Only those responsible for generating or updating the baseline need to install detect-secrets.
 
 ### Pre-commit
 
-For all, install pre-commit in your local environment.  You need python3.  See box note for upgrading python to python3 on mac.
+All contributors should install pre-commit in their local environment. Python 3 is required. Refer to the Box note for instructions on upgrading to Python 3 on macOS.
 
-- pip install pre-commit
+- `pip install pre-commit`
 
-For each armada-performance clone in your local environment, enable pre-commit hook with command:
+For each local clone of armada-performance, enable the pre-commit hook with:
 
-- pre-commit install
-  - This will add .git/hooks/pre-commit file to the GIT clone.
+- `pre-commit install`
+  - This command adds the `.git/hooks/pre-commit` file to your repository.
 
-Alternative, Makefile is now updated with a setup step, install pre-commit with:
+Alternatively, you can use the Makefile to install pre-commit:
 
-- make setup
+- `make setup`
 
-It is not recommended to disable pre-commit hook once enabled.  But there may be occasions initially when you switch to a local branch without the  pre-commit file
+Disabling the pre-commit hook is not recommended. However, if you switch to a local branch that does not have the pre-commit configuration, you may need to temporarily disable it.
 
-If your commit failed in pre-commit and you see the version in .secrets.baseline has changed, you need to upgrade your pre-commit as follows:
+If your commit fails due to pre-commit and you notice changes in `.secrets.baseline`, upgrade pre-commit as follows:
 
-- pre-commit clean
-- pre-commit gc
-- pre-commit autoupdate
+- `pre-commit clean`
+- `pre-commit gc`
+- `pre-commit autoupdate`
 
-Then
+Then:
 
-- Revert changes in .secrets.baseline and .pre-commit-config.yaml
-- Re-commit your changes including any new changes in .secrets.baseline and .pre-commit-config.yaml
+- Revert changes in `.secrets.baseline` and `.pre-commit-config.yaml`
+- Re-commit your changes, including any updates to `.secrets.baseline` and `.pre-commit-config.yaml`
 
-You may be prompted to upgrade your detect-secrets on commit with version changes in .secrets.baseline.
-Follow instructions (<https://ibm.biz/detect-secrets-how-to-upgrade>)to upgrade detect-secrets, then you need to upgrade your pre-commit with the pre-commit commands above.
+If prompted to upgrade detect-secrets due to version changes in `.secrets.baseline`, follow the [upgrade instructions](https://ibm.biz/detect-secrets-how-to-upgrade), then update pre-commit using the commands above.
 
-To disable pre-commit hook:
+To disable the pre-commit hook:
 
-- pre-commit uninstall
+- `pre-commit uninstall`
 
-Alternatively, merge the master branch to your local branch and keep the pre-commit hook enabled.
+Alternatively, merge the master branch into your local branch and keep the pre-commit hook enabled.

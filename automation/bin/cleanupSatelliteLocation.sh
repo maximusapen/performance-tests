@@ -1,14 +1,4 @@
 #!/bin/bash -e
-# ******************************************************************************
-# * Licensed Materials - Property of IBM
-# * IBM Cloud Kubernetes Service, 5737-D43
-# * (C) Copyright IBM Corp. 2020, 2022 All Rights Reserved.
-# * US Government Users Restricted Rights - Use, duplication or
-# * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
-# ******************************************************************************
-#
-# This script will remove all hosts from a Satellite location and trigger an OS reload or cancellation of them.
-# Finally it will delete the location, waiting for any associated cluster to have been deleted.
 
 # Position Parameters
 # 1. location_name - name of location to cleanup

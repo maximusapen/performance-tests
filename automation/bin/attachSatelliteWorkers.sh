@@ -1,15 +1,4 @@
 #!/bin/bash -e
-# ******************************************************************************
-# * Licensed Materials - Property of IBM
-# * IBM Cloud Kubernetes Service, 5737-D43
-# * (C) Copyright IBM Corp. 2021, 2022 All Rights Reserved.
-# * US Government Users Restricted Rights - Use, duplication or
-# * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
-# ******************************************************************************
-#
-# Position Parameters
-# 1. Satellite location identiifer
-# 2. [Optional] Number of hosts to attach
 
 # Runs armada-perf-client2 commands with built in retry
 apc2_with_retry() {

@@ -1,11 +1,4 @@
 #!/bin/bash
-# ******************************************************************************
-# * Licensed Materials - Property of IBM
-# * IBM Cloud Kubernetes Service, 5737-D43
-# * (C) Copyright IBM Corp. 2021, 2022 All Rights Reserved.
-# * US Government Users Restricted Rights - Use, duplication or
-# * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
-# ******************************************************************************
 
 # Extracts automation schedule data and outputs a json file that is formated
 # to make it easy to convert into html. The output json has two sections:
